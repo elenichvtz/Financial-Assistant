@@ -1,6 +1,6 @@
 <h1>Σύντομη περιγραφή των περιπτώσεων χρήσης</h1>
 
-* [__Εγγραφή στην εφαρμογή__](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc6-%CE%95%CE%B3%CE%B3%CF%81%CE%B1%CF%86%CE%AE%20%CF%83%CF%84%CE%B7%CE%BD%20%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE.md): Ο χρήστης πληκτρολογεί τα στοιχεία του (email και καινούργιος κωδικός) για να μπορέσει να εγγραφεί στην εφαρμογή.
+* [__Εγγραφή στην εφαρμογή__](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc6-%CE%95%CE%B3%CE%B3%CF%81%CE%B1%CF%86%CE%AE%20%CF%83%CF%84%CE%B7%CE%BD%20%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE.md): Ο χρήστης πληκτρολογεί τα στοιχεία του (email και καινούργιο κωδικός) για να μπορέσει να εγγραφεί στην εφαρμογή.
 
 * [__Σύνδεση στην εφαρμογή__](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc7-%CE%A3%CF%8D%CE%BD%CE%B4%CE%B5%CF%83%CE%B7%20%CF%83%CF%84%CE%B7%CE%BD%20%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE.md): Ο χρήστης πληκτρολογεί τα στοιχεία του (email και κωδικός) για να μπορέσει να συνδεθεί στην εφαρμογή.
 
