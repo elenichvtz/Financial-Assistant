@@ -13,4 +13,4 @@
 
 Τέλος, ανάλογα με τα στοιχεία των εσόδων και εξόδων του, ο χρήστης δέχεται μηνύματα που αφορούν τους στόχους και τα έξοδά του.
 
-**Η περιγραφή των περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements.md).**
+**Η περιγραφή των περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/requirements.md).**
