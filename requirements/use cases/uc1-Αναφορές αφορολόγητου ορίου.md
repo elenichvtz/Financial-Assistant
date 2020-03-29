@@ -19,4 +19,4 @@
 
 *2α. Ο Χρήστης δεν έχει δηλώσει το εισόδημά του.*
 
- 1. [Ο Χρήστης δηλώνει το εισόδημά του.]()
+ 1. [Ο Χρήστης δηλώνει το εισόδημά του.](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc3-%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%20%CE%B5%CF%83%CF%8C%CE%B4%CF%89%CE%BD-%CE%B5%CE%BE%CF%8C%CE%B4%CF%89%CE%BD.md)
