@@ -19,7 +19,7 @@
 
 **Διάγραμμα Περιπτώσεων Χρήσης**
 
-<img src =https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.png>
+![](diagrams/use%20case.png)
 
 
 
