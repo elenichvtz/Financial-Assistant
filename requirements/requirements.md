@@ -19,7 +19,7 @@
 
 **Διάγραμμα Περιπτώσεων Χρήσης**
 
-![](diagrams/use%20case.png)
+![](diagrams/use-case.png)
 
 
 
