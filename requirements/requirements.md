@@ -19,7 +19,8 @@
 
 **Διάγραμμα Περιπτώσεων Χρήσης**
 
-![](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.jpg)
+![Διάγραμμα Περιπτώσεων Χρήσης](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.jpg)
+Format: ![Alt Text](url)
 
 <!--Η εικόνα του διαγράμματος περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.jpg).-->
 
