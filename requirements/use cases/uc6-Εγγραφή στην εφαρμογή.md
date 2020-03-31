@@ -21,7 +21,7 @@
 
 **Εναλλακτικές Ροές**
 
-*5α. Τα στοιχεία του Χρήστη δεν είναι έγκυρα καθώς παραβιάζεται ο κανόνας [ΕΚ1](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/requirements.md#EK).*
+*5α. Τα στοιχεία του Χρήστη δεν είναι έγκυρα καθώς παραβιάζεται ο κανόνας [ΕΚ1](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/requirements.md#%CE%B5%CF%80%CE%B9%CF%87%CE%B5%CE%B9%CF%81%CE%B7%CF%83%CE%B9%CE%B1%CE%BA%CE%BF%CE%AF-%CE%BA%CE%B1%CE%BD%CF%8C%CE%BD%CE%B5%CF%82).*
 
  1. Το σύστημα εμφανίζει κατάλληλο μήνυμα στο Χρήστη.
  2. Η ΠΧ επιστρέφει στο βήμα 3 της βασικής ροής.
