@@ -17,7 +17,13 @@
 * [__Τροποποίηση αποταμιευτικών στόχων__](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc8-%CE%A4%CF%81%CE%BF%CF%80%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7%20%CE%B1%CF%80%CE%BF%CF%84%CE%B1%CE%BC%CE%B9%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CF%8E%CE%BD%20%CF%83%CF%84%CF%8C%CF%87%CF%89%CE%BD.md): Ο χρήστης μπορεί να τροποποιήσει τους ήδη υπάρχοντες αποταμιευτικούς στόχους του.
 
 
-Η εικόνα του διαγράμματος περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.jpg).
+**Διάγραμμα Περιπτώσεων Χρήσης**
+
+![](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use-case.png)
+
+
+
+<!--Η εικόνα του διαγράμματος περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.jpg).-->
 
 Το uxf αρχείο του διαγράμματος περιπτώσεων χρήσης βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/diagrams/use%20case.uxf).
 
