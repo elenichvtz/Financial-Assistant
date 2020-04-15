@@ -4,8 +4,8 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>18</x>
-      <y>144</y>
+      <x>0</x>
+      <y>207</y>
       <w>18</w>
       <h>18</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>27</x>
-      <y>144</y>
+      <x>9</x>
+      <y>207</y>
       <w>99</w>
       <h>27</h>
     </coordinates>
@@ -26,8 +26,8 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>108</x>
-      <y>126</y>
+      <x>90</x>
+      <y>189</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -38,19 +38,19 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>207</x>
-      <y>144</y>
-      <w>144</w>
+      <x>189</x>
+      <y>207</y>
+      <w>126</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>333</x>
-      <y>126</y>
+      <x>297</x>
+      <y>189</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -62,8 +62,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
-      <y>144</y>
+      <x>396</x>
+      <y>207</y>
       <w>144</w>
       <h>27</h>
     </coordinates>
@@ -73,19 +73,19 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>657</x>
-      <y>144</y>
-      <w>288</w>
+      <x>783</x>
+      <y>207</y>
+      <w>144</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>558</x>
-      <y>126</y>
+      <x>684</x>
+      <y>189</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -94,21 +94,10 @@ email</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>603</x>
-      <y>72</y>
-      <w>27</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>927</x>
-      <y>369</y>
+      <x>909</x>
+      <y>432</y>
       <w>54</w>
       <h>54</h>
     </coordinates>
@@ -118,19 +107,19 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>270</y>
-      <w>189</w>
+      <x>954</x>
+      <y>207</y>
+      <w>216</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>945</x>
-      <y>171</y>
+      <x>927</x>
+      <y>234</y>
       <w>27</w>
       <h>99</h>
     </coordinates>
@@ -140,8 +129,8 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>594</x>
-      <y>387</y>
+      <x>576</x>
+      <y>450</y>
       <w>117</w>
       <h>27</h>
     </coordinates>
@@ -151,8 +140,8 @@ email</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>693</x>
-      <y>369</y>
+      <x>675</x>
+      <y>432</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -164,8 +153,8 @@ email</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>477</x>
-      <y>369</y>
+      <x>459</x>
+      <y>432</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -177,8 +166,8 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>387</y>
+      <x>342</x>
+      <y>450</y>
       <w>135</w>
       <h>27</h>
     </coordinates>
@@ -188,8 +177,8 @@ email</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>342</x>
-      <y>387</y>
+      <x>324</x>
+      <y>450</y>
       <w>27</w>
       <h>27</h>
     </coordinates>
@@ -199,8 +188,8 @@ email</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>954</x>
-      <y>90</y>
+      <x>936</x>
+      <y>153</y>
       <w>117</w>
       <h>27</h>
     </coordinates>
@@ -210,8 +199,8 @@ email</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>954</x>
-      <y>198</y>
+      <x>936</x>
+      <y>261</y>
       <w>135</w>
       <h>27</h>
     </coordinates>
@@ -221,8 +210,8 @@ email</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>927</x>
-      <y>126</y>
+      <x>909</x>
+      <y>189</y>
       <w>54</w>
       <h>54</h>
     </coordinates>
@@ -232,41 +221,41 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>603</x>
-      <y>72</y>
-      <w>144</w>
+      <x>540</x>
+      <y>108</y>
+      <w>162</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>945</x>
-      <y>72</y>
+      <x>927</x>
+      <y>108</y>
       <w>27</w>
-      <h>72</h>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>72</y>
-      <w>144</w>
+      <x>783</x>
+      <y>108</y>
+      <w>171</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>729</x>
-      <y>54</y>
+      <x>684</x>
+      <y>90</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -278,8 +267,8 @@ email</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>900</x>
-      <y>252</y>
+      <x>882</x>
+      <y>315</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -290,8 +279,8 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>945</x>
-      <y>297</y>
+      <x>927</x>
+      <y>360</y>
       <w>27</w>
       <h>90</h>
     </coordinates>
@@ -301,8 +290,8 @@ email</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>981</x>
-      <y>369</y>
+      <x>963</x>
+      <y>432</y>
       <w>126</w>
       <h>27</h>
     </coordinates>
@@ -312,8 +301,8 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>387</y>
+      <x>774</x>
+      <y>450</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -323,8 +312,8 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>972</x>
-      <y>387</y>
+      <x>954</x>
+      <y>450</y>
       <w>162</w>
       <h>27</h>
     </coordinates>
@@ -334,8 +323,8 @@ email</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1116</x>
-      <y>369</y>
+      <x>1098</x>
+      <y>432</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -347,23 +336,56 @@ email</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1161</x>
-      <y>270</y>
+      <x>1143</x>
+      <y>207</y>
       <w>27</w>
-      <h>117</h>
+      <h>243</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>819</x>
-      <y>369</y>
+      <x>801</x>
+      <y>432</y>
       <w>126</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>[επαρκής κωδικός]</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>522</x>
+      <y>189</y>
+      <w>54</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>108</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>207</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
