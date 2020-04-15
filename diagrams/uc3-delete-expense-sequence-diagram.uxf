@@ -2,21 +2,10 @@
 <diagram program="umlet" version="14.3.0">
   <zoom_level>10</zoom_level>
   <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>320</x>
-      <y>130</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>:Χρήστης</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>160</x>
-      <y>60</y>
+      <x>90</x>
+      <y>90</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -26,74 +15,64 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>540</x>
-      <y>130</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>:Λογαριασμός</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>800</x>
-      <y>130</y>
+      <x>920</x>
+      <y>140</y>
       <w>70</w>
-      <h>30</h>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>:Έξοδο</panel_attributes>
+    <panel_attributes>«entity»
+:Έξοδο</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>150</y>
-      <w>30</w>
-      <h>330</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>190</x>
-      <y>150</y>
-      <w>30</w>
-      <h>330</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>580</x>
-      <y>150</y>
-      <w>30</w>
-      <h>330</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>820</x>
-      <y>150</y>
-      <w>30</w>
-      <h>330</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>190</x>
+      <x>290</x>
       <y>170</y>
+      <w>30</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>180</y>
+      <w>30</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>170</y>
+      <w>30</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>170</y>
+      <w>30</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>200</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -105,8 +84,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>360</x>
-      <y>290</y>
+      <x>290</x>
+      <y>320</y>
       <w>20</w>
       <h>150</h>
     </coordinates>
@@ -116,20 +95,20 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>190</y>
-      <w>470</w>
+      <x>500</x>
+      <y>220</y>
+      <w>460</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
  searchExpense()</panel_attributes>
-    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>820</x>
-      <y>210</y>
+      <x>940</x>
+      <y>240</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -139,20 +118,20 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>230</y>
-      <w>470</w>
+      <x>500</x>
+      <y>260</y>
+      <w>460</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 expenseList</panel_attributes>
-    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>270</y>
+      <x>120</x>
+      <y>300</y>
       <w>190</w>
       <h>40</h>
     </coordinates>
@@ -163,20 +142,20 @@ expenseList</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>290</y>
-      <w>230</w>
+      <x>300</x>
+      <y>320</y>
+      <w>210</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 getExpense()</panel_attributes>
-    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>580</x>
-      <y>310</y>
+      <x>700</x>
+      <y>360</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -186,8 +165,8 @@ getExpense()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>310</y>
+      <x>710</x>
+      <y>360</y>
       <w>250</w>
       <h>40</h>
     </coordinates>
@@ -198,8 +177,8 @@ getExpence()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>820</x>
-      <y>330</y>
+      <x>940</x>
+      <y>380</y>
       <w>20</w>
       <h>100</h>
     </coordinates>
@@ -209,8 +188,8 @@ getExpence()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>830</x>
-      <y>350</y>
+      <x>950</x>
+      <y>400</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -220,8 +199,8 @@ getExpence()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>350</y>
+      <x>960</x>
+      <y>400</y>
       <w>60</w>
       <h>30</h>
     </coordinates>
@@ -231,8 +210,8 @@ getExpence()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>350</y>
+      <x>990</x>
+      <y>400</y>
       <w>130</w>
       <h>60</h>
     </coordinates>
@@ -243,8 +222,8 @@ deleteExpense()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>380</y>
+      <x>960</x>
+      <y>430</y>
       <w>60</w>
       <h>30</h>
     </coordinates>
@@ -254,24 +233,117 @@ deleteExpense()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>390</y>
-      <w>470</w>
+      <x>500</x>
+      <y>440</y>
+      <w>460</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 returnConfirmation()</panel_attributes>
-    <additional_attributes>10.0;20.0;450.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>360</x>
-      <y>190</y>
+      <x>290</x>
+      <y>220</y>
       <w>20</w>
       <h>80</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>430</x>
+      <y>140</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>«controller»
+:ExpenseController</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>250</x>
+      <y>140</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>«boundary»
+:ExpenseUI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>660</x>
+      <y>140</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>«entity»
+:Λογαριασμός</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>490</x>
+      <y>230</y>
+      <w>20</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>210</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+getExpensesList()</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>490</x>
+      <y>340</y>
+      <w>20</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>340</y>
+      <w>220</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+getExpense()</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>170</y>
+      <w>30</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
   </element>
 </diagram>
