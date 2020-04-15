@@ -5,11 +5,12 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>580</x>
-      <y>60</y>
+      <y>50</y>
       <w>100</w>
-      <h>30</h>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>:Λογαριασμός</panel_attributes>
+    <panel_attributes>«entity»
+:Λογαριασμός</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -27,11 +28,12 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>770</x>
-      <y>60</y>
+      <y>50</y>
       <w>160</w>
-      <h>30</h>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>:Αποταμιευτικός Στόχος</panel_attributes>
+    <panel_attributes>«entity»
+:Αποταμιευτικός Στόχος</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -117,11 +119,12 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>320</x>
-      <y>60</y>
+      <y>50</y>
       <w>100</w>
-      <h>30</h>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>:Χρήστης</panel_attributes>
+    <panel_attributes>«boundary»
+:Console</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
