@@ -4,12 +4,20 @@ public class Goal {
 
     private String title;
     private int sumGoal;
-    //private Date endDate;
+    private Date endDate;
 
-
-    public Goal(String title, int sumGoal) {
+    public Goal(String title, int sumGoal, Date endDate) {
         this.title = title;
         this.sumGoal = sumGoal;
+        this.endDate = endDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public String getTitle() {
@@ -27,4 +35,6 @@ public class Goal {
     public void setSumGoal(int sumGoal) {
         this.sumGoal = sumGoal;
     }
+
+
 }

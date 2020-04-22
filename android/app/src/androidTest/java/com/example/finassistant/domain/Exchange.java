@@ -1,0 +1,41 @@
+package com.example.finassistant.domain;
+
+public class Exchange {
+     private double sum;
+     private Date dateEnd;
+     private ExchangeCategory exchange = ExchangeCategory.CASH; //default
+
+    public Exchange(){
+        this.sum = 0;
+        this.dateEnd = null;
+    }
+
+    public Exchange(double sum, Date dateEnd) {
+        this.sum = sum;
+        this.dateEnd = dateEnd;
+    }
+
+    public double getSum() {
+        return sum;
+    }
+
+    public void setSum(double sum) {
+        this.sum = sum;
+    }
+
+    public Date getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
+    }
+
+    public ExchangeCategory getExchange() {
+        return exchange;
+    }
+
+    public void setExchange(ExchangeCategory exchange) {
+        this.exchange = exchange;
+    }
+}

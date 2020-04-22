@@ -9,6 +9,8 @@ public class Account {
     private double taxFree;
 
     private Set<Goal> goals = new HashSet<>();
+    private Set<Income> income = new HashSet<>();
+    private Set<Expense> expenses = new HashSet<>();
 
     public Account(int id, User user, double taxFree) {
         this.id = id;
@@ -45,5 +47,31 @@ public class Account {
 
     public double getTaxFree() {
         return taxFree;
+    }
+
+    public Set<Expense> getExpenses() {
+        return expenses;
+    }
+
+    public Set<Income> getIncome() {
+        return new HashSet<>(income);
+    }
+
+    public Set<Goal> getGoals() {
+        return new HashSet<>(goals);
+    }
+
+    public void addIncome(Income income){
+        if(income != null){
+            this.income.add(income);
+
+        }
+    }
+
+    public void removeIncome(Income income){
+        if(income != null){
+            this.income.remove(income);
+
+        }
     }
 }
