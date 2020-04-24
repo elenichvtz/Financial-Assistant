@@ -12,6 +12,8 @@ public class Account {
     private Set<Income> income = new HashSet<>();
     private Set<Expense> expenses = new HashSet<>();
 
+    public Account(){ }
+
     public Account(int id, User user, double taxFree) {
         this.id = id;
         this.user = user;
@@ -74,4 +76,35 @@ public class Account {
 
         }
     }
+
+    public void addExpense(Expense expense){
+        if(expense != null){
+            this.expenses.add(expense);
+
+        }
+    }
+
+    public void removeExpense(Expense expense){
+        if(expense != null){
+            this.expenses.remove(expense);
+
+        }
+    }
+
+    public void addGoal(Goal goal){
+        if( goal != null){
+            this.goals.add(goal);
+
+        }
+    }
+
+    public void removeGoal(Goal goal){
+        if(goal != null){
+            this.goals.remove(goal);
+
+        }
+
+    }
+
+
 }

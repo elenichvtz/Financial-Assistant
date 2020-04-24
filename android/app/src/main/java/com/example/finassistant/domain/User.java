@@ -7,11 +7,15 @@ public class User {
     private int id;
     private Account account;
 
+    public User(){
+
+    }
+
     public User(String name, String email, int id, Account account) {
         this.name = name;
         this.email = email;
         this.id = id;
-        this.account = account;
+        this.account = account == null ? null : new Account(account);
     }
 
     public String getName() {
@@ -28,5 +32,9 @@ public class User {
 
     public Account getAccount() {
         return account == null ? null : new Account(account);
+    }
+
+    public void setAccount(Account account){
+        this.account = account == null ? null : new Account(account);
     }
 }

@@ -28,4 +28,18 @@ public class ShoppingList {
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
+
+    public void addProduct(Product product){
+        if( product != null){
+            this.products.add(product);
+
+        }
+    }
+
+    public void removeProduct(Product product){
+        if( product != null){
+            this.products.remove(product);
+
+        }
+    }
 }

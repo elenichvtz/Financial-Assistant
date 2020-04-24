@@ -13,7 +13,23 @@ public class Income extends Exchange{
         this.category = category;
     }
 
-    
+    public void setCategory(IncomeCategory category)
+    {
+        this.category = category;
+    }
+
+    public IncomeCategory getCategory(){
+        return category;
+    }
+
+    /*public IncomeCategory setCategory(int x){
+        switch(x)
+        {
+            case 1:
+
+
+        }
+    }*/
 
 
 }

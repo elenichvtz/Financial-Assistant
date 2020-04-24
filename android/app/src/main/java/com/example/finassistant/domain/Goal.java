@@ -6,6 +6,8 @@ public class Goal {
     private int sumGoal;
     private Date endDate;
 
+    public Goal(){ }
+
     public Goal(String title, int sumGoal, Date endDate) {
         this.title = title;
         this.sumGoal = sumGoal;
