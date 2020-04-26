@@ -19,12 +19,12 @@ public class IncomeTest {
     }
 
     @Test
-    public void checkExchangeCategory() {
+    public void checkExchangeCategory(){
         Income income = new Income();
         ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
         income.setExchangeCategory(exchangeCategory);
+        Assert.assertEquals(exchangeCategory,income.getExchangeCategory());
 
-        Assert.assertEquals(exchangeCategory, income.getExchangeCategory());
     }
 
     @Test
@@ -35,10 +35,11 @@ public class IncomeTest {
         Assert.assertEquals(30.04,income.getSum(),0.000001);
     }
 
-    /*@Test
-    public void testList() {
+    @Test
+    public void testCategoryList(){
         Income income = new Income();
-        Object[] possibleValues = IncomeCategory.class.getEnumConstants();
-        Assert.assertEquals(income.getCategoryList(), possibleValues);
-    }*/
+        income.setCategory(IncomeCategory.REGULAR);
+        Assert.assertEquals(income.getCategoryList()[1],income.getCategory());
+
+    }
 }

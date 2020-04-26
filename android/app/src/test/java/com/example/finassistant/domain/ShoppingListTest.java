@@ -3,10 +3,8 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class ShoppingListTest {
+
 
 
     @Test
@@ -48,5 +46,7 @@ public class ShoppingListTest {
         list.setTitle("grocery shopping");
         Assert.assertEquals("grocery shopping", list.getTitle());
     }
+
+
 
 }

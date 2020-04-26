@@ -10,25 +10,10 @@ public class AccountTest {
 
 
     @Test
-    public void setIDTest(){
-        Account account =  new Account();
-        account.setId(1);
-        Assert.assertEquals(1,account.getId());
-    }
-
-    @Test
     public void setUserTest(){
         Account account =  new Account();
-        User user = new User();
-        account.setUser(user);
-        Assert.assertEquals(user,account.getUser());
-    }
-
-    @Test
-    public void setTaxFreeTest(){
-        Account account =  new Account();
-        account.setTaxFree(300.0);
-        Assert.assertEquals(300.0,account.getTaxFree(),0);
+        account.setId(1);
+        assertEquals(1,account.getId());
     }
 
     @Test
