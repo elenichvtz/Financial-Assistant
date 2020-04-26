@@ -10,7 +10,7 @@ public class ShoppingList {
 
     public ShoppingList(){ }
 
-    public ShoppingList(String title, Set<Product> products) {
+    public ShoppingList(String title) {
         this.title = title;
         this.products = products;
     }
@@ -25,11 +25,7 @@ public class ShoppingList {
     }
 
     public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
+        return new HashSet<Product>(products);
     }
 
     public void addProduct(Product product){

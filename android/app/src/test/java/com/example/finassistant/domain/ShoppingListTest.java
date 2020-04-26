@@ -1,7 +1,6 @@
 package com.example.finassistant.domain;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -9,13 +8,6 @@ import java.util.Set;
 
 public class ShoppingListTest {
 
-    @Test
-    public void testList() {
-        Set<Product> products = new HashSet<>();
-        ShoppingList list = new ShoppingList("example",products);
-        Assert.assertEquals("example", list.getTitle());
-        Assert.assertEquals(products, list.getProducts());
-    }
 
     @Test
     public void addNullProduct(){
@@ -52,16 +44,9 @@ public class ShoppingListTest {
 
     @Test
     public void testTitle() {
-        ShoppingList list = new ShoppingList();
-        list.setTitle("example");
-        Assert.assertEquals("example", list.getTitle());
+        ShoppingList list = new ShoppingList("example");
+        list.setTitle("grocery shopping");
+        Assert.assertEquals("grocery shopping", list.getTitle());
     }
 
-    @Test
-    public void testProducts() {
-        ShoppingList list = new ShoppingList();
-        Set<Product> products = new HashSet<>();
-        list.setProducts(products);
-        Assert.assertEquals(products, list.getProducts());
-}
 }
