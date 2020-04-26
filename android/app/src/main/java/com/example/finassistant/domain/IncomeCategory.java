@@ -1,7 +1,7 @@
 package com.example.finassistant.domain;
 
 public enum IncomeCategory {
-   SALARY,
+    SALARY,
     REGULAR,
     NONREGULAR
 

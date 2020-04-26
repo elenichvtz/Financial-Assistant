@@ -2,7 +2,7 @@ package com.example.finassistant.domain;
 
 public class Income extends Exchange{
 
-    private IncomeCategory category = IncomeCategory.PAYMENT;
+    private IncomeCategory category = IncomeCategory.SALARY;
     private ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
 
     public Income() {

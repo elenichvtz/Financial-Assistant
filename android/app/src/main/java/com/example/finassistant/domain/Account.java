@@ -15,10 +15,10 @@ public class Account {
 
     public Account(){ }
 
-    public Account(int id, User user, double taxFree) {
+    public Account(int id, User user) {
         this.id = id;
         this.user = user;
-        this.taxFree = taxFree;
+        //this.taxFree = taxFree;
     }
 
 
@@ -125,10 +125,13 @@ public class Account {
         return total;
     }
 
-    //public double CalculateTaxFree(){
-       // if
+    public double CalculateTaxFree(){
 
-    //}
+        this.taxFree = 0.3*CalculateTotalIncome();
+
+        return this.taxFree;
+    }
+
 
 
 

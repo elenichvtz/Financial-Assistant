@@ -8,20 +8,20 @@ public class ExpenseTest {
     @Test
     public void getCategory(){
         Expense expense = new Expense();
-        Assert.assertEquals(ExpenseCategory.DEPT,expense.getCategory());
+        Assert.assertEquals(ExpenseCategory.OBLIGATION,expense.getCategory());
     }
 
     @Test
     public void setCategory(){
         Expense expense = new Expense();
-        expense.setCategory(ExpenseCategory.DEPT);
-        Assert.assertEquals(ExpenseCategory.DEPT,expense.getCategory());
+        expense.setCategory(ExpenseCategory.TRANSPORT);
+        Assert.assertEquals(ExpenseCategory.TRANSPORT,expense.getCategory());
     }
 
     @Test
     public void checkExchange(){
         Expense expense = new Expense();
-        ExchangeCategory exchangeCategory = ExchangeCategory.CREDITCARD;
+        ExchangeCategory exchangeCategory = ExchangeCategory.ONLINE;
         expense.setExchangeCategory(exchangeCategory);
         Assert.assertEquals(exchangeCategory,expense.getExchangeCategory());
     }
@@ -29,7 +29,7 @@ public class ExpenseTest {
     @Test
     public void checkExpense(){
         Date date = new Date();
-        ExpenseCategory category = ExpenseCategory.DEPT;
+        ExpenseCategory category = ExpenseCategory.OBLIGATION;
         Expense expense = new Expense(30.04,date,category);
         Assert.assertEquals(30.04,expense.getSum(),0.000001);
     }

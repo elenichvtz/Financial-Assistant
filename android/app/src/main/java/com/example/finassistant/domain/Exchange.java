@@ -3,7 +3,7 @@ package com.example.finassistant.domain;
 public class Exchange {
      private double sum;
      private Date dateEnd;
-     private ExchangeCategory exchange = ExchangeCategory.CASH; //default
+     private ExchangeCategory exchange = ExchangeCategory.ONLINE; //default
 
     public Exchange(){
         this.sum = 0;

@@ -2,8 +2,8 @@ package com.example.finassistant.domain;
 
 public class Expense extends Exchange{
 
-    private ExpenseCategory category = ExpenseCategory.DEPT; //default
-    private ExchangeCategory exchangeCategory = ExchangeCategory.CREDITCARD;
+    private ExpenseCategory category = ExpenseCategory.OBLIGATION; //default
+    private ExchangeCategory exchangeCategory = ExchangeCategory.ONLINE;
 
     public Expense() {
         super();

@@ -8,18 +8,7 @@ import org.junit.*;
 
 public class AccountTest {
 
-    /*@Test
-    public void checkAccount(){
-        User user = new User();
-        Account account = new Account(1,user,200.3);
-        assertEquals(1,account.getId());
-
-
-
-
-    }*/
-
-
+    
     @Test
     public void setUserTest(){
         Account account =  new Account();
@@ -137,7 +126,7 @@ public class AccountTest {
     public void checkTotal(){
         Account account = new Account();
         Date date = new Date();
-        IncomeCategory category = IncomeCategory.EMERGENCY;
+        IncomeCategory category = IncomeCategory.SALARY;
         //ExchangeCategory exchangeCategory = ExchangeCategory.
         Income income = new Income(30.04,date,category);
         Income income2 = new Income(20.00,date,category);
@@ -151,7 +140,7 @@ public class AccountTest {
     public void checkTotalExpense(){
         Account account = new Account();
         Date date = new Date();
-        ExpenseCategory category = ExpenseCategory.DEPT;
+        ExpenseCategory category = ExpenseCategory.OBLIGATION;
         Expense expense = new Expense(49.99,date,category);
         Expense expense2 = new Expense(100.00,date,category);
         account.addExpense(expense);
@@ -159,6 +148,19 @@ public class AccountTest {
         Assert.assertEquals(149.99,account.CalculateTotalExpense(),0.000001);
     }
 
+
+    @Test
+    public void testTaxFree(){
+        Account account = new Account();
+        Date date = new Date();
+        IncomeCategory category = IncomeCategory.SALARY;
+        Income income = new Income(30.04,date,category);
+        Income income2 = new Income(20.00,date,category);
+        account.addIncome(income);
+        account.addIncome(income2);
+        account.CalculateTaxFree();
+        Assert.assertEquals(15.012,account.getTaxFree(),0.0001);
+    }
 
 
 }
