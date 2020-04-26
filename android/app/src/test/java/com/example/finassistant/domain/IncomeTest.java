@@ -27,11 +27,18 @@ public class IncomeTest {
         Assert.assertEquals(exchangeCategory, income.getExchangeCategory());
     }
 
-        @Test
+    @Test
     public void checkIncome(){
         Date date = new Date();
         IncomeCategory category = IncomeCategory.SALARY;
         Income income = new Income(30.04,date,category);
         Assert.assertEquals(30.04,income.getSum(),0.000001);
     }
+
+    /*@Test
+    public void testList() {
+        Income income = new Income();
+        Object[] possibleValues = IncomeCategory.class.getEnumConstants();
+        Assert.assertEquals(income.getCategoryList(), possibleValues);
+    }*/
 }
