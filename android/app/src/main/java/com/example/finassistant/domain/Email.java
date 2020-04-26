@@ -18,10 +18,6 @@ public class Email {
         return this.email;
     }
 
-    public boolean isValid() {
-        return true;
-    }
-
     @Override
     public boolean equals(Object other) {
         if (other == null) {
