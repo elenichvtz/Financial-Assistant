@@ -31,9 +31,4 @@ public class Expense extends Exchange{
     public void setExchangeCategory(ExchangeCategory exchangeCategory) {
         this.exchangeCategory = exchangeCategory;
     }
-
-    public Object[] getCategoryList(){
-        Object[] possibleValues = ExpenseCategory.class.getEnumConstants();
-        return possibleValues;
-    }
 }

@@ -19,27 +19,19 @@ public class IncomeTest {
     }
 
     @Test
-    public void checkExchangeCategory(){
+    public void checkExchangeCategory() {
         Income income = new Income();
         ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
         income.setExchangeCategory(exchangeCategory);
-        Assert.assertEquals(exchangeCategory,income.getExchangeCategory());
 
+        Assert.assertEquals(exchangeCategory, income.getExchangeCategory());
     }
 
-    @Test
+        @Test
     public void checkIncome(){
         Date date = new Date();
         IncomeCategory category = IncomeCategory.SALARY;
         Income income = new Income(30.04,date,category);
         Assert.assertEquals(30.04,income.getSum(),0.000001);
-    }
-
-    @Test
-    public void testCategoryList(){
-        Income income = new Income();
-        income.setCategory(IncomeCategory.REGULAR);
-        Assert.assertEquals(income.getCategoryList()[1],income.getCategory());
-
     }
 }

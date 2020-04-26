@@ -36,9 +36,9 @@ public class Account {
         this.user = user;
     }
 
-    /*public void setTaxFree(double taxFree) {
+    public void setTaxFree(double taxFree) {
         this.taxFree = taxFree;
-    }*/
+    }
 
     public int getId() {
         return id;
