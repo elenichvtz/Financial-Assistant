@@ -40,7 +40,7 @@
 --
 τίτλος: String
 ποσό: int
-ημερομηνία λήξης</panel_attributes>
+ημερομηνίαΛήξης: date</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

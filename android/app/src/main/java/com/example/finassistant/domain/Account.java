@@ -125,10 +125,12 @@ public class Account {
         return total;
     }
 
-    //public double CalculateTaxFree(){
-       // if
+    public double CalculateTaxFree(){
 
-    //}
+        this.taxFree = 0.3*CalculateTotalIncome();
+
+        return this.taxFree;
+    }
 
 
 
