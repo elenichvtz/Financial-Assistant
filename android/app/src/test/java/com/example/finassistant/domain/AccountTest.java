@@ -8,7 +8,7 @@ import org.junit.*;
 
 public class AccountTest {
 
-    
+
     @Test
     public void setUserTest(){
         Account account =  new Account();
