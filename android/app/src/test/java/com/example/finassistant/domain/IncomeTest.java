@@ -18,6 +18,16 @@ public class IncomeTest {
         Assert.assertEquals(IncomeCategory.DAILY,income.getCategory());
     }
 
+    /*@Test
+    public void checkExchangeCategory(){
+        Income income = new Income();
+        ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
+        income.setExchangeCategory(exchangeCategory);
+        Assert.assertEquals();
+
+
+    }*/
+
     @Test
     public void checkIncome(){
         Date date = new Date();

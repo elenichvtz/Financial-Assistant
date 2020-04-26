@@ -3,12 +3,32 @@ package com.example.finassistant.domain;
 public class Expense extends Exchange{
 
     private ExpenseCategory category = ExpenseCategory.DEPT; //default
+    private ExchangeCategory exchangeCategory = ExchangeCategory.CREDITCARD;
 
     public Expense() {
         super();
     }
 
-    public Expense(double sum, Date dateEnd) {
+    public Expense(double sum, Date dateEnd,ExpenseCategory category) {
+
         super(sum, dateEnd);
+        this.category = category;
+
+    }
+
+    public ExpenseCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ExpenseCategory category) {
+        this.category = category;
+    }
+
+    public ExchangeCategory getExchangeCategory() {
+        return exchangeCategory;
+    }
+
+    public void setExchangeCategory(ExchangeCategory exchangeCategory) {
+        this.exchangeCategory = exchangeCategory;
     }
 }

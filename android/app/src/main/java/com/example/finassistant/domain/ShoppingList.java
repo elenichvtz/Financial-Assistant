@@ -8,10 +8,13 @@ public class ShoppingList {
     private String title;
     private Set<Product> products = new HashSet<>();
 
+    public ShoppingList(){ }
+
     public ShoppingList(String title, Set<Product> products) {
         this.title = title;
         this.products = products;
     }
+
 
     public String getTitle() {
         return title;

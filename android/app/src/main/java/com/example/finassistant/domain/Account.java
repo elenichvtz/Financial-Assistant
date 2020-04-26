@@ -1,6 +1,7 @@
 package com.example.finassistant.domain;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Account {
@@ -105,6 +106,30 @@ public class Account {
         }
 
     }
+
+    public double CalculateTotalIncome(){
+        double total =0;
+
+        for(Income income : income){
+            total = total + income.getSum();
+        }
+        return total;
+    }
+
+    public double CalculateTotalExpense(){
+        double total =0;
+
+        for(Expense expense: expenses){
+            total = total + expense.getSum();
+        }
+        return total;
+    }
+
+    //public double CalculateTaxFree(){
+       // if
+
+    //}
+
 
 
 }

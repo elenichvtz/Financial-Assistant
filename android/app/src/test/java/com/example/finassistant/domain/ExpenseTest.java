@@ -1,0 +1,36 @@
+package com.example.finassistant.domain;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class ExpenseTest {
+
+    @Test
+    public void getCategory(){
+        Expense expense = new Expense();
+        Assert.assertEquals(ExpenseCategory.DEPT,expense.getCategory());
+    }
+
+    @Test
+    public void setCategory(){
+        Expense expense = new Expense();
+        expense.setCategory(ExpenseCategory.DEPT);
+        Assert.assertEquals(ExpenseCategory.DEPT,expense.getCategory());
+    }
+
+    @Test
+    public void checkExchange(){
+        Expense expense = new Expense();
+        ExchangeCategory exchangeCategory = ExchangeCategory.CREDITCARD;
+        expense.setExchangeCategory(exchangeCategory);
+        Assert.assertEquals(exchangeCategory,expense.getExchangeCategory());
+    }
+
+    @Test
+    public void checkExpense(){
+        Date date = new Date();
+        ExpenseCategory category = ExpenseCategory.DEPT;
+        Expense expense = new Expense(30.04,date,category);
+        Assert.assertEquals(30.04,expense.getSum(),0.000001);
+    }
+}

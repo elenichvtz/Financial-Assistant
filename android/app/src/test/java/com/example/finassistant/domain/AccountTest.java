@@ -133,8 +133,31 @@ public class AccountTest {
         Assert.assertEquals(0,account.getGoals().size());
     }
 
+    @Test
+    public void checkTotal(){
+        Account account = new Account();
+        Date date = new Date();
+        IncomeCategory category = IncomeCategory.EMERGENCY;
+        //ExchangeCategory exchangeCategory = ExchangeCategory.
+        Income income = new Income(30.04,date,category);
+        Income income2 = new Income(20.00,date,category);
+        account.addIncome(income);
+        account.addIncome(income2);
+        Assert.assertEquals(50.04,account.CalculateTotalIncome(),0.0000001);
+    }
 
 
+    @Test
+    public void checkTotalExpense(){
+        Account account = new Account();
+        Date date = new Date();
+        ExpenseCategory category = ExpenseCategory.DEPT;
+        Expense expense = new Expense(49.99,date,category);
+        Expense expense2 = new Expense(100.00,date,category);
+        account.addExpense(expense);
+        account.addExpense(expense2);
+        Assert.assertEquals(149.99,account.CalculateTotalExpense(),0.000001);
+    }
 
 
 

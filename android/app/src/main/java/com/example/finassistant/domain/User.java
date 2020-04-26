@@ -3,7 +3,7 @@ package com.example.finassistant.domain;
 public class User {
 
     private String name;
-    private String email;
+    private Email email;
     private int id;
     private Account account;
 
@@ -11,7 +11,7 @@ public class User {
 
     }
 
-    public User(String name, String email, int id, Account account) {
+    public User(String name, Email email, int id, Account account) {
         this.name = name;
         this.email = email;
         this.id = id;
@@ -22,7 +22,7 @@ public class User {
         return name;
     }
 
-    public String getEmail() {
+    public Email getEmail() {
         return email;
     }
 
