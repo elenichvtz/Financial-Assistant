@@ -25,7 +25,7 @@ public class Income extends Exchange{
         return category;
     }
 
-    public Object getCategoryList(){
+    public Object[] getCategoryList(){
         Object[] possibleValues = IncomeCategory.class.getEnumConstants();
         return possibleValues;
     }

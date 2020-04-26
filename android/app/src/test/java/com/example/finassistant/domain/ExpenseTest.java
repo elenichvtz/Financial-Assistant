@@ -33,4 +33,12 @@ public class ExpenseTest {
         Expense expense = new Expense(30.04,date,category);
         Assert.assertEquals(30.04,expense.getSum(),0.000001);
     }
+
+    @Test
+    public void testCategoryList(){
+        Expense expense = new Expense();
+        expense.setCategory(ExpenseCategory.OBLIGATION);
+        Assert.assertEquals(expense.getCategoryList()[4],expense.getCategory());
+
+    }
 }
