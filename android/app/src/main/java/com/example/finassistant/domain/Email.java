@@ -32,9 +32,7 @@ public class Email {
             return true;
         }
 
-        if (!(other instanceof Email)) {
-            return false;
-        }
+        if (!(other instanceof Email)) return false;
 
         Email theEmail = (Email) other;
         return email == null ? theEmail.getEmail() == null
@@ -44,11 +42,6 @@ public class Email {
     @Override
     public int hashCode() {
         return email == null ? 0 : email.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        return email;
     }
 
 }

@@ -18,9 +18,7 @@ public class Account {
     public Account(int id, User user) {
         this.id = id;
         this.user = user;
-        //this.taxFree = taxFree;
     }
-
 
     public Account(Account account) {
         this.id = account.getId();
@@ -35,10 +33,6 @@ public class Account {
     public void setUser(User user) {
         this.user = user;
     }
-
-    /*public void setTaxFree(double taxFree) {
-        this.taxFree = taxFree;
-    }*/
 
     public int getId() {
         return id;
@@ -102,12 +96,11 @@ public class Account {
     public void removeGoal(Goal goal){
         if(goal != null){
             this.goals.remove(goal);
-
         }
-
     }
 
     public double CalculateTotalIncome(){
+
         double total =0;
 
         for(Income income : income){
@@ -117,7 +110,8 @@ public class Account {
     }
 
     public double CalculateTotalExpense(){
-        double total =0;
+
+        double total = 0;
 
         for(Expense expense: expenses){
             total = total + expense.getSum();
@@ -131,8 +125,4 @@ public class Account {
 
         return this.taxFree;
     }
-
-
-
-
 }

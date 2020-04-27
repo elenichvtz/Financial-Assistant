@@ -15,7 +15,10 @@ public class AccountTest {
     public void setUserTest(){
         Account account =  new Account();
         account.setId(1);
-        assertEquals(1,account.getId());
+        User user = new User();
+        account.setUser(user);
+        Assert.assertEquals(1,account.getId());
+        Assert.assertEquals(user, account.getUser());
     }
 
     @Test

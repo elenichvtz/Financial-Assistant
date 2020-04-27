@@ -20,5 +20,8 @@ public class EmailTest {
         email2.setEmail("example@gmail.com");
         Assert.assertEquals(email, email2);
         Assert.assertEquals(email.hashCode(), email2.hashCode());
+
+        /*Object email3 = new Object();
+        Assert.assertTrue(!(email3 instanceof Email));*/
     }
 }
