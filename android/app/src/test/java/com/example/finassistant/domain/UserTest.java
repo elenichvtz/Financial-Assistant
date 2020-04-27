@@ -13,6 +13,7 @@ public class UserTest {
         User user = new User("Name",email,5,account);
         Assert.assertEquals("Name",user.getName());
         Assert.assertEquals(5,user.getId());
+        Assert.assertEquals(email, user.getEmail());
     }
 
     @Test
