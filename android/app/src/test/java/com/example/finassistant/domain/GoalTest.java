@@ -43,8 +43,8 @@ public class GoalTest {
     @Test
     public void InsertEndDate() throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date myDate = new Date(233276400000L);
-        Date parsedDate = formatter.parse("27-04-2020");
+        Date myDate = new Date(1587934800000L);
+        Date parsedDate = formatter.parse("27/04/2020");
         assertEquals(myDate.getTime(), parsedDate.getTime());
         Goal goal = new Goal();
         goal.setEndDate(myDate);
@@ -54,8 +54,8 @@ public class GoalTest {
     @Test
     public void checkEndDate() throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date myDate = new Date(233276400000L);
-        Date parsedDate = formatter.parse("27-04-2020");
+        Date myDate = new Date(1587934800000L);
+        Date parsedDate = formatter.parse("27/04/2020");
         assertEquals(myDate.getTime(), parsedDate.getTime());
         Goal goal = new Goal();
         System.out.println("The goal date is: " + goal.getEndDate());
