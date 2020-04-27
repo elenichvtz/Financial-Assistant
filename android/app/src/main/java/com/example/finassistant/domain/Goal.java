@@ -1,9 +1,12 @@
 package com.example.finassistant.domain;
 
+import java.util.Date;
+
 public class Goal {
 
     private String title;
     private int sumGoal;
+    private double amount;
     private Date endDate;
 
     public Goal(){ }
@@ -37,6 +40,10 @@ public class Goal {
     public void setSumGoal(int sumGoal) {
         this.sumGoal = sumGoal;
     }
+
+    public void setAmount(double amount) { this.amount = amount;}
+
+    public double getAmount(){ return amount;}
 
 
 }

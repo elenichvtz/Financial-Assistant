@@ -3,6 +3,8 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Date;
+
 public class ExpenseTest {
 
     @Test

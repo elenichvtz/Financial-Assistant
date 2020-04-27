@@ -1,5 +1,7 @@
 package com.example.finassistant.domain;
 
+import java.util.Date;
+
 public class Expense extends Exchange{
 
     private ExpenseCategory category = ExpenseCategory.OBLIGATION; //default
@@ -9,7 +11,7 @@ public class Expense extends Exchange{
         super();
     }
 
-    public Expense(double sum, Date dateEnd,ExpenseCategory category) {
+    public Expense(double sum, Date dateEnd, ExpenseCategory category) {
 
         super(sum, dateEnd);
         this.category = category;

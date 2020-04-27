@@ -1,5 +1,7 @@
 package com.example.finassistant.domain;
 
+import java.util.Date;
+
 public class Exchange {
      private double sum;
      private Date dateEnd;

@@ -6,6 +6,8 @@ import com.example.finassistant.domain.Account;
 import static org.junit.Assert.*;
 import org.junit.*;
 
+import java.util.Date;
+
 public class AccountTest {
 
 
