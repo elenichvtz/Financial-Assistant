@@ -12,6 +12,7 @@ public class Account {
     private Set<Goal> goals = new HashSet<>();
     private Set<Income> income = new HashSet<>();
     private Set<Expense> expenses = new HashSet<>();
+    private Set<ShoppingList> shoppingList = new HashSet<>();
 
     public Account(){ }
 
@@ -58,6 +59,12 @@ public class Account {
         return new HashSet<>(goals);
     }
 
+    public Set<ShoppingList> getShoppingList() {
+        return shoppingList;
+    }
+
+
+
     public void addIncome(Income income){
         if(income != null){
             this.income.add(income);
@@ -98,6 +105,19 @@ public class Account {
             this.goals.remove(goal);
         }
     }
+    public void addList(ShoppingList list){
+        if( list != null){
+            this.shoppingList.add(list);
+
+        }
+    }
+
+    public void removeList(ShoppingList list){
+        if(list != null){
+            this.shoppingList.remove(list);
+        }
+    }
+
 
     public double CalculateTotalIncome(){
 

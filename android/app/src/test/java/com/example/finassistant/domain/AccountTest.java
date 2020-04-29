@@ -22,6 +22,13 @@ public class AccountTest {
     }
 
     @Test
+    public void checkAccounr(){
+
+        Account account = new Account();
+
+    }
+
+    @Test
     public void addNullIncome() {
         Account account = new Account();
         account.addIncome(null);
@@ -166,6 +173,40 @@ public class AccountTest {
         account.CalculateTaxFree();
         Assert.assertEquals(15.012,account.getTaxFree(),0.0001);
     }
+
+    @Test
+    public void addNullList(){
+        Account account = new Account();
+        account.addList(null);
+        Assert.assertEquals(0,account.getShoppingList().size());
+    }
+    @Test
+    public void addList(){
+        Account account = new Account();
+        ShoppingList list = new ShoppingList();
+        account.addList(list);
+        Assert.assertEquals(1,account.getShoppingList().size());
+    }
+
+    @Test
+    public void removeNullList(){
+        Account account = new Account();
+        ShoppingList list = new ShoppingList();
+        account.addList(list);
+        account.removeList(null);
+        Assert.assertEquals(1, account.getShoppingList().size());
+
+    }
+
+    @Test
+    public void removeList(){
+        Account account = new Account();
+        ShoppingList list = new ShoppingList();
+        account.addList(list);
+        account.removeList(list);
+        Assert.assertEquals(0, account.getShoppingList().size());
+    }
+
 
 
 }

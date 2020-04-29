@@ -24,8 +24,8 @@ public class IncomeTest {
     public void checkExchangeCategory(){
         Income income = new Income();
         ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
-        income.setExchangeCategory(exchangeCategory);
-        Assert.assertEquals(exchangeCategory,income.getExchangeCategory());
+        income.setExchange(exchangeCategory);
+        Assert.assertEquals(exchangeCategory,income.getExchange());
 
     }
 
@@ -42,6 +42,15 @@ public class IncomeTest {
         Income income = new Income();
         income.setCategory(IncomeCategory.REGULAR);
         Assert.assertEquals(income.getCategoryList()[1],income.getCategory());
+
+    }
+
+    @Test
+    public void random(){
+        Income income = new Income();
+        income.setCategory(IncomeCategory.REGULAR);
+        income.setExchange(ExchangeCategory.ONLINE);
+        Assert.assertEquals(ExchangeCategory.ONLINE,income.getExchange());
 
     }
 }

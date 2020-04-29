@@ -5,7 +5,7 @@ import java.util.Date;
 public class Income extends Exchange{
 
     private IncomeCategory category = IncomeCategory.SALARY;
-    private ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
+    //private ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
 
     public Income() {
         super();
@@ -32,13 +32,9 @@ public class Income extends Exchange{
         return possibleValues;
     }
 
-    public ExchangeCategory getExchangeCategory() {
-        return exchangeCategory;
-    }
 
-    public void setExchangeCategory(ExchangeCategory exchangeCategory) {
-        this.exchangeCategory = exchangeCategory;
-    }
+
+
 
 
 

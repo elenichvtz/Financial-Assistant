@@ -26,4 +26,8 @@ public class UserTest {
         Assert.assertNotSame(account,user.getAccount());
     }
 
+    @Test void testAccount2(){
+
+    }
+
 }

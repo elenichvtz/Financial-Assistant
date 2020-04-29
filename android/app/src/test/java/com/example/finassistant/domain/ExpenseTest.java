@@ -24,8 +24,8 @@ public class ExpenseTest {
     public void checkExchange(){
         Expense expense = new Expense();
         ExchangeCategory exchangeCategory = ExchangeCategory.ONLINE;
-        expense.setExchangeCategory(exchangeCategory);
-        Assert.assertEquals(exchangeCategory,expense.getExchangeCategory());
+        expense.setExchange(exchangeCategory);
+        Assert.assertEquals(exchangeCategory,expense.getExchange());
     }
 
     @Test
