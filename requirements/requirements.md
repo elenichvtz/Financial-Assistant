@@ -100,7 +100,7 @@
 
 <h4>Στατική Όψη</h4>
 
-![Μοντέλο πεδίου](diagrams/class-diagram-new.png)
+![Μοντέλο πεδίου](android/diagrams/class-diagram-new.png)
 
 <h2>Συμπεριφορές</h2>
 
@@ -110,7 +110,7 @@
 
 <h4>Δυναμική Όψη</h4>
 
-![Εισαγωγή εσόδων διάγραμμα ακολουθίας](diagrams/uc3-insert-income-new-sequence.png)
+![Εισαγωγή εσόδων διάγραμμα ακολουθίας](android/diagrams/uc3-insert-income-new-sequence.png)
 
 <h3>ΠΧ3. Διαγραφή εσόδων</h3>
 
@@ -130,7 +130,7 @@
 
 <h4>Δυναμική Όψη</h4>
 
-![Δημιουργία αποταμιευτικών στόχων διάγραμμα ακολουθίας](diagrams/uc5-create-new-sequence.png)
+![Δημιουργία αποταμιευτικών στόχων διάγραμμα ακολουθίας](android/diagrams/uc5-create-new-sequence.png)
 
 <h3>ΠΧ5. Τροποποίηση αποταμιευτικών στόχων</h3>
 
@@ -146,7 +146,7 @@
 
 <h4>Δυναμική Όψη</h4>
 
-![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](diagrams/uc6-new-sequence.png)
+![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](android/diagrams/uc6-new-sequence.png)
 
 <h2>Επιχειρησιακοί κανόνες</h2>
 
