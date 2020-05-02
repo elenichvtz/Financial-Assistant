@@ -1,130 +1,212 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>0</y>
-      <w>300</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>ShoppingList
---
-- title : String
-- products : HashSet&lt;Product&gt;
---
-+ getTitle() : String {query}
-+ setTitle(title : String)
-+ getProducts() : HashSet&lt;Product&gt; {query}
-+ setProducts(products : HashSet&lt;Product&gt;)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>170</x>
-      <y>0</y>
-      <w>200</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>Product
---
-- title : String
-- price : double
---
-+ getTitle() : String {query}
-+ setTitle(title : String)
-+ getPrice() : double {query}
-+ setPrice(price : double)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>990</x>
-      <y>280</y>
-      <w>210</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>Goal
---
-- title : String
-- sumGoal : int
-- endDate : Date
---
-+ getEndDate() : Date {query}
-+ getTitle() : String {query}
-+ getSumGoal() : int {query}
-+ setEndDate(endDate : Date)
-+ setTitle(title : String)
-+ setSumGoal(sumGoal : int)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>520</x>
-      <y>200</y>
-      <w>310</w>
-      <h>310</h>
-    </coordinates>
-    <panel_attributes>Account
---
-- id: int
-- user: User
-- taxFree: double
-- goals : HashSet&lt;Goal&gt;
-- expenses: HashSet&lt;Expense&gt;
-- income: HashSet&lt;Income&gt;
---
-+ setId(id: int)
-+ setUser(user: User)
-+ setTaxFree(taxFree: double)
-+ getId() : int {query}
-+ getUser() : User {query}
-+ getTaxFree() : double {query}
-+ getExpenses() : HashSet&lt;Expense&gt; {query}
-+ getIncome() : HashSet&lt;Income&gt; {query}
-+ getGoals() : HashSet&lt;Goals&gt; {query}
-+ addIncome(income: Income)
-+ removeIncome(income: Income) </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>180</x>
-      <y>190</y>
-      <w>210</w>
+      <x>1056</x>
+      <y>704</y>
+      <w>152</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Income
+    <panel_attributes>Email
 --
-- category: IncomeCategory
-</panel_attributes>
+&lt;&lt;get/set&gt;&gt;-email : String
+--
++equals() boolean{quer}
++hashCode()int{query}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>320</y>
+      <w>224</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>352</y>
+      <w>24</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>248</y>
+      <w>40</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>96</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>968</x>
+      <y>320</y>
+      <w>144</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>968</x>
+      <y>88</y>
+      <w>280</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>112</y>
+      <w>24</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>112</y>
+      <w>200</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>112</y>
+      <w>216</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>536</y>
+      <w>24</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1= 1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>704</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>580</y>
-      <w>250</w>
-      <h>60</h>
+      <x>720</x>
+      <y>192</y>
+      <w>200</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Expense
 --
-- category : ExpenseCategory</panel_attributes>
+- category : ExpenseCategory
+--
++getCategoryList(): Object[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>200</y>
-      <w>130</w>
-      <h>110</h>
+      <x>712</x>
+      <y>320</y>
+      <w>264</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+&lt;&lt;get/set&gt;&gt;- id: int
+&lt;&lt;get/set&gt;&gt;- user: User
+&lt;&lt;get/set&gt;&gt;- taxFree: double
+&lt;&lt;get/set&gt;&gt;- goals : HashSet&lt;Goal&gt;
+&lt;&lt;get&gt;&gt;- expenses: HashSet&lt;Expense&gt;
+&lt;&lt;get&gt;&gt;- income: HashSet&lt;Income&gt;
+&lt;&lt;get&gt;&gt;- shoppingList: HasSet&lt;ShoppingList&gt; 
+--
+
++ addIncome(income: Income)
++ removeIncome(income: Income) 
++ addExpense(expense:Expense)
++ removeExpense(expense: Expense)
++ addGoal(goal:Goal)
++ removeGoal(goal:Goal)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>504</y>
+      <w>104</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>«enumeration»
 IncomeCategory
@@ -138,10 +220,92 @@ EMERGENCY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>500</y>
-      <w>140</w>
-      <h>130</h>
+      <x>752</x>
+      <y>704</y>
+      <w>176</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>User
+--
+&lt;&lt;get/set&gt;&gt;- name : String
+&lt;&lt;get/set&gt;&gt;- email : String
+&lt;&lt;get/set&gt;&gt;- password : String
+&lt;&lt;get/set&gt;&gt;- accout : Account
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1096</x>
+      <y>296</y>
+      <w>240</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>ShoppingList
+--
+&lt;&lt;get/set&gt;&gt;- title : String
+- products : HashSet&lt;Product&gt;
+--
++ getProducts() : HashSet&lt;Product&gt; {query}
++addProduct(product : Product)
++removeProduct(product:Product)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1496</x>
+      <y>296</y>
+      <w>160</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Product
+--
+- title : String
+- price : double
+--
++ getTitle() : String {query}
++ setTitle(title : String)
++ getPrice() : double {query}
++ setPrice(price : double)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1328</x>
+      <y>320</y>
+      <w>184</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>32</y>
+      <w>160</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Goal
+--
+&lt;&lt;get/set&gt;&gt;- title : String
+&lt;&lt;get/set&gt;&gt;- amount : double
+&lt;&lt;get/set&gt;&gt;- endDate : Date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>776</x>
+      <y>0</y>
+      <w>112</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>«enumeration»
 ExpenseCAtegory
@@ -154,80 +318,45 @@ DEPT</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>290</y>
-      <w>190</w>
-      <h>50</h>
+      <x>312</x>
+      <y>296</y>
+      <w>200</w>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>lt=-
-m1=0..1
-m2=0..*
+    <panel_attributes>Income
+--
+&lt;&lt;get/set&gt;&gt;- category: IncomeCategory
+--
++getCategoryList(): Object[]
+
 </panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>610</x>
-      <y>500</y>
-      <w>50</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..1
-m2=0..*
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>380</x>
-      <y>180</y>
-      <w>160</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..*
-m2=0..1
-</panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>600</x>
-      <y>120</y>
-      <w>50</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..*
-m2=0..1
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>360</x>
-      <y>0</y>
-      <w>220</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=*</panel_attributes>
-    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>700</y>
-      <w>160</w>
-      <h>80</h>
+      <x>320</x>
+      <y>48</y>
+      <w>224</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Exchange
+--
+&lt;&lt;get/set&gt;&gt;- dateEnd: Date
+&lt;&lt;get/set&gt;&gt;- exchange: ExchandeCategory
+&lt;&lt;get/set&gt;&gt;- sum : double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>88</y>
+      <w>128</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>«enumeration»
 ExchangeCategory
@@ -235,131 +364,5 @@ ExchangeCategory
 CASH
 CREDITCARD</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1080</x>
-      <y>30</y>
-      <w>210</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>User
---
-- name : String
-- email : String
-- id : int
-- accout : Account
---
-+ getName() : String {query}
-+ getEmail() : String {query}
-+ getId() : int {query}
-+ getName() : Account {query}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>820</x>
-      <y>30</y>
-      <w>280</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=1
-m2=1
-</panel_attributes>
-    <additional_attributes>10.0;170.0;260.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>300</x>
-      <y>790</y>
-      <w>300</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>Exchange
---
-- dateEnd: Date
-- exchange: ExchandeCategory
-- sum : double
---
-+ getSum() : double {query}
-+ setSum(sum : double)
-+ getDateEnd() : Date {query}
-+ setDateEnd(dateEnd : Date)
-+ getExchange() : ExchangeCategory {query}
-+ setExchange(exchange : ExchangeCategory)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>270</x>
-      <y>260</y>
-      <w>30</w>
-      <h>470</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;450.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>610</x>
-      <y>630</y>
-      <w>30</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>270</x>
-      <y>700</y>
-      <w>370</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;350.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>440</x>
-      <y>700</y>
-      <w>30</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>60</x>
-      <y>830</y>
-      <w>100</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Date</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>150</x>
-      <y>830</y>
-      <w>170</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=0..*
-m2=0..1
-</panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
   </element>
 </diagram>
