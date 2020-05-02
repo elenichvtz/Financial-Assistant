@@ -33,16 +33,24 @@ public class UserTest {
     }
 
     @Test
+    public void testPassword2(){
+        User user = new User();
+        user.setPassword("12345678");
+        Assert.assertEquals("12345678",user.getPassword());
+    }
+
+    @Test
+    public void testName(){
+        User user = new User();
+        user.setName("Name");
+        Assert.assertEquals("Name",user.getName());
+    }
+
+    @Test
     public void testEmail(){
         User user = new User();
         Email email = new Email("example@gmail.com");
         user.setEmail(email);
         Assert.assertEquals(email,user.getEmail());
     }
-
-
-
-
-
-
 }

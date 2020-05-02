@@ -1,5 +1,7 @@
 package com.example.finassistant.domain;
 
+import org.jetbrains.annotations.NotNull;
+
 public class User {
 
     private String name;
@@ -7,14 +9,7 @@ public class User {
     private String password;
     private Account account;
 
-    public User(){
-
-    }
-    public User(String name, Email email,String password){
-        this.name = name;
-        this.email = email;
-        setPassword(password);
-    }
+    public User(){ }
 
     public User(String name, Email email, String password, Account account) {
         this.name = name;
@@ -51,7 +46,7 @@ public class User {
         this.email = email;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(@NotNull String password) {
         if(password.length() >= 8)  this.password = password;
         else System.out.println("Not enough characters");
     }

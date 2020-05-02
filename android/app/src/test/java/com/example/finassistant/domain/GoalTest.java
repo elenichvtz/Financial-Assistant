@@ -36,8 +36,8 @@ public class GoalTest {
     @Test
     public void testInsertAmount(){
         Goal goal = new Goal();
-        goal.setAmount(1000.0);
-        Assert.assertEquals(1000.0, goal.getAmount(), 0.001);
+        goal.setAmount(-1000.0);
+        Assert.assertEquals(0.0, goal.getAmount(), 0.001);
     }
 
 

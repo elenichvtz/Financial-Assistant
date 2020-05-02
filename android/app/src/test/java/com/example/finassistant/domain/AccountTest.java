@@ -22,10 +22,12 @@ public class AccountTest {
     }
 
     @Test
-    public void checkAccounr(){
-
-        Account account = new Account();
-
+    public void checkAccount(){
+        int id = 12345;
+        User user = new User();
+        Account account = new Account(id, user);
+        Assert.assertEquals(12345, account.getId());
+        Assert.assertEquals(user, account.getUser());
     }
 
     @Test
@@ -160,7 +162,6 @@ public class AccountTest {
         Assert.assertEquals(149.99,account.CalculateTotalExpense(),0.000001);
     }
 
-
     @Test
     public void testTaxFree(){
         Account account = new Account();
@@ -180,6 +181,7 @@ public class AccountTest {
         account.addList(null);
         Assert.assertEquals(0,account.getShoppingList().size());
     }
+
     @Test
     public void addList(){
         Account account = new Account();
@@ -206,6 +208,4 @@ public class AccountTest {
         account.removeList(list);
         Assert.assertEquals(0, account.getShoppingList().size());
     }
-
-
 }
