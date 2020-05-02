@@ -5,15 +5,14 @@ import java.util.Date;
 public class Goal {
 
     private String title;
-    private int sumGoal;
     private double amount;
     private Date endDate;
 
     public Goal(){ }
 
-    public Goal(String title, int sumGoal, Date endDate) {
+    public Goal(String title, double amount, Date endDate) {
         this.title = title;
-        this.sumGoal = sumGoal;
+        this.amount = amount;
         this.endDate = endDate;
     }
 
@@ -33,15 +32,11 @@ public class Goal {
         this.title = title;
     }
 
-    public int getSumGoal() {
-        return sumGoal;
-    }
 
-    public void setSumGoal(int sumGoal) {
-        this.sumGoal = sumGoal;
+    public void setAmount(double amount) {
+        if(amount > 0) this.amount = amount;
+        else System.out.println("Invalid input");
     }
-
-    public void setAmount(double amount) { this.amount = amount;}
 
     public double getAmount(){ return amount;}
 

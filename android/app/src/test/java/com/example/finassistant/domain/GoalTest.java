@@ -15,7 +15,7 @@ public class GoalTest {
     public void checkGoal() {
         Date date = new Date();
         Goal goal = new Goal("save 100 euros", 100, date);
-        Assert.assertEquals(100, goal.getSumGoal());
+        Assert.assertEquals(100, goal.getAmount(),0.0001);
 
     }
 
@@ -27,10 +27,10 @@ public class GoalTest {
     }
 
     @Test
-    public void testSumGaol() {
+    public void testAmount() {
         Goal goal = new Goal();
-        goal.setSumGoal(10090);
-        Assert.assertEquals(10090, goal.getSumGoal());
+        goal.setAmount(1000.00);
+        Assert.assertEquals(1000.00, goal.getAmount(),0.0001);
     }
 
     @Test
@@ -40,25 +40,18 @@ public class GoalTest {
         Assert.assertEquals(1000.0, goal.getAmount(), 0.001);
     }
 
-    @Test
-    public void InsertEndDate() throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date myDate = new Date(1587934800000L);
-        Date parsedDate = formatter.parse("27/04/2020");
-        assertEquals(myDate.getTime(), parsedDate.getTime());
-        Goal goal = new Goal();
-        goal.setEndDate(myDate);
 
-    }
 
     @Test
     public void checkEndDate() throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date myDate = new Date(1587934800000L);
         Date parsedDate = formatter.parse("27/04/2020");
-        assertEquals(myDate.getTime(), parsedDate.getTime());
         Goal goal = new Goal();
-        System.out.println("The goal date is: " + goal.getEndDate());
+        goal.setEndDate(parsedDate);
+        Assert.assertEquals(parsedDate,goal.getEndDate());
+
+
+
     }
 
 }

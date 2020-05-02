@@ -4,17 +4,22 @@ public class User {
 
     private String name;
     private Email email;
-    private int id;
+    private String password;
     private Account account;
 
     public User(){
 
     }
-
-    public User(String name, Email email, int id, Account account) {
+    public User(String name, Email email,String password){
         this.name = name;
         this.email = email;
-        this.id = id;
+        setPassword(password);
+    }
+
+    public User(String name, Email email, String password, Account account) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
         this.account = account == null ? null : new Account(account);
     }
 
@@ -26,8 +31,8 @@ public class User {
         return email;
     }
 
-    public int getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
     public Account getAccount() {
@@ -36,5 +41,18 @@ public class User {
 
     public void setAccount(Account account){
         this.account = account == null ? null : new Account(account);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(Email email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        if(password.length() >= 8)  this.password = password;
+        else System.out.println("Not enough characters");
     }
 }

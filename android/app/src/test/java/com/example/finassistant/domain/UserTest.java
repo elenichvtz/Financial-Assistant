@@ -9,10 +9,10 @@ public class UserTest {
     public void UserTest(){
         Account account = new Account();
         account.setId(123456);
-        Email email = new Email("examplegmail.com");
-        User user = new User("Name",email,5,account);
+        Email email = new Email("example@gmail.com");
+        User user = new User("Name",email,"password123",account);
         Assert.assertEquals("Name",user.getName());
-        Assert.assertEquals(5,user.getId());
+        Assert.assertEquals("password123",user.getPassword());
         Assert.assertEquals(email, user.getEmail());
     }
 
@@ -20,14 +20,29 @@ public class UserTest {
     public void testAccount(){
         Account account = new Account();
         account.setId(123456);
-
         User user = new User();
         user.setAccount(account);
         Assert.assertNotSame(account,user.getAccount());
     }
 
-    @Test void testAccount2(){
-
+    @Test
+    public void testPassword(){
+        User user = new User();
+        user.setPassword("123");
+        Assert.assertEquals(null,user.getPassword());
     }
+
+    @Test
+    public void testEmail(){
+        User user = new User();
+        Email email = new Email("example@gmail.com");
+        user.setEmail(email);
+        Assert.assertEquals(email,user.getEmail());
+    }
+
+
+
+
+
 
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 public class Expense extends Exchange{
 
     private ExpenseCategory category = ExpenseCategory.OBLIGATION; //default
-    //private ExchangeCategory exchangeCategory = ExchangeCategory.ONLINE;
+
 
     public Expense() {
         super();
