@@ -43,4 +43,7 @@ public class ExpenseTest {
         Assert.assertEquals(expense.getCategoryList()[4],expense.getCategory());
 
     }
+
+
+
 }

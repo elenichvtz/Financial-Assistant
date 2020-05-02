@@ -21,9 +21,7 @@ public class Exchange {
         return sum;
     }
 
-    public void setSum(double sum) {
-        this.sum = sum;
-    }
+    public void setSum(double sum) {  this.sum = sum;}
 
     public Date getDateEnd() {
         return dateEnd;
