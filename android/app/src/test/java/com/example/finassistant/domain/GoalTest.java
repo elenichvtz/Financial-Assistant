@@ -40,8 +40,6 @@ public class GoalTest {
         Assert.assertEquals(0.0, goal.getAmount(), 0.001);
     }
 
-
-
     @Test
     public void checkEndDate() throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -49,9 +47,6 @@ public class GoalTest {
         Goal goal = new Goal();
         goal.setEndDate(parsedDate);
         Assert.assertEquals(parsedDate,goal.getEndDate());
-
-
-
     }
 
 }

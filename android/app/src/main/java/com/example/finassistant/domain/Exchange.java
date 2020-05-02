@@ -17,11 +17,12 @@ public class Exchange {
         this.dateEnd = dateEnd;
     }
 
-    public double getSum() {
-        return sum;
-    }
+    public double getSum() { return sum; }
 
-    public void setSum(double sum) {  this.sum = sum;}
+    public void setSum(double sum) {
+        if(sum > 0) this.sum = sum;
+        else System.out.println("Invalid input");
+    }
 
     public Date getDateEnd() {
         return dateEnd;

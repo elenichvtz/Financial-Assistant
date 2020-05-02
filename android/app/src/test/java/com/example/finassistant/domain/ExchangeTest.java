@@ -23,6 +23,13 @@ public class ExchangeTest {
     }
 
     @Test
+    public void testInsertSum(){
+        Exchange exchange = new Exchange();
+        exchange.setSum(-234.96);
+        Assert.assertEquals(0.0, exchange.getSum(), 0.001);
+    }
+
+    @Test
     public void testExchangeCategory() {
         Exchange exchange = new Exchange();
         ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
