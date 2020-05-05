@@ -154,3 +154,7 @@
 | :------: | :------: |
 | ΕΚ1 | Το email κάθε Χρήστη είναι μοναδικό. |
 | ΕΚ2 | Ο κωδικός πρέπει να αποτελείται απο τουλάχιστον 8 χαρακτήρες. |
+
+
+<h2>Coverage Report</h2>
+![Coverage Report](android/diagrams/coverage_report.png)
