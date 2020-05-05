@@ -110,7 +110,7 @@
 
 <h4>Δυναμική Όψη</h4>
 
-![Εισαγωγή εσόδων διάγραμμα ακολουθίας](android/diagrams/diagrams_uc3-insert-income-new-sequence)
+![Εισαγωγή εσόδων διάγραμμα ακολουθίας](android/diagrams/diagrams_uc3-insert-income-new-sequence.png)
 
 <h3>ΠΧ3. Διαγραφή εσόδων</h3>
 
