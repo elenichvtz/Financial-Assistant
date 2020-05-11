@@ -14,8 +14,8 @@
 
 <h3>ΠΧ6. Εγγραφή στην εφαρμογή</h3>
 
-![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](android/diagrams/diagrams_uc6-new-sequence.png)
+![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](diagrams/diagrams_uc6-new-sequence.png)
 
 <h2>Coverage Report</h2>
 
-![Coverage Report](android/diagrams/coverage_report.png)
+![Coverage Report](diagrams/coverage_report.png)
