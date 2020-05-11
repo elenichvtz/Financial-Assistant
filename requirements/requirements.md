@@ -98,19 +98,11 @@
 
 ![Μοντέλο πεδίου](diagrams/class-diagram.png)
 
-<h4>Στατική Όψη</h4>
-
-![Μοντέλο πεδίου](android/diagrams/class-diagram-new.png)
-
 <h2>Συμπεριφορές</h2>
 
 <h3>ΠΧ3. Εισαγωγή εσόδων</h3>
 
 ![Εισαγωγή εσόδων διάγραμμα ακολουθίας](diagrams/uc3-insert-income-sequence-diagram.png)
-
-<h4>Δυναμική Όψη</h4>
-
-![Εισαγωγή εσόδων διάγραμμα ακολουθίας](android/diagrams/diagrams_uc3-insert-income-new-sequence.png)
 
 <h3>ΠΧ3. Διαγραφή εσόδων</h3>
 
@@ -128,10 +120,6 @@
 
 ![Δημιουργία αποταμιευτικών στόχων διάγραμμα ακολουθίας](diagrams/uc5-create-sequence-diagram.png)
 
-<h4>Δυναμική Όψη</h4>
-
-![Δημιουργία αποταμιευτικών στόχων διάγραμμα ακολουθίας](android/diagrams/diagrams_uc5-create-new-sequence.png)
-
 <h3>ΠΧ5. Τροποποίηση αποταμιευτικών στόχων</h3>
 
 ![Τροποποίηση αποταμιευτικών στόχων διάγραμμα ακολουθίας](diagrams/uc5-modify-sequence-diagram.png)
@@ -144,9 +132,6 @@
 
 ![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](diagrams/uc6-sequence-diagram.png)
 
-<h4>Δυναμική Όψη</h4>
-
-![Εγγραφή στην εφαρμογή διάγραμμα ακολουθίας](android/diagrams/diagrams_uc6-new-sequence.png)
 
 <h2>Επιχειρησιακοί κανόνες</h2>
 
@@ -156,5 +141,4 @@
 | ΕΚ2 | Ο κωδικός πρέπει να αποτελείται απο τουλάχιστον 8 χαρακτήρες. |
 
 
-<h2>Coverage Report</h2>
-![Coverage Report](android/diagrams/coverage_report.png)
+
