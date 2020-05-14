@@ -7,6 +7,8 @@ public class User {
     private Email email;
     private String password;
     private Account account;
+    //added
+    private int id;
 
     public User(){ }
 
@@ -32,6 +34,10 @@ public class User {
     public Account getAccount() {
         return account == null ? null : new Account(account);
     }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public void setAccount(Account account){
         this.account = account == null ? null : new Account(account);
