@@ -2,7 +2,7 @@ package com.example.finassistant.domain;
 
 import java.util.Date;
 
-public class Expense extends Exchange{
+public class Expense extends Exchange implements ExpenseUI{
 
     private ExpenseCategory category = ExpenseCategory.OBLIGATION; //default
 

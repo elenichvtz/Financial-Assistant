@@ -1,6 +1,6 @@
 package com.example.finassistant.domain;
 
-public class Email {
+public class Email implements EmailUI {
     private String email;
 
     public Email(){ }
@@ -36,8 +36,5 @@ public class Email {
     }
 
     @Override
-    public int hashCode() {
-
-        return email == null ? 0 : email.hashCode();
-    }
+    public int hashCode() { return email == null ? 0 : email.hashCode(); }
 }

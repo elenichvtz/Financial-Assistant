@@ -1,6 +1,6 @@
 package com.example.finassistant.domain;
 
-public class Product {
+public class Product implements ProductUI {
 
     private String title;
     private double price;

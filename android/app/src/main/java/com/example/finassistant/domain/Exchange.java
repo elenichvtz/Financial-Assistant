@@ -2,7 +2,7 @@ package com.example.finassistant.domain;
 
 import java.util.Date;
 
-public class Exchange {
+public class Exchange implements ExchangeUI{
      private double sum;
      private Date dateEnd;
      private ExchangeCategory exchange = ExchangeCategory.ONLINE; //default

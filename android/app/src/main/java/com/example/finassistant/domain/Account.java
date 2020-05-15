@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Account {
+public class Account implements AccountUI{
     private int id;
     private User user;
     private double taxFree;

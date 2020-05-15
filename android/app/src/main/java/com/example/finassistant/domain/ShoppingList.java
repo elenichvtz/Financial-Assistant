@@ -3,7 +3,7 @@ package com.example.finassistant.domain;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ShoppingList {
+public class ShoppingList implements ShoppingListUI{
 
     private String title;
     private Set<Product> products = new HashSet<>();
