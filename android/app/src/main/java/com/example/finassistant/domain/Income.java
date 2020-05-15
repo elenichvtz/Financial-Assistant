@@ -2,7 +2,7 @@ package com.example.finassistant.domain;
 
 import java.util.Date;
 
-public class Income extends Exchange implements IncomeUI{
+public class Income extends Exchange{
 
     private IncomeCategory category = IncomeCategory.SALARY;
     //private ExchangeCategory exchangeCategory = ExchangeCategory.CASH;

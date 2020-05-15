@@ -2,7 +2,7 @@ package com.example.finassistant.domain;
 
 import java.util.Date;
 
-public class Goal implements GoalUI{
+public class Goal{
 
     private String title;
     private double amount;

@@ -1,6 +1,6 @@
 package com.example.finassistant.domain;
 
-public class Email implements EmailUI {
+public class Email{
     private String email;
 
     public Email(){ }

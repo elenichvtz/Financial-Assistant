@@ -1,7 +1,7 @@
 package com.example.finassistant.domain;
 
 
-public class User implements UserUI{
+public class User {
 
     private String name;
     private Email email;
