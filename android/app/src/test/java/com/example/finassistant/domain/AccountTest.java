@@ -3,6 +3,7 @@ package com.example.finassistant.domain;
 
 import com.example.finassistant.domain.Account;
 
+
 import static org.junit.Assert.*;
 import org.junit.*;
 
