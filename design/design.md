@@ -54,7 +54,7 @@
 
 <h3>Διάγραμμα ακολουθίας removeProduct(Product product)</h3>
 
-![removeProduct(Product product)](diagrams/ShoppingList.removeProduct-sequence-diagram)
+![removeProduct(Product product)](diagrams/ShoppingList.removeProduct-sequence-diagram.png)
 
 <h2>Coverage Report</h2>
 
