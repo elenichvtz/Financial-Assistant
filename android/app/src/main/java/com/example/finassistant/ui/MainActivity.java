@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button2;
     private Button button3;
     private Button button4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
     public void openActivityIncome(){
         Intent intent = new Intent(this, IncomeActivity.class);
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivityGoal(){
-        Intent intent = new Intent(this, ListActivity.class);
+        Intent intent = new Intent(this, GoalActivity.class);
         startActivity(intent);
     }
 

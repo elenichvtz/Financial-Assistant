@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.finassistant.R;
 
@@ -23,15 +22,16 @@ public class IncomeActivity extends AppCompatActivity {
     EditText amount;
     EditText endDate;
     double amountValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
-        income = (Button) findViewById(R.id.button2);
-        total_income = (Button) findViewById(R.id.button5);
-        incomeCategory = (ListView) findViewById((R.id.listview));
-        amount = (EditText)findViewById(R.id.txt_input);
-        endDate = (EditText) findViewById(R.id.date);
+        income = findViewById(R.id.button2);
+        total_income = findViewById(R.id.button5);
+        incomeCategory = findViewById((R.id.goallist));
+        amount = findViewById(R.id.txt_input);
+        endDate = findViewById(R.id.date);
         incomeCategory.setVisibility(View.GONE);
         income.setVisibility(View.VISIBLE);
         total_income.setVisibility(View.VISIBLE);
@@ -63,10 +63,8 @@ public class IncomeActivity extends AppCompatActivity {
                             public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
                                 //If the keyevent is a key-down event on the "enter" button
                                 if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                                    //...
-                                    // Perform your action on key press here
-                                    // ...
-                                    amount = (EditText) findViewById(R.id.txt_input);
+
+                                    amount = findViewById(R.id.txt_input);
                                     amountValue = Double.parseDouble(amount.getText().toString());
                                     endDate.setVisibility(View.VISIBLE);
                                     return true;
