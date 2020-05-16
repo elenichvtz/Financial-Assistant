@@ -44,7 +44,12 @@ public class Goal{
     double getCurrentAmount() {return this.currentamount; }
 
     double GoalCompletion(double completion) {
-        this.currentamount = this.currentamount + completion;
+        if(this.amount-this.currentamount<completion) {
+            this.currentamount = this.amount;
+        }
+        else if(this.currentamount!=this.amount && this.amount-this.currentamount>=completion) {
+            this.currentamount = this.currentamount + completion;
+        }
         return this.currentamount;
     }
 }
