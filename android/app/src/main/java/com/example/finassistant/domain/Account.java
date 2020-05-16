@@ -63,8 +63,6 @@ public class Account{
         return shoppingList;
     }
 
-
-
     public void addIncome(Income income){
         if(income != null){
             this.income.add(income);
@@ -105,6 +103,7 @@ public class Account{
             this.goals.remove(goal);
         }
     }
+
     public void addList(ShoppingList list){
         if( list != null){
             this.shoppingList.add(list);
@@ -117,7 +116,6 @@ public class Account{
             this.shoppingList.remove(list);
         }
     }
-
 
     public double CalculateTotalIncome(){
 
