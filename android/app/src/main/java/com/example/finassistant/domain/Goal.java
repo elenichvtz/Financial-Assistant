@@ -41,7 +41,7 @@ public class Goal{
 
     double getAmount(){ return amount;}
 
-    double getCurrentAmmount() {return this.currentamount; }
+    double getCurrentAmount() {return this.currentamount; }
 
     double GoalCompletion(double completion) {
         this.currentamount = this.currentamount + completion;

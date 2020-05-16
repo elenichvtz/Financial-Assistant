@@ -52,13 +52,13 @@ public class GoalTest {
     @Test
     public void testCurrentAmount() {
         Goal goal = new Goal();
-        Assert.assertEquals(0.0, goal.getCurrentAmmount(), 0.0001);
+        Assert.assertEquals(0.0, goal.getCurrentAmount(), 0.0001);
     }
 
     @Test
     public void testCompletion() {
         Goal goal = new Goal();
         goal.GoalCompletion(76.43);
-        Assert.assertEquals(76.43, goal.getCurrentAmmount(), 0.001);
+        Assert.assertEquals(76.43, goal.getCurrentAmount(), 0.001);
     }
 }
