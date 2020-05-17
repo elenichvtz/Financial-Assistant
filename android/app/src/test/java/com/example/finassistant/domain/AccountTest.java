@@ -1,6 +1,5 @@
 package com.example.finassistant.domain;
 
-
 import com.example.finassistant.domain.Account;
 
 
@@ -11,7 +10,6 @@ import java.util.Date;
 import java.util.Iterator;
 
 public class AccountTest {
-
 
     @Test
     public void setUserTest(){
