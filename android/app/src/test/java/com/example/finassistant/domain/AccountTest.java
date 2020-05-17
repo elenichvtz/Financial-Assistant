@@ -1,6 +1,5 @@
 package com.example.finassistant.domain;
 
-
 import com.example.finassistant.domain.Account;
 
 
@@ -8,9 +7,9 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 import java.util.Date;
+import java.util.Iterator;
 
 public class AccountTest {
-
 
     @Test
     public void setUserTest(){
@@ -208,5 +207,19 @@ public class AccountTest {
         account.addList(list);
         account.removeList(list);
         Assert.assertEquals(0, account.getShoppingList().size());
+    }
+
+    @Test
+    public void testGoalExpenses() {
+        Account account = new Account();
+        Goal goal = new Goal();
+        goal.setAmount(89.51);
+        account.addGoal(goal);
+        account.updateGoalExpenses(goal, 43.56);
+        Assert.assertEquals(1, account.getExpenses().size());
+        for (Iterator<Expense> it = account.getExpenses().iterator(); it.hasNext(); ) {
+            Expense expense = it.next();
+            Assert.assertEquals(43.56, expense.getSum(), 0.001);
+        }
     }
 }
