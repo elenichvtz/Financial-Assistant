@@ -7,16 +7,16 @@ public class User {
     private Email email;
     private String password;
     private Account account;
-    //added
     private int id;
 
     public User(){ }
 
-    public User(String name, Email email, String password, Account account) {
+    public User(String name, Email email, String password, Account account,int id) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.account = account == null ? null : new Account(account);
+        this.id = id;
     }
 
     public String getName() {

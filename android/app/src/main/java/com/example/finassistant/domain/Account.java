@@ -1,7 +1,8 @@
 package com.example.finassistant.domain;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class Account{
@@ -13,6 +14,7 @@ public class Account{
     private Set<Income> income = new HashSet<>();
     private Set<Expense> expenses = new HashSet<>();
     private Set<ShoppingList> shoppingList = new HashSet<>();
+    private HashMap<Integer,Expense> temp = new HashMap<>();
 
     public Account(){ }
 
@@ -63,6 +65,8 @@ public class Account{
         return shoppingList;
     }
 
+    public HashMap<Integer, Expense> getTemp() { return temp; }
+
     public void addIncome(Income income){
         if(income != null){
             this.income.add(income);
@@ -104,6 +108,13 @@ public class Account{
         }
     }
 
+    void updateGoalExpenses(Goal goal, double amount) {
+        goal.GoalCompletion(amount);
+        Expense expence = new Expense(amount, new Date(), ExpenseCategory.OBLIGATION);
+        addExpense(expence);
+    }
+
+
     public void addList(ShoppingList list){
         if( list != null){
             this.shoppingList.add(list);
@@ -142,5 +153,23 @@ public class Account{
         this.taxFree = 0.3*CalculateTotalIncome();
 
         return this.taxFree;
+    }
+
+    /*public void validateAmounts(){
+        if( CalculateTotalIncome() < CalculateTotalExpense()){
+            //add something
+        }
+    }*/
+
+    public void ShoppingExpenses(){
+
+        int count = 1;
+
+        for(ShoppingList list: shoppingList){
+            Expense expense = new Expense(list.getTotal(),null,ExpenseCategory.SHOPPING);
+            temp.put(count,expense);
+            this.addExpense(expense);
+            count ++;
+        }
     }
 }

@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 import java.util.Date;
+import java.util.Iterator;
 
 public class AccountTest {
 
@@ -209,4 +210,58 @@ public class AccountTest {
         account.removeList(list);
         Assert.assertEquals(0, account.getShoppingList().size());
     }
+
+    @Test
+    public void checkListExpense(){
+        Account account = new Account();
+        Product product = new Product("toothbrush",2.99);
+        Product product2 = new Product("vegetables",20.59);
+        Product product3 = new Product("drinks",15.40);
+        ShoppingList list = new ShoppingList("Super market essentials");
+        list.addProduct(product);
+        list.addProduct(product2);
+        list.addProduct(product3);
+        account.addList(list);
+        account.ShoppingExpenses();
+
+        Assert.assertEquals(1,account.getExpenses().size());
+        Assert.assertEquals(38.98,account.getTemp().get(1).getSum(),0.00001);
+    }
+
+    @Test
+    public void testGoalExpenses() {
+        Account account = new Account();
+        Goal goal = new Goal();
+        goal.setAmount(89.51);
+        account.addGoal(goal);
+        account.updateGoalExpenses(goal, 43.56);
+        Assert.assertEquals(1, account.getExpenses().size());
+        for (Iterator<Expense> it = account.getExpenses().iterator(); it.hasNext(); ) {
+            Expense expense = it.next();
+            Assert.assertEquals(43.56, expense.getSum(), 0.001);
+        }
+    }
+
+
+    /*@Test
+    public void checkLiExpense(){
+        Account account = new Account();
+        Product product = new Product("toothbrush",2.99);
+        Product product2 = new Product("vegetables",20.59);
+        ShoppingList list = new ShoppingList("Super market essentials");
+        list.addProduct(product);
+        list.addProduct(product2);
+        account.addList(list);
+        Product product4 = new Product("drinks",15.40);
+        ShoppingList list2 = new ShoppingList("Super market essentials");
+        list2.addProduct(product4);
+        account.addList(list2);
+        account.ShoppingExpenses();
+        Assert.assertEquals(2,account.getExpenses().size());
+        Assert.assertEquals(15.40,account.getTemp().get(2).getSum(),0.00001);
+    }*/
+
+
+
+
 }
