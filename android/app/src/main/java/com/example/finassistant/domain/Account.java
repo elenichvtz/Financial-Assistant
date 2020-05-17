@@ -65,9 +65,9 @@ public class Account{
         return shoppingList;
     }
 
-    public HashMap<Integer, Expense> getTemp() { return temp; }
+    HashMap<Integer, Expense> getTemp() { return temp; }
 
-    public void addIncome(Income income){
+    void addIncome(Income income){
         if(income != null){
             this.income.add(income);
 
@@ -115,7 +115,7 @@ public class Account{
     }
 
 
-    public void addList(ShoppingList list){
+    void addList(ShoppingList list){
         if( list != null){
             this.shoppingList.add(list);
 
@@ -161,7 +161,7 @@ public class Account{
         }
     }*/
 
-    public void ShoppingExpenses(){
+    void ShoppingExpenses(){
 
         int count = 1;
 
