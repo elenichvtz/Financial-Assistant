@@ -16,14 +16,14 @@ public class Account{
     private Set<ShoppingList> shoppingList = new HashSet<>();
     private HashMap<Integer,Expense> temp = new HashMap<>();
 
-    Account(){ }
+    public Account(){ }
 
-    Account(int id, User user) {
+    public Account(int id, User user) {
         this.id = id;
         this.user = user;
     }
 
-    Account(Account account) {
+    public Account(Account account) {
         this.id = account.getId();
         this.user = account.getUser();
         this.taxFree = account.getTaxFree();
@@ -41,61 +41,61 @@ public class Account{
         return id;
     }
 
-    User getUser() {
+    public User getUser() {
         return user;
     }
 
-    double getTaxFree() {
+    public double getTaxFree() {
         return taxFree;
     }
 
-    Set<Expense> getExpenses() {
+    public Set<Expense> getExpenses() {
         return expenses;
     }
 
-    Set<Income> getIncome() {
+    public Set<Income> getIncome() {
         return new HashSet<>(income);
     }
 
-    Set<Goal> getGoals() {
+    public Set<Goal> getGoals() {
         return new HashSet<>(goals);
     }
 
-    Set<ShoppingList> getShoppingList() {
+    public Set<ShoppingList> getShoppingList() {
         return shoppingList;
     }
 
-    HashMap<Integer, Expense> getTemp() { return temp; }
+    public HashMap<Integer, Expense> getTemp() { return temp; }
 
-    void addIncome(Income income){
+    public void addIncome(Income income){
         if(income != null){
             this.income.add(income);
 
         }
     }
 
-    void removeIncome(Income income){
+    public void removeIncome(Income income){
         if(income != null){
             this.income.remove(income);
 
         }
     }
 
-    void addExpense(Expense expense){
+    public void addExpense(Expense expense){
         if(expense != null){
             this.expenses.add(expense);
 
         }
     }
 
-    void removeExpense(Expense expense){
+    public void removeExpense(Expense expense){
         if(expense != null){
             this.expenses.remove(expense);
 
         }
     }
 
-    void addGoal(Goal goal){
+    public void addGoal(Goal goal){
         if( goal != null){
             this.goals.add(goal);
 
@@ -108,27 +108,27 @@ public class Account{
         }
     }
 
-    void updateGoalExpenses(Goal goal, double amount) {
+    public void updateGoalExpenses(Goal goal, double amount) {
         goal.GoalCompletion(amount);
         Expense expence = new Expense(amount, new Date(), ExpenseCategory.OBLIGATION);
         addExpense(expence);
     }
 
 
-    void addList(ShoppingList list){
+    public void addList(ShoppingList list){
         if( list != null){
             this.shoppingList.add(list);
 
         }
     }
 
-    void removeList(ShoppingList list){
+    public void removeList(ShoppingList list){
         if(list != null){
             this.shoppingList.remove(list);
         }
     }
 
-    double CalculateTotalIncome(){
+    public double CalculateTotalIncome(){
 
         double total =0;
 
@@ -138,7 +138,7 @@ public class Account{
         return total;
     }
 
-    double CalculateTotalExpense(){
+    public double CalculateTotalExpense(){
 
         double total = 0;
 
@@ -148,7 +148,7 @@ public class Account{
         return total;
     }
 
-    double CalculateTaxFree(){
+    public double CalculateTaxFree(){
 
         this.taxFree = 0.3*CalculateTotalIncome();
 
@@ -161,7 +161,7 @@ public class Account{
         }
     }*/
 
-    void ShoppingExpenses(){
+    public void ShoppingExpenses(){
 
         int count = 1;
 

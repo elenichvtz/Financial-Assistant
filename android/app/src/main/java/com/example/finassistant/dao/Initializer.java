@@ -25,29 +25,23 @@ public abstract class Initializer {
 
     public void prepareData() throws ParseException {
         eraseData();
-        User user1 = new User("John Wick",new Email("john@gmail.com"),"protectalldogs",null,9755);
+        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",null,9755);
         Account account = new Account(1234,user1);
         user1.setAccount(account);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date parsedDate = formatter.parse("29/05/2020");
         Goal goal =  new Goal("Save 20 euros",20,parsedDate);
-        Date parsedDate2 = formatter.parse("01/05/2020");
-        Date parsedDate3 = formatter.parse("04/05/2020");
-        Date parsedDate4 = formatter.parse("016/05/2020");
-        Date parsedDate5 = formatter.parse("013/05/2020");
-        Date parsedDate6 = formatter.parse("09/05/2020");
-        Date parsedDate7 = formatter.parse("022/05/2020");
 
         /**
          * Initializing Income instances to add to Income set of the Account
          *
          */
-        Income income1 = new Income(1000,parsedDate2, IncomeCategory.SALARY);
-        Income income2 = new Income(15,parsedDate3, IncomeCategory.REGULAR);
-        Income income3 = new Income(240,parsedDate4, IncomeCategory.REGULAR);
-        Income income4 = new Income(5.99,parsedDate5, IncomeCategory.NONREGULAR);
-        Income income5 = new Income(2.50,parsedDate6, IncomeCategory.NONREGULAR);
-        Income income6 = new Income(450,parsedDate7, IncomeCategory.REGULAR);
+        Income income1 = new Income(1000,formatter.parse("01/05/2020"), IncomeCategory.SALARY);
+        Income income2 = new Income(15,formatter.parse("04/05/2020"), IncomeCategory.REGULAR);
+        Income income3 = new Income(240,formatter.parse("016/05/2020"), IncomeCategory.REGULAR);
+        Income income4 = new Income(5.99,formatter.parse("013/05/2020"), IncomeCategory.NONREGULAR);
+        Income income5 = new Income(2.50,formatter.parse("09/05/2020"), IncomeCategory.NONREGULAR);
+        Income income6 = new Income(450,formatter.parse("022/05/2020"), IncomeCategory.REGULAR);
         income4.setExchange(ExchangeCategory.CASH);
         income5.setExchange(ExchangeCategory.CASH);
 
@@ -69,6 +63,8 @@ public abstract class Initializer {
 
         /**
          * Initializing Products and Shopping List
+         * and adding the expenses from that list to Expenses Set
+         *
          */
         Product product = new Product("toothbrush",2.99);
         Product product2 = new Product("vegetables",20.59);
@@ -87,9 +83,11 @@ public abstract class Initializer {
         account.addExpense(expense1);
         account.addExpense(expense2);
         account.addExpense(expense3);
-        //account.addExpense(expense4);
         account.addExpense(expense5);
         account.addExpense(expense6);
+
+        getAccountDAO().save(account);
+        getUserDAO().save(user1);
 
 
 
