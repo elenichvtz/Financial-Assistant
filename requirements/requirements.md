@@ -58,7 +58,7 @@
 
 <h4>[ΠΧ4 Διαχείριση λίστας αγορών](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc4-%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%20%CE%BB%CE%AF%CF%83%CF%84%CE%B1%CF%82%20%CE%B1%CE%B3%CE%BF%CF%81%CF%8E%CE%BD.md)
 
-<h4>[ΠΧ5 Διαχείριση στόχων αποταμίευσης](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc5-%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%B9%CC%81%CF%81%CE%B9%CF%83%CE%B7%20%CF%83%CF%84%CE%BF%CC%81%CF%87%CF%89%CE%BD%20%CE%B1%CF%80%CE%BF%CF%84%CE%B1%CE%BC%CE%B9%CC%81%CE%B5%CF%85%CF%83%CE%B7%CF%82.md)
+<h4>[ΠΧ5 Διαχείριση στόχων αποταμίευσης](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc5-%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%20%CF%83%CF%84%CF%8C%CF%87%CF%89%CE%BD%20%CE%B1%CF%80%CE%BF%CF%84%CE%B1%CE%BC%CE%AF%CE%B5%CF%85%CF%83%CE%B7%CF%82.md)
 
 <h4>[ΠΧ6 Εγγραφή στην εφαρμογή](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc6-%CE%95%CE%B3%CE%B3%CF%81%CE%B1%CF%86%CE%AE%20%CF%83%CF%84%CE%B7%CE%BD%20%CE%B5%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AE.md)
 
