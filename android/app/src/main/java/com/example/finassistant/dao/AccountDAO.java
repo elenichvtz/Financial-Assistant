@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * διεπαφή Dao για την κλάση User
- * @author ομάδα 3
+ *
  *
  */
 public interface AccountDAO {
