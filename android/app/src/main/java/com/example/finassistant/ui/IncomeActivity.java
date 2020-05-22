@@ -3,6 +3,9 @@ package com.example.finassistant.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,18 +14,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.finassistant.R;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class IncomeActivity extends AppCompatActivity {
     Button income;
     Button total_income;
     ListView incomeCategory;
-    EditText amount;
+    static EditText amount;
     EditText endDate;
     double amountValue;
+    TextView wrongAmount;
+    TextView typeAmount;
+    TextView er ;
+    private Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,13 +39,18 @@ public class IncomeActivity extends AppCompatActivity {
         income = (Button) findViewById(R.id.button2);
         total_income = (Button) findViewById(R.id.button5);
         incomeCategory = (ListView) findViewById((R.id.listview));
-        amount = (EditText)findViewById(R.id.txt_input);
+        amount = (EditText) findViewById(R.id.txt_input);
         endDate = (EditText) findViewById(R.id.date);
+        wrongAmount = (TextView) findViewById(R.id.textView1);
+        typeAmount = (TextView) findViewById(R.id.textView2);
+        er = (TextView)findViewById(R.id.textView3);
         incomeCategory.setVisibility(View.GONE);
         income.setVisibility(View.VISIBLE);
         total_income.setVisibility(View.VISIBLE);
         amount.setVisibility(View.GONE);
         endDate.setVisibility(View.GONE);
+        wrongAmount.setVisibility(View.GONE);
+        typeAmount.setVisibility(View.GONE);
 
 
         income.setOnClickListener(new View.OnClickListener() {
@@ -58,25 +72,99 @@ public class IncomeActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String itemValue = (String) incomeCategory.getItemAtPosition(position);
                         incomeCategory.setVisibility(View.GONE);
+                        typeAmount.setVisibility(View.VISIBLE);
                         amount.setVisibility(View.VISIBLE);
-                        amount.setOnKeyListener(new View.OnKeyListener() {
-                            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                //If the keyevent is a key-down event on the "enter" button
-                                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                                    //...
-                                    // Perform your action on key press here
-                                    // ...
-                                    amount = (EditText) findViewById(R.id.txt_input);
-                                    amountValue = Double.parseDouble(amount.getText().toString());
-                                    endDate.setVisibility(View.VISIBLE);
-                                    return true;
+                        amount = (EditText) findViewById(R.id.txt_input);
+                        String error = amount.getText().toString();
+                       /* while (error.equals("") || Double.parseDouble(error) <= 0) {
+                            amount.setVisibility(View.VISIBLE);
+                            amount = (EditText) findViewById(R.id.txt_input);
+                        }*/
+
+                            amount.setOnKeyListener(new View.OnKeyListener() {
+                                public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                                    //If the keyevent is a key-down event on the "enter" button
+                                    if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                        //...
+                                        // Perform your action on key press here
+                                        // ...
+                                        amount = (EditText) findViewById(R.id.txt_input);
+
+
+                                        if ((!amount.getText().toString().equals("")) && (!amount.getText().toString().equals("0"))) {
+                                            System.out.println("Amount without toString(): " + amount.getText());
+                                            System.out.println("Amount with toString(): " + amount.getText().toString());
+                                            amountValue = Double.parseDouble(amount.getText().toString());
+                                            if(amountValue<0) {
+                                                System.err.println("Please type again a valid amount");
+                                               // TextView er = (TextView)(R.id.textView3);
+                                            }
+                                            endDate.setVisibility(View.VISIBLE);
+                                        }
+
+                                        return true;
+                                        //insertAmount();
+                                        // if((!amount.getText().toString().equals("")) && (!amount.getText().toString().equals("0"))) break;
+                                        //onClick
+                                    }
+
+                                    return false;
+
+
                                 }
-                                return false;
-                            }
-                        });
-                    }
+
+                            });
+                        }
+
+
                 });
             }
         });
+    }
+
+    public void insertAmount(){
+        amount = (EditText) findViewById(R.id.txt_input);
+        String error = amount.getText().toString();
+
+        System.out.println("Inside insertAmount");
+        amount.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                //If the keyevent is a key-down event on the "enter" button
+                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    //...
+                    // Perform your action on key press here
+                    // ...
+                    amount = (EditText) findViewById(R.id.txt_input);
+
+
+                    if((!amount.getText().toString().equals("")) && (!amount.getText().toString().equals("0"))) {
+                        System.out.println("Amount without toString(): "+amount.getText());
+                        System.out.println("Amount with toString(): "+amount.getText().toString());
+                        amountValue = Double.parseDouble(amount.getText().toString());
+                        endDate.setVisibility(View.VISIBLE);
+                    }
+
+
+                    return true;
+
+                }
+
+                return false;
+
+            }
+
+        });
+    }
+
+    public static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 }
