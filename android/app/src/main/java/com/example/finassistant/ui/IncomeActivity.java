@@ -13,11 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-<<<<<<< HEAD
 import android.widget.TextView;
 import android.widget.Toast;
-=======
->>>>>>> 6655cb9a164ebdf9a7d77ba56813f7994d9df1d6
 
 import com.example.finassistant.R;
 
@@ -31,19 +28,14 @@ public class IncomeActivity extends AppCompatActivity {
     static EditText amount;
     EditText endDate;
     double amountValue;
-<<<<<<< HEAD
     TextView wrongAmount;
     TextView typeAmount;
     TextView er ;
     private Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
-=======
-
->>>>>>> 6655cb9a164ebdf9a7d77ba56813f7994d9df1d6
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
-<<<<<<< HEAD
         income = (Button) findViewById(R.id.button2);
         total_income = (Button) findViewById(R.id.button5);
         incomeCategory = (ListView) findViewById((R.id.listview));
@@ -52,13 +44,6 @@ public class IncomeActivity extends AppCompatActivity {
         wrongAmount = (TextView) findViewById(R.id.textView1);
         typeAmount = (TextView) findViewById(R.id.textView2);
         er = (TextView)findViewById(R.id.textView3);
-=======
-        income = findViewById(R.id.button2);
-        total_income = findViewById(R.id.button5);
-        incomeCategory = findViewById((R.id.goallist));
-        amount = findViewById(R.id.txt_input);
-        endDate = findViewById(R.id.date);
->>>>>>> 6655cb9a164ebdf9a7d77ba56813f7994d9df1d6
         incomeCategory.setVisibility(View.GONE);
         income.setVisibility(View.VISIBLE);
         total_income.setVisibility(View.VISIBLE);
@@ -89,7 +74,6 @@ public class IncomeActivity extends AppCompatActivity {
                         incomeCategory.setVisibility(View.GONE);
                         typeAmount.setVisibility(View.VISIBLE);
                         amount.setVisibility(View.VISIBLE);
-<<<<<<< HEAD
                         amount = (EditText) findViewById(R.id.txt_input);
                         String error = amount.getText().toString();
                        /* while (error.equals("") || Double.parseDouble(error) <= 0) {
@@ -127,17 +111,6 @@ public class IncomeActivity extends AppCompatActivity {
                                     return false;
 
 
-=======
-                        amount.setOnKeyListener(new View.OnKeyListener() {
-                            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                //If the keyevent is a key-down event on the "enter" button
-                                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                                    amount = findViewById(R.id.txt_input);
-                                    amountValue = Double.parseDouble(amount.getText().toString());
-                                    endDate.setVisibility(View.VISIBLE);
-                                    return true;
->>>>>>> 6655cb9a164ebdf9a7d77ba56813f7994d9df1d6
                                 }
 
                             });
