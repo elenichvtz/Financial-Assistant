@@ -2,6 +2,7 @@ package com.example.finassistant.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.finassistant.R;
+import com.example.finassistant.domain.ExchangeCategory;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -28,8 +30,8 @@ public class IncomeActivity extends AppCompatActivity {
     static EditText amount;
     EditText endDate;
     double amountValue;
-    TextView wrongAmount;
-    TextView typeAmount;
+
+
     TextView er ;
     private Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
     @Override
@@ -41,16 +43,14 @@ public class IncomeActivity extends AppCompatActivity {
         incomeCategory = (ListView) findViewById((R.id.listview));
         amount = (EditText) findViewById(R.id.txt_input);
         endDate = (EditText) findViewById(R.id.date);
-        wrongAmount = (TextView) findViewById(R.id.textView1);
-        typeAmount = (TextView) findViewById(R.id.textView2);
-        er = (TextView)findViewById(R.id.textView3);
+
+
         incomeCategory.setVisibility(View.GONE);
         income.setVisibility(View.VISIBLE);
         total_income.setVisibility(View.VISIBLE);
         amount.setVisibility(View.GONE);
         endDate.setVisibility(View.GONE);
-        wrongAmount.setVisibility(View.GONE);
-        typeAmount.setVisibility(View.GONE);
+
 
 
         income.setOnClickListener(new View.OnClickListener() {
@@ -72,52 +72,18 @@ public class IncomeActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String itemValue = (String) incomeCategory.getItemAtPosition(position);
                         incomeCategory.setVisibility(View.GONE);
-                        typeAmount.setVisibility(View.VISIBLE);
+
                         amount.setVisibility(View.VISIBLE);
-                        amount = (EditText) findViewById(R.id.txt_input);
-                        String error = amount.getText().toString();
-                       /* while (error.equals("") || Double.parseDouble(error) <= 0) {
-                            amount.setVisibility(View.VISIBLE);
-                            amount = (EditText) findViewById(R.id.txt_input);
-                        }*/
-
-                            amount.setOnKeyListener(new View.OnKeyListener() {
-                                public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                    //If the keyevent is a key-down event on the "enter" button
-                                    if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                                        //...
-                                        // Perform your action on key press here
-                                        // ...
-                                        amount = (EditText) findViewById(R.id.txt_input);
+                        insertAmount();
+                        //amount = (EditText) findViewById(R.id.txt_input);
+                        //String error = amount.getText().toString();
 
 
-                                        if ((!amount.getText().toString().equals("")) && (!amount.getText().toString().equals("0"))) {
-                                            System.out.println("Amount without toString(): " + amount.getText());
-                                            System.out.println("Amount with toString(): " + amount.getText().toString());
-                                            amountValue = Double.parseDouble(amount.getText().toString());
-                                            if(amountValue<0) {
-                                                System.err.println("Please type again a valid amount");
-                                               // TextView er = (TextView)(R.id.textView3);
-                                            }
-                                            endDate.setVisibility(View.VISIBLE);
-                                        }
-
-                                        return true;
-                                        //insertAmount();
-                                        // if((!amount.getText().toString().equals("")) && (!amount.getText().toString().equals("0"))) break;
-                                        //onClick
-                                    }
-
-                                    return false;
-
-
-                                }
-
-                            });
                         }
 
 
                 });
+
             }
         });
     }

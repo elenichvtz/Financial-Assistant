@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui.IncomeActivity"/>
-        <activity android:name=".ui.ExpenseActivity"/>
-        <activity android:name=".ui.ListActivity"/>
-        <activity android:name=".ui.GoalActivity"/>
+        <activity android:name=".ui.IncomeActivity" />
+        <activity android:name=".ui.ExpenseActivity" />
+        <activity android:name=".ui.ListActivity" />
+        <activity android:name=".ui.GoalActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
