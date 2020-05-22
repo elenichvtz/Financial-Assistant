@@ -4,8 +4,24 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>594</y>
+      <x>1146</x>
+      <y>390</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>AccountDAOMemory
+--
++ delete(Account entity)
++ findAll() : List&lt;Account&gt;
++ save(Account entity) : void
++ find(int id) : Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>528</y>
       <w>114</w>
       <h>60</h>
     </coordinates>
@@ -20,8 +36,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>372</x>
-      <y>306</y>
+      <x>630</x>
+      <y>240</y>
       <w>168</w>
       <h>24</h>
     </coordinates>
@@ -32,8 +48,8 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>348</y>
+      <x>564</x>
+      <y>282</y>
       <w>24</w>
       <h>108</h>
     </coordinates>
@@ -45,8 +61,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>252</y>
+      <x>864</x>
+      <y>186</y>
       <w>30</w>
       <h>66</h>
     </coordinates>
@@ -58,8 +74,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>138</y>
+      <x>864</x>
+      <y>72</y>
       <w>24</w>
       <h>84</h>
     </coordinates>
@@ -71,8 +87,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>306</y>
+      <x>978</x>
+      <y>240</y>
       <w>114</w>
       <h>24</h>
     </coordinates>
@@ -84,8 +100,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>138</y>
+      <x>978</x>
+      <y>72</y>
       <w>228</w>
       <h>180</h>
     </coordinates>
@@ -97,8 +113,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>150</y>
+      <x>564</x>
+      <y>84</y>
       <w>24</w>
       <h>168</h>
     </coordinates>
@@ -110,8 +126,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>108</y>
+      <x>654</x>
+      <y>42</y>
       <w>150</w>
       <h>114</h>
     </coordinates>
@@ -123,8 +139,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>102</y>
+      <x>348</x>
+      <y>36</y>
       <w>156</w>
       <h>24</h>
     </coordinates>
@@ -136,8 +152,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>528</y>
+      <x>864</x>
+      <y>462</y>
       <w>24</w>
       <h>78</h>
     </coordinates>
@@ -149,8 +165,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>594</y>
+      <x>942</x>
+      <y>528</y>
       <w>114</w>
       <h>24</h>
     </coordinates>
@@ -161,8 +177,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>534</x>
-      <y>210</y>
+      <x>792</x>
+      <y>144</y>
       <w>150</w>
       <h>48</h>
     </coordinates>
@@ -176,8 +192,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>306</y>
+      <x>786</x>
+      <y>240</y>
       <w>198</w>
       <h>228</h>
     </coordinates>
@@ -209,8 +225,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>444</y>
+      <x>528</x>
+      <y>378</y>
       <w>78</w>
       <h>66</h>
     </coordinates>
@@ -226,8 +242,8 @@ EMERGENCY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
-      <y>594</y>
+      <x>816</x>
+      <y>528</y>
       <w>132</w>
       <h>66</h>
     </coordinates>
@@ -243,8 +259,8 @@ EMERGENCY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>822</x>
-      <y>306</y>
+      <x>1080</x>
+      <y>240</y>
       <w>180</w>
       <h>78</h>
     </coordinates>
@@ -261,8 +277,8 @@ EMERGENCY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>306</y>
+      <x>1368</x>
+      <y>240</y>
       <w>120</w>
       <h>84</h>
     </coordinates>
@@ -280,8 +296,8 @@ EMERGENCY
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>996</x>
-      <y>306</y>
+      <x>1254</x>
+      <y>240</y>
       <w>126</w>
       <h>24</h>
     </coordinates>
@@ -292,8 +308,8 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>138</y>
+      <x>1194</x>
+      <y>72</y>
       <w>150</w>
       <h>72</h>
     </coordinates>
@@ -310,8 +326,8 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>66</y>
+      <x>834</x>
+      <y>0</y>
       <w>84</w>
       <h>78</h>
     </coordinates>
@@ -328,8 +344,8 @@ DEPT</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>306</y>
+      <x>486</x>
+      <y>240</y>
       <w>150</w>
       <h>48</h>
     </coordinates>
@@ -345,8 +361,8 @@ DEPT</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
-      <y>102</y>
+      <x>492</x>
+      <y>36</y>
       <w>168</w>
       <h>54</h>
     </coordinates>
@@ -361,8 +377,8 @@ DEPT</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>102</y>
+      <x>258</x>
+      <y>36</y>
       <w>96</w>
       <h>48</h>
     </coordinates>
@@ -372,5 +388,150 @@ ExchangeCategory
 CASH
 CREDITCARD</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1218</x>
+      <y>582</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>UserDAOMemory
+--
++ delete(User entity) : void
++ findAll() : List&lt;User&gt;
++ save(User entity) : void
++ find(int id) : User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1242</x>
+      <y>498</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>MemoryInitializer
+--
++ eraseData() : void
++ getAccountDAO() : AccountDAO
++ getUserDAO() : UserDAO</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>342</x>
+      <y>618</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>MainActivity
+--
++ onCreate(Bundle savedInstanceState) : void
++ openActivityIncome() : void
++ openActivityExpense() : void
++ openActivityGoal() :void
++ openActivityList() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>342</x>
+      <y>762</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>GoalActivity
+--
++ onCreate(Bundle savedInstanceState) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>618</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ListActivity
+--
++ onCreate(Bundle savedInstanceState) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>342</x>
+      <y>474</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>IncomeActivity
+--
++ onCreate(Bundle savedInstanceState) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>618</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ExpenseActivity
+--
++ onCreate(Bundle savedInstanceState) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>618</y>
+      <w>174</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>534</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>618</y>
+      <w>162</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>678</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
