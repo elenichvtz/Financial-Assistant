@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finassistant.R;
 import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.Goal;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,7 +28,7 @@ public class GoalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal);
-        add = findViewById(R.id.floatingActionButton2);
+        final FloatingActionButton add = findViewById(R.id.floatingActionButton2);
         goallist = findViewById((R.id.goallist));
         amount = findViewById(R.id.txt_input);
         goallist.setVisibility(View.VISIBLE);
