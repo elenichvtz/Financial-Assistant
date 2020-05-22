@@ -10,10 +10,11 @@ public class UserTest {
         Account account = new Account();
         account.setId(123456);
         Email email = new Email("example@gmail.com");
-        User user = new User("Name",email,"password123",account);
+        User user = new User("Name",email,"password123",account,123);
         Assert.assertEquals("Name",user.getName());
         Assert.assertEquals("password123",user.getPassword());
         Assert.assertEquals(email, user.getEmail());
+        Assert.assertEquals(123,user.getId());
     }
 
     @Test
@@ -52,5 +53,12 @@ public class UserTest {
         Email email = new Email("example@gmail.com");
         user.setEmail(email);
         Assert.assertEquals(email,user.getEmail());
+    }
+
+    @Test
+    public void testId(){
+        User user = new User();
+        user.setId(1234);
+        Assert.assertEquals(1234,user.getId());
     }
 }

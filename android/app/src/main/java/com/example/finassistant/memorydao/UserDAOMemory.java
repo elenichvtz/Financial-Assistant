@@ -24,9 +24,9 @@ public class UserDAOMemory implements UserDAO {
             entities.add(entity);
         }
     }
-    public User find(int itemNo) {  //NEED TO CHECK IF IT NEEDS DAO AND IF SO ADD AN ID FIELD TO THE MAIN CLASS AND ADD/CHANGE TESTS
+    public User find(int id) {
         for(User user : entities) {
-            if (user == null) { //it's not null it's user.getid() == id !!!!
+            if (user.getId() == id) {
                 return user;
             }
         }
