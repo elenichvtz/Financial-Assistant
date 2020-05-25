@@ -131,9 +131,9 @@ public class GoalActivity extends AppCompatActivity {
                 add.setVisibility(View.VISIBLE);
                 //otan ksanapataei add sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
                 //den apothikevei tous stoxous pou ftiaksame an vgeis kai ksanampeis -> DAO(?)
+                //den doulevei to enter mono to submit
             }
         });
 
     }
 }
-

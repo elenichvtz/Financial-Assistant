@@ -7,13 +7,16 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="416dp"
-        android:layout_height="293dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="399dp"
+        android:layout_height="301dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
-        tools:layout_editor_absoluteX="-3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.209"
         tools:ignore="MissingConstraints">
 
         <Button
@@ -33,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="type amount"
+            android:hint="Add amount"
             android:imeOptions="actionSend"
             android:inputType="numberDecimal"
             android:textSize="20dp"
@@ -65,7 +68,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
-        android:layout_width="415dp"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
@@ -88,17 +91,14 @@
         app:layout_constraintVertical_bias="0.615" />
 
     <ListView
-        android:id="@+id/listview"
-        android:layout_width="413dp"
-        android:layout_height="323dp"
+        android:id="@+id/goallist"
+        android:layout_width="377dp"
+        android:layout_height="267dp"
         android:choiceMode="singleChoice"
         android:listSelector="@android:color/holo_purple"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

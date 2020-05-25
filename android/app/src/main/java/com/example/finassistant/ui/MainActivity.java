@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.finassistant.R;
+import com.example.finassistant.memorydao.MemoryInitializer;
+
+import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button2;
     private Button button3;
     private Button button4;
+    private static boolean initialized = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,16 @@ public class MainActivity extends AppCompatActivity {
                 openActivityList();
             }
         });
+
+        if(!initialized){
+            try {
+                new MemoryInitializer().prepareData();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            initialized = true;
+
+        }
 
     }
     public void openActivityIncome(){
