@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     tools:context=".ui.MainActivity">
 
-
     <LinearLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
@@ -46,6 +45,5 @@
             android:layout_height="84dp"
             android:text="Shopping List" />
     </LinearLayout>
-
 
 </RelativeLayout>
