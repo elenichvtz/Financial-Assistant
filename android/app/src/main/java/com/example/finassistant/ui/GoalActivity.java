@@ -1,8 +1,11 @@
 package com.example.finassistant.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,7 +56,7 @@ public class GoalActivity extends AppCompatActivity {
         date.setVisibility(View.GONE);
         submit.setVisibility(View.GONE);
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(GoalActivity.this, android.R.layout.simple_list_item_1, goals);
+        final ArrayAdapter arrayAdapter = new ArrayAdapter(GoalActivity.this, android.R.layout.simple_list_item_1, goals);
         goallist.setAdapter(arrayAdapter);
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +123,7 @@ public class GoalActivity extends AppCompatActivity {
                 date.setVisibility(View.GONE);
                 submit.setVisibility(View.GONE);
 
-                Goal goal = new Goal(titleValue, amountValue, dateValue);
+                final Goal goal = new Goal(titleValue, amountValue, dateValue);
 
                 account.addGoal(goal);
 
@@ -130,6 +133,46 @@ public class GoalActivity extends AppCompatActivity {
                 //otan ksanapataei add, sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
                 //den apothikevei tous stoxous pou ftiaksame an vgeis kai ksanampeis -> DAO(?)
                 //den doulevei to enter mono to submit
+
+                goallist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                        //emfanizei ta stoixeia tou expense
+                        AlertDialog.Builder info = new AlertDialog.Builder(GoalActivity.this);
+                        info.setTitle("");
+
+                        double compl = (goals.get(position).getAmount() - goals.get(position).getCurrentAmount())/goals.get(position).getAmount();
+
+                        info.setMessage("Title: " + goals.get(position).getTitle() +"\n\n" + "Amount: " +
+                                goals.get(position).getAmount() + " €\n\n" + "End Date: " + goals.get(position).getEndDate() +
+                                "\n\nCompletion: " + compl + "%");
+
+                        info.setNeutralButton("Add Amount", null);
+
+                        info.setPositiveButton("OK", null);
+
+                        info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder delete = new AlertDialog.Builder(GoalActivity.this);
+                                delete.setTitle("Delete?");
+                                delete.setMessage("Are you sure you want to delete " + position);
+                                final int positionToRemove = position;
+                                delete.setNegativeButton("Cancel", null);
+                                delete.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //DIAGRAFI
+                                        //MyDataObject.remove(positionToRemove);
+                                        arrayAdapter.notifyDataSetChanged();
+                                    }});
+                                delete.show();
+                            }
+                        });
+
+
+
+                        info.show();
+                    }
+                });
             }
         });
 

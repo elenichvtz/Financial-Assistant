@@ -18,7 +18,7 @@ public class Goal{
         this.currentamount = 0.0;
     }
 
-    Date getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
@@ -26,7 +26,7 @@ public class Goal{
         this.endDate = endDate;
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -39,11 +39,11 @@ public class Goal{
         else System.out.println("Invalid input");
     }
 
-    double getAmount(){ return amount;}
+    public double getAmount(){ return amount;}
 
-    double getCurrentAmount() {return this.currentamount; }
+    public double getCurrentAmount() {return this.currentamount; }
 
-    double GoalCompletion(double completion) {
+    public double GoalCompletion(double completion) {
         if(this.amount-this.currentamount<completion) {
             this.currentamount = this.amount;
         }
