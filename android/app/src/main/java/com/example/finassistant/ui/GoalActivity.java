@@ -30,7 +30,7 @@ public class GoalActivity extends AppCompatActivity {
     String titleValue;
     EditText date;
     Date dateValue;
-    //account pou prepei na erxetai apo main activity kanonika
+    //TODO prosvasi sto account
     Account account = new Account();
     ArrayList<Goal> goals = new ArrayList<>();
 
@@ -125,6 +125,7 @@ public class GoalActivity extends AppCompatActivity {
 
                 final Goal goal = new Goal(titleValue, amountValue, dateValue);
 
+                //TODO apothikeusi sto account
                 account.addGoal(goal);
 
                 goals.add(goal);
@@ -147,6 +148,7 @@ public class GoalActivity extends AppCompatActivity {
                                 goals.get(position).getAmount() + " €\n\n" + "End Date: " + goals.get(position).getEndDate() +
                                 "\n\nCompletion: " + compl + "%");
 
+                        //TODO apothikeusi sto account:
                         info.setNeutralButton("Add Amount", null);
 
                         info.setPositiveButton("OK", null);
@@ -160,16 +162,13 @@ public class GoalActivity extends AppCompatActivity {
                                 delete.setNegativeButton("Cancel", null);
                                 delete.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        //DIAGRAFI
+                                        //TODO diagrafi apo to account
                                         //MyDataObject.remove(positionToRemove);
                                         arrayAdapter.notifyDataSetChanged();
                                     }});
                                 delete.show();
                             }
                         });
-
-
-
                         info.show();
                     }
                 });

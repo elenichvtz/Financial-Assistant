@@ -26,8 +26,6 @@ public class Expense extends Exchange{
         this.category = category;
     }
 
-
-
     public Object[] getCategoryList(){
         Object[] possibleValues = ExpenseCategory.class.getEnumConstants();
         return possibleValues;
