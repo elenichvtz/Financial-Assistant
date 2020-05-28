@@ -2,16 +2,15 @@ package com.example.finassistant.ui.account;
 
 import com.example.finassistant.dao.AccountDAO;
 import com.example.finassistant.domain.Account;
-import com.example.finassistant.domain.Income;
 import com.example.finassistant.memorydao.AccountDAOMemory;
 
-public class AccountPresenter {
+public class ExpensePresenter {
 
-    private AccountView view;
+    private ExpenseView view;
     private AccountDAO accountDAO;
     private Account account;
 
-    public AccountPresenter(AccountView view){
+    public ExpensePresenter(ExpenseView view){
         this.view = view;
         accountDAO = new AccountDAOMemory();
         account = accountDAO.find(1234);
@@ -29,6 +28,4 @@ public class AccountPresenter {
     public Account getAccount(){
         return this.account;
     }
-
-
 }

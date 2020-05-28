@@ -24,7 +24,6 @@ public class UserPresenter {
         view.setUserId(user.getId());
         view.setEmail(user.getEmail());
         view.setPassword(user.getPassword());
-        view.setAccount(user.getAccount());
     }
 
     public void start(){
@@ -37,7 +36,6 @@ public class UserPresenter {
         user.setId(view.getUserId());
         user.setEmail(view.getEmail());
         user.setPassword(view.getPassword());
-        user.setAccount(view.getAccount());
         view.close();
     }
 

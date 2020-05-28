@@ -1,14 +1,10 @@
 package com.example.finassistant.ui.account;
 
-import com.example.finassistant.domain.Expense;
 import com.example.finassistant.domain.ExpenseCategory;
-import com.example.finassistant.domain.Income;
-import com.example.finassistant.domain.IncomeCategory;
-import com.example.finassistant.ui.user.View;
 
 import java.util.Date;
 
-public interface AccountView {
+public interface ExpenseView {
 
     /**
      * Sets the sum field of an Income or Expense Object
@@ -26,7 +22,7 @@ public interface AccountView {
      * Sets the category field of an Income Object
      * @param category
      */
-    void addCategory(IncomeCategory category);
+    void addCategory(ExpenseCategory category);
 
     /**
      *
@@ -34,5 +30,4 @@ public interface AccountView {
      * @param message
      */
     void showErrorMessage(String title,String message);
-
 }

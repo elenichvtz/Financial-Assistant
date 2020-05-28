@@ -25,9 +25,8 @@ public abstract class Initializer {
 
     public void prepareData() throws ParseException {
         eraseData();
-        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",null,9755);
+        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",9755);
         Account account = new Account(1234,user1);
-        user1.setAccount(account);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date parsedDate = formatter.parse("29/05/2020");
         Goal goal =  new Goal("Save 20 euros",20,parsedDate);
@@ -53,6 +52,7 @@ public abstract class Initializer {
         account.addIncome(income3);
         account.addIncome(income4);
         account.addIncome(income5);
+        account.addIncome(income6);
 
         Expense expense1 = new Expense(230,formatter.parse("31/05/2020"), ExpenseCategory.OBLIGATION);
         Expense expense2 = new Expense(345,formatter.parse("29/05/2020"), ExpenseCategory.OBLIGATION);

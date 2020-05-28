@@ -240,26 +240,4 @@ public class AccountTest {
         }
     }
 
-
-    /*@Test
-    public void checkLiExpense(){
-        Account account = new Account();
-        Product product = new Product("toothbrush",2.99);
-        Product product2 = new Product("vegetables",20.59);
-        ShoppingList list = new ShoppingList("Super market essentials");
-        list.addProduct(product);
-        list.addProduct(product2);
-        account.addList(list);
-        Product product4 = new Product("drinks",15.40);
-        ShoppingList list2 = new ShoppingList("Super market essentials");
-        list2.addProduct(product4);
-        account.addList(list2);
-        account.ShoppingExpenses();
-        Assert.assertEquals(2,account.getExpenses().size());
-        Assert.assertEquals(15.40,account.getTemp().get(2).getSum(),0.00001);
-    }*/
-
-
-
-
 }

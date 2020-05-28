@@ -3,27 +3,18 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Date;
+
 public class UserTest {
 
     @Test
     public void UserTest(){
-        Account account = new Account();
-        account.setId(123456);
         Email email = new Email("example@gmail.com");
-        User user = new User("Name",email,"password123",account,123);
+        User user = new User("Name",email,"password123",123);
         Assert.assertEquals("Name",user.getName());
         Assert.assertEquals("password123",user.getPassword());
         Assert.assertEquals(email, user.getEmail());
         Assert.assertEquals(123,user.getId());
-    }
-
-    @Test
-    public void testAccount(){
-        Account account = new Account();
-        account.setId(123456);
-        User user = new User();
-        user.setAccount(account);
-        Assert.assertNotSame(account,user.getAccount());
     }
 
     @Test
@@ -61,4 +52,5 @@ public class UserTest {
         user.setId(1234);
         Assert.assertEquals(1234,user.getId());
     }
+
 }

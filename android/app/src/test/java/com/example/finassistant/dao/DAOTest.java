@@ -50,7 +50,7 @@ public class DAOTest {
 
     @Test
     public void saveUser(){
-        User user = new User("Joaquin Phoenix",new Email("phoenix@gmail.com"),"phoenix1234",null,7654);
+        User user = new User("Joaquin Phoenix",new Email("phoenix@gmail.com"),"phoenix1234",7654);
         userDAO.save(user);
         Assert.assertEquals(INITIAL_USER_COUNT+1 , userDAO.findAll().size());
         Assert.assertTrue(userDAO.findAll().contains(user));
@@ -150,6 +150,16 @@ public class DAOTest {
     public void totalExpenses(){
         Account account = accountDAO.find(1234);
         Assert.assertEquals(881.11, account.CalculateTotalExpense(), 0.000001);
+    }
+
+    /**
+     * Checks if total income in account with id(1234) is equal to the expected amount
+     */
+
+    @Test
+    public void totalIncome(){
+        Account account = accountDAO.find(1234);
+        Assert.assertEquals(1713.49,account.CalculateTotalIncome(),0.000001);
     }
 
 

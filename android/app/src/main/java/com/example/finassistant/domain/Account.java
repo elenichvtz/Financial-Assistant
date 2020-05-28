@@ -23,12 +23,6 @@ public class Account{
         this.user = user;
     }
 
-    public Account(Account account) {
-        this.id = account.getId();
-        this.user = account.getUser();
-        this.taxFree = account.getTaxFree();
-    }
-
     public void setId(int id) {
         this.id = id;
     }
