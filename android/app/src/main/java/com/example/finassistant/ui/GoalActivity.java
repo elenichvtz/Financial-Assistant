@@ -140,7 +140,7 @@ public class GoalActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                         //emfanizei ta stoixeia tou expense
                         AlertDialog.Builder info = new AlertDialog.Builder(GoalActivity.this);
-                        info.setTitle("");
+                        info.setTitle("Details");
 
                         double compl = (goals.get(position).getAmount() - goals.get(position).getCurrentAmount())/goals.get(position).getAmount();
 
@@ -157,7 +157,7 @@ public class GoalActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 AlertDialog.Builder delete = new AlertDialog.Builder(GoalActivity.this);
                                 delete.setTitle("Delete?");
-                                delete.setMessage("Are you sure you want to delete " + position);
+                                delete.setMessage("Are you sure you want to delete the goal?");
                                 final int positionToRemove = position;
                                 delete.setNegativeButton("Cancel", null);
                                 delete.setPositiveButton("Ok", new AlertDialog.OnClickListener() {

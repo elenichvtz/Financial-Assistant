@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             initialized = true;
 
         }
-
     }
     public void openActivityIncome(){
         Intent intent = new Intent(this, IncomeActivity.class);

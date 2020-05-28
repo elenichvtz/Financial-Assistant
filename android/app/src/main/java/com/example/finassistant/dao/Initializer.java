@@ -25,8 +25,8 @@ public abstract class Initializer {
 
     public void prepareData() throws ParseException {
         eraseData();
-        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",9755);
-        Account account = new Account(1234,user1);
+        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",1234);
+        Account account = new Account(1234, user1);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date parsedDate = formatter.parse("29/05/2020");
         Goal goal =  new Goal("Save 20 euros",20,parsedDate);
@@ -37,10 +37,10 @@ public abstract class Initializer {
          */
         Income income1 = new Income(1000,formatter.parse("01/05/2020"), IncomeCategory.SALARY);
         Income income2 = new Income(15,formatter.parse("04/05/2020"), IncomeCategory.REGULAR);
-        Income income3 = new Income(240,formatter.parse("016/05/2020"), IncomeCategory.REGULAR);
-        Income income4 = new Income(5.99,formatter.parse("013/05/2020"), IncomeCategory.NONREGULAR);
+        Income income3 = new Income(240,formatter.parse("16/05/2020"), IncomeCategory.REGULAR);
+        Income income4 = new Income(5.99,formatter.parse("13/05/2020"), IncomeCategory.NONREGULAR);
         Income income5 = new Income(2.50,formatter.parse("09/05/2020"), IncomeCategory.NONREGULAR);
-        Income income6 = new Income(450,formatter.parse("022/05/2020"), IncomeCategory.REGULAR);
+        Income income6 = new Income(450,formatter.parse("22/05/2020"), IncomeCategory.REGULAR);
         income4.setExchange(ExchangeCategory.CASH);
         income5.setExchange(ExchangeCategory.CASH);
 
@@ -57,7 +57,6 @@ public abstract class Initializer {
         Expense expense1 = new Expense(230,formatter.parse("31/05/2020"), ExpenseCategory.OBLIGATION);
         Expense expense2 = new Expense(345,formatter.parse("29/05/2020"), ExpenseCategory.OBLIGATION);
         Expense expense3 = new Expense(129.56,formatter.parse("28/05/2020"), ExpenseCategory.OBLIGATION);
-        //Expense expense4 = new Expense(70.20,formatter.parse("03/05/2020"), ExpenseCategory.SHOPPING);
         Expense expense5 = new Expense(69.99,formatter.parse("02/05/2020"), ExpenseCategory.ENTERTAINMENT);
         Expense expense6 = new Expense(67.58,formatter.parse("06/05/2020"), ExpenseCategory.SHOPPING);
 

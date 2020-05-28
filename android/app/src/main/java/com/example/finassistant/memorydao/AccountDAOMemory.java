@@ -18,7 +18,6 @@ public class AccountDAOMemory implements AccountDAO {
         return new ArrayList<Account>(entities);
     }
 
-
     public void save(Account entity) {
         if (! entities.contains(entity)) {
             entities.add(entity);

@@ -50,7 +50,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
     static ExpensePresenter presenter;
     Expense expense;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +60,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
     public void onStart() {
         super.onStart();
-
 
         categories = findViewById(R.id.category);
         amount = findViewById(R.id.txt_input);
@@ -105,9 +103,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                 expenses.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
 
-
-
-                categories.setAdapter(adapter);
                 categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -135,82 +130,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         //addCategory(ExpenseCategory.HEALTH);
                     }
                 });
-                /*categories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String clickedItem = String.valueOf(position);
-                        if (clickedItem.equalsIgnoreCase("HEALTH")){
-                            expense.setCategory(ExpenseCategory.HEALTH);
-                        }else if (clickedItem.equalsIgnoreCase("ENTERTAINMENT")){
-                            expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                        }else if(clickedItem.equalsIgnoreCase("SHOPPING")){
-                            expense.setCategory(ExpenseCategory.SHOPPING);
-                        }else if(clickedItem.equalsIgnoreCase("TRANSPORT")){
-                            expense.setCategory(ExpenseCategory.TRANSPORT);
-                        }else{
-                            expense.setCategory(ExpenseCategory.OBLIGATION);
-                        }
-                    }
-                });*/
-                /*categories.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String clickedItem = String.valueOf(position);
-                        if (clickedItem.equalsIgnoreCase("HEALTH")){
-                            expense.setCategory(ExpenseCategory.HEALTH);
-                        }else if (clickedItem.equalsIgnoreCase("ENTERTAINMENT")){
-                            expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                        }else if(clickedItem.equalsIgnoreCase("SHOPPING")){
-                            expense.setCategory(ExpenseCategory.SHOPPING);
-                        }else if(clickedItem.equalsIgnoreCase("TRANSPORT")){
-                            expense.setCategory(ExpenseCategory.TRANSPORT);
-                        }else{
-                            expense.setCategory(ExpenseCategory.OBLIGATION);
-                        }
-                    }
-                });*/
-                /*amount.setOnKeyListener(new View.OnKeyListener() {
-                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                        //If the keyevent is a key-down event on the "enter" button
-                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                            amount = findViewById(R.id.txt_input);
-                            amountValue = Double.parseDouble(amount.getText().toString());
-                            System.err.println("amountvalue :" +amountValue);
-                            addAmount(amountValue);
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-
-                date.setOnKeyListener(new View.OnKeyListener() {
-                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                        //If the keyevent is a key-down event on the "enter" button
-                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                            date = findViewById(R.id.date);
-                            //dateValue = (Date) date.getText();
-                            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                            try {
-                                Date parsedDate = formatter.parse(date.toString());
-                                addDate(parsedDate);
-                            } catch (ParseException e) {
-                                e.printStackTrace();
-                            }
-
-
-                            System.err.println("Total expenses are: "+presenter.getAccount().CalculateTotalExpense());
-                            return true;
-                        }
-                        return false;
-                    }
-                });*/
-
-                //category
-
-
 
                 //otan pataei submit na ftiaxnetai expense kai na mpainei stin expense list tou account
                 submit.setOnClickListener(new View.OnClickListener() {
@@ -238,6 +157,8 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         date.setVisibility(View.GONE);
                         submit.setVisibility(View.GONE);
                         categories.setVisibility(View.GONE);
+                        textView2.setVisibility(View.GONE);
+                        textView3.setVisibility(View.VISIBLE);
 
                         //Expense expense = new Expense(amountValue, dateValue, selected_category);
                         System.err.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq "+amountValue);
@@ -245,132 +166,48 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         //String itemValue = (String) categories.getItemAtPosition(position);
 
                         presenter.getAccount().addExpense(expense);
+                        System.out.println("efwigyyyyyyyyyyyywybc "+presenter.getAccount().getExpenses().size());
 
-                        //expenselist.add(expense);
+                        expenselist.add(expense);
                         //System.out.println("iiifgyyggggggggggggggggggggggg   " +account.getExpenses().size());
 
-                        add.setVisibility(View.VISIBLE);
-                        textView2.setVisibility(View.GONE);
-                        textView3.setVisibility(View.VISIBLE);
                         //presenter.getAccount().addExpense(expense);
                         textView3.setText("Total expensessss: " + presenter.getAccount().CalculateTotalExpense() + " €");
                         //otan ksanapataei add, sta pedia exei tis times tou proigoumenou expense alla ama ta allakseis apothikevei kainourgio eksodo
-                        //den apothikevei ta eksoda pou ftiaksame an vgeis kai ksanampeis -> DAO(?)
-                        //den doulevei to enter mono to submit
                     }
                 });
+            }
+        });
 
-                /*expenses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                        //emfanizei ta stoixeia tou expense
-                        AlertDialog.Builder info = new AlertDialog.Builder(ExpenseActivity.this);
-                        info.setTitle("");
-                        info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
-                                expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd());
+        expenses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                //emfanizei ta stoixeia tou expense
+                android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ExpenseActivity.this);
+                info.setTitle("Details");
 
-                        info.setPositiveButton("OK", null);
+                info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
+                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd());
 
-                        //edit expense
-                        info.setNeutralButton("Edit", new DialogInterface.OnClickListener() {
+                info.setPositiveButton("OK", null);
+
+                info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ExpenseActivity.this);
+                        delete.setTitle("Delete?");
+                        delete.setMessage("Are you sure you want to delete the expense?");
+                        final int positionToRemove = position;
+                        delete.setNegativeButton("Cancel", null);
+                        delete.setPositiveButton("Ok", new android.app.AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                date.setVisibility(View.VISIBLE);
-                                amount.setVisibility(View.VISIBLE);
-                                categories.setVisibility(View.VISIBLE);
-                                submit.setVisibility(View.VISIBLE);
-                                textView2.setVisibility(View.VISIBLE);
-                                textView3.setVisibility(View.GONE);
-                                expenses.setVisibility(View.GONE);
-                                add.setVisibility(View.GONE);
-
-                                amount.setOnKeyListener(new View.OnKeyListener() {
-                                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                        //If the keyevent is a key-down event on the "enter" button
-                                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                                            amount = findViewById(R.id.txt_input);
-                                            newAmountValue = Double.parseDouble(amount.getText().toString());
-                                            return true;
-                                        }
-                                        return false;
-                                    }
-                                });
-
-                                date.setOnKeyListener(new View.OnKeyListener() {
-                                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                        //If the keyevent is a key-down event on the "enter" button
-                                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                                            date = findViewById(R.id.date);
-                                            newDateValue = (Date) date.getText();
-
-                                            return true;
-                                        }
-                                        return false;
-                                    }
-                                });
-
-                                //category
-                                categories.setOnKeyListener(new View.OnKeyListener() {
-                                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                                        //If the keyevent is a key-down event on the "enter" button
-                                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                                            newselected_category = (ExpenseCategory) categories.getSelectedItem();
-                                            System.out.println("1111111111111111111111111111 "+ newselected_category.toString());
-
-                                            return true;
-                                        }
-                                        return false;
-                                    }
-                                });
-
-                                submit.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        expenses.setVisibility(View.VISIBLE);
-                                        add.setVisibility(View.VISIBLE);
-                                        amount.setVisibility(View.GONE);
-                                        date.setVisibility(View.GONE);
-                                        submit.setVisibility(View.GONE);
-                                        categories.setVisibility(View.GONE);
-
-                                        //TODO apothikeusi sto account
-                                        expenselist.get(position).setCategory(newselected_category);
-                                        expenselist.get(position).setDateEnd(newDateValue);
-                                        expenselist.get(position).setSum(newAmountValue);
-
-                                        add.setVisibility(View.VISIBLE);
-                                        textView2.setVisibility(View.GONE);
-                                        textView3.setVisibility(View.VISIBLE);
-                                        textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
-                                        //otan ksanapataei add, sta pedia exei tis times tou proigoumenou expense alla ama ta allakseis apothikevei kainourgio eksodo
-                                        //den apothikevei ta eksoda pou ftiaksame an vgeis kai ksanampeis -> DAO(?)
-                                        //den doulevei to enter mono to submit
-                                    }
-                                });
-                            }
-                        });
-
-                        info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                AlertDialog.Builder delete = new AlertDialog.Builder(ExpenseActivity.this);
-                                delete.setTitle("Delete?");
-                                delete.setMessage("Are you sure you want to delete " + position);
-                                final int positionToRemove = position;
-                                delete.setNegativeButton("Cancel", null);
-                                delete.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        //TODO diagrafi apo to account
-                                        //MyDataObject.remove(positionToRemove);
-                                        arrayAdapter.notifyDataSetChanged();
-                                    }});
-                                delete.show();
-                            }
-                        });
-                        info.show();
+                                //TODO diagrafi apo to account
+                                //MyDataObject.remove(positionToRemove);
+                                arrayAdapter.notifyDataSetChanged();
+                            }});
+                        delete.show();
                     }
-                });*/
+                });
+                info.show();
             }
         });
     }

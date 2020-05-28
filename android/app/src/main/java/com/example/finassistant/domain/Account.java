@@ -149,12 +149,6 @@ public class Account{
         return this.taxFree;
     }
 
-    /*public void validateAmounts(){
-        if( CalculateTotalIncome() < CalculateTotalExpense()){
-            //add something
-        }
-    }*/
-
     public void ShoppingExpenses(){
 
         int count = 1;

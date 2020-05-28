@@ -2,7 +2,6 @@ package com.example.finassistant.ui.account;
 
 import com.example.finassistant.dao.AccountDAO;
 import com.example.finassistant.domain.Account;
-import com.example.finassistant.domain.Income;
 import com.example.finassistant.memorydao.AccountDAOMemory;
 
 public class AccountPresenter {
@@ -29,6 +28,4 @@ public class AccountPresenter {
     public Account getAccount(){
         return this.account;
     }
-
-
 }
