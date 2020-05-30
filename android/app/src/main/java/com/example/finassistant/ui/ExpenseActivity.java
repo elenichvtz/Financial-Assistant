@@ -25,6 +25,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
@@ -78,8 +79,48 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
         textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
 
+        Iterator<Expense> iterator = presenter.getAccount().getExpenses().iterator();
+        while(iterator.hasNext()) {
+            expenselist.add(iterator.next());
+        }
+
         final ArrayAdapter arrayAdapter = new ArrayAdapter(ExpenseActivity.this, android.R.layout.simple_list_item_1, expenselist);
         expenses.setAdapter(arrayAdapter);
+
+        expenses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                //emfanizei ta stoixeia tou expense
+                android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ExpenseActivity.this);
+                info.setTitle("Details");
+
+                info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
+                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd());
+
+                info.setPositiveButton("OK", null);
+
+                info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ExpenseActivity.this);
+                        delete.setTitle("Are you sure you want to delete the expense?");
+                        final int positionToRemove = position;
+                        delete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+                        delete.setPositiveButton("Delete", new android.app.AlertDialog.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //TODO diagrafi apo to account
+                                //MyDataObject.remove(positionToRemove);
+                                arrayAdapter.notifyDataSetChanged();
+                            }});
+                        delete.show();
+                    }
+                });
+                info.show();
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,42 +215,10 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         //System.out.println("iiifgyyggggggggggggggggggggggg   " +account.getExpenses().size());
 
                         //presenter.getAccount().addExpense(expense);
-                        textView3.setText("Total expensessss: " + presenter.getAccount().CalculateTotalExpense() + " €");
+                        textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
                         //otan ksanapataei add, sta pedia exei tis times tou proigoumenou expense alla ama ta allakseis apothikevei kainourgio eksodo
                     }
                 });
-            }
-        });
-
-        expenses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
-                android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ExpenseActivity.this);
-                info.setTitle("Details");
-
-                info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
-                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd());
-
-                info.setPositiveButton("OK", null);
-
-                info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ExpenseActivity.this);
-                        delete.setTitle("Delete?");
-                        delete.setMessage("Are you sure you want to delete the expense?");
-                        final int positionToRemove = position;
-                        delete.setNegativeButton("Cancel", null);
-                        delete.setPositiveButton("Ok", new android.app.AlertDialog.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                //TODO diagrafi apo to account
-                                //MyDataObject.remove(positionToRemove);
-                                arrayAdapter.notifyDataSetChanged();
-                            }});
-                        delete.show();
-                    }
-                });
-                info.show();
             }
         });
     }

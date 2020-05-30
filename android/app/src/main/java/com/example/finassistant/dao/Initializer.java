@@ -29,7 +29,8 @@ public abstract class Initializer {
         Account account = new Account(1234, user1);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date parsedDate = formatter.parse("29/05/2020");
-        Goal goal =  new Goal("Save 20 euros",20,parsedDate);
+        Goal goal =  new Goal("Save 20 euros",20, parsedDate);
+        account.addGoal(goal);
 
         /**
          * Initializing Income instances to add to Income set of the Account
@@ -61,6 +62,15 @@ public abstract class Initializer {
         Expense expense6 = new Expense(67.58,formatter.parse("06/05/2020"), ExpenseCategory.SHOPPING);
 
         /**
+         * Adding expenses into account
+         */
+        account.addExpense(expense1);
+        account.addExpense(expense2);
+        account.addExpense(expense3);
+        account.addExpense(expense5);
+        account.addExpense(expense6);
+
+        /**
          * Initializing Products and Shopping List
          * and adding the expenses from that list to Expenses Set
          *
@@ -75,15 +85,6 @@ public abstract class Initializer {
         account.addList(list);
         account.ShoppingExpenses();
         account.getTemp().get(1).setDateEnd(formatter.parse("03/05/2020"));
-
-        /**
-         * Adding expenses into account
-         */
-        account.addExpense(expense1);
-        account.addExpense(expense2);
-        account.addExpense(expense3);
-        account.addExpense(expense5);
-        account.addExpense(expense6);
 
         getAccountDAO().save(account);
         getUserDAO().save(user1);

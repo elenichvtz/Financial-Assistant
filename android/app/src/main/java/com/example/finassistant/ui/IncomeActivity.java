@@ -31,6 +31,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 public class IncomeActivity extends AppCompatActivity implements AccountView {
 
@@ -45,6 +46,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     //Income income2;
     TextView textView2;
     TextView textView3;
+    TextView taxfree;
 
     ArrayList<Income> incomelist = new ArrayList<>();
 
@@ -54,17 +56,14 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
         presenter = new AccountPresenter(this);
-        //income2 = new Income();
-        //accountDAO = new AccountDAOMemory();
-        //account = accountDAO.find(1234);
     }
 
-    @SuppressLint("WrongViewCast")
     public void onStart() {
         super.onStart();
 
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
+        taxfree = findViewById(R.id.taxfree);
         incomes = findViewById((R.id.button_income));
         incomeCategory = findViewById((R.id.incomecategory));
         amount = findViewById(R.id.txt_input);
@@ -76,14 +75,56 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         endDate.setVisibility(View.GONE);
         textView2.setVisibility(View.GONE);
         textView3.setVisibility(View.VISIBLE);
+        taxfree.setVisibility(View.VISIBLE);
         incomes.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
         submit.setVisibility(View.GONE);
 
-        textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalIncome() + " €");
+        textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
+        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateTaxFree() + "€ out of " + presenter.getAccount().CalculateTotalIncome() + " €");
+
+        Iterator<Income> iterator = presenter.getAccount().getIncome().iterator();
+        while(iterator.hasNext()) {
+            incomelist.add(iterator.next());
+        }
 
         final ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, incomelist);
         incomes.setAdapter(arrayAdapter);
+
+        incomes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                //emfanizei ta stoixeia tou expense
+                android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(IncomeActivity.this);
+                info.setTitle("Details");
+
+                info.setMessage("Category: " + incomelist.get(position).getCategory() +"\n\n" + "Amount: " +
+                        incomelist.get(position).getSum() + " €\n\n" + "End Date: " + incomelist.get(position).getDateEnd());
+
+                info.setPositiveButton("OK", null);
+
+                info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(IncomeActivity.this);
+                        delete.setTitle("Are you sure you want to delete the income?");
+                        final int positionToRemove = position;
+                        delete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+                        delete.setPositiveButton("Delete", new android.app.AlertDialog.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //TODO diagrafi apo to account
+                                //MyDataObject.remove(positionToRemove);
+                                arrayAdapter.notifyDataSetChanged();
+                            }});
+                        delete.show();
+                    }
+                });
+                info.show();
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +135,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                 endDate.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
                 textView3.setVisibility(View.GONE);
+                taxfree.setVisibility(View.GONE);
                 textView2.setVisibility(View.VISIBLE);
                 incomes.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
@@ -164,7 +206,8 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
                         incomelist.add(income);
 
-                        textView3.setText("Total expensessss: " + presenter.getAccount().CalculateTotalIncome() + " €");
+                        textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
+                        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateTaxFree() + "€ out of " + presenter.getAccount().CalculateTotalIncome() + " €");
 
                         incomes.setVisibility(View.VISIBLE);
                         add.setVisibility(View.VISIBLE);
@@ -174,40 +217,9 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         incomeCategory.setVisibility(View.GONE);
                         textView2.setVisibility(View.GONE);
                         textView3.setVisibility(View.VISIBLE);
+                        taxfree.setVisibility(View.VISIBLE);
                     }
                 });
-            }
-        });
-
-        incomes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
-                android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(IncomeActivity.this);
-                info.setTitle("Details");
-
-                info.setMessage("Category: " + incomelist.get(position).getCategory() +"\n\n" + "Amount: " +
-                        incomelist.get(position).getSum() + " €\n\n" + "End Date: " + incomelist.get(position).getDateEnd());
-
-                info.setPositiveButton("OK", null);
-
-                info.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(IncomeActivity.this);
-                        delete.setTitle("Delete?");
-                        delete.setMessage("Are you sure you want to delete the income?");
-                        final int positionToRemove = position;
-                        delete.setNegativeButton("Cancel", null);
-                        delete.setPositiveButton("Ok", new android.app.AlertDialog.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                //TODO diagrafi apo to account
-                                //MyDataObject.remove(positionToRemove);
-                                arrayAdapter.notifyDataSetChanged();
-                            }});
-                        delete.show();
-                    }
-                });
-                info.show();
             }
         });
 
