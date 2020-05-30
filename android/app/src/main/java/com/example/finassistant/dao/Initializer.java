@@ -36,14 +36,18 @@ public abstract class Initializer {
          * Initializing Income instances to add to Income set of the Account
          *
          */
-        Income income1 = new Income(1000,formatter.parse("01/05/2020"), IncomeCategory.SALARY);
-        Income income2 = new Income(15,formatter.parse("04/05/2020"), IncomeCategory.REGULAR);
+        Income income1 = new Income(10,formatter.parse("01/05/2020"), IncomeCategory.SALARY);
+        Income income2 = new Income(150,formatter.parse("04/05/2020"), IncomeCategory.REGULAR);
         Income income3 = new Income(240,formatter.parse("16/05/2020"), IncomeCategory.REGULAR);
         Income income4 = new Income(5.99,formatter.parse("13/05/2020"), IncomeCategory.NONREGULAR);
         Income income5 = new Income(2.50,formatter.parse("09/05/2020"), IncomeCategory.NONREGULAR);
         Income income6 = new Income(450,formatter.parse("22/05/2020"), IncomeCategory.REGULAR);
+        income1.setExchange(ExchangeCategory.ONLINE);
+        income2.setExchange(ExchangeCategory.CASH);
+        income3.setExchange(ExchangeCategory.ONLINE);
         income4.setExchange(ExchangeCategory.CASH);
-        income5.setExchange(ExchangeCategory.CASH);
+        income5.setExchange(ExchangeCategory.ONLINE);
+        income6.setExchange(ExchangeCategory.CASH);
 
         /**
          * Adding income to account
@@ -60,6 +64,11 @@ public abstract class Initializer {
         Expense expense3 = new Expense(129.56,formatter.parse("28/05/2020"), ExpenseCategory.OBLIGATION);
         Expense expense5 = new Expense(69.99,formatter.parse("02/05/2020"), ExpenseCategory.ENTERTAINMENT);
         Expense expense6 = new Expense(67.58,formatter.parse("06/05/2020"), ExpenseCategory.SHOPPING);
+        expense1.setExchange(ExchangeCategory.CASH);
+        expense2.setExchange(ExchangeCategory.CASH);
+        expense3.setExchange(ExchangeCategory.CASH);
+        expense5.setExchange(ExchangeCategory.ONLINE);
+        expense6.setExchange(ExchangeCategory.CASH);
 
         /**
          * Adding expenses into account

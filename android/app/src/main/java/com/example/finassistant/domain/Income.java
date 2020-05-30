@@ -15,7 +15,6 @@ public class Income extends Exchange{
     public Income(double sum, Date dateEnd, IncomeCategory category) {
         super(sum, dateEnd);
         this.category = category;
-
     }
 
     public void setCategory(IncomeCategory category)

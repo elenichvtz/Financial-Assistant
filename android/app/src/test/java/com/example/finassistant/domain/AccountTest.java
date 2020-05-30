@@ -163,19 +163,6 @@ public class AccountTest {
     }
 
     @Test
-    public void testTaxFree(){
-        Account account = new Account();
-        Date date = new Date();
-        IncomeCategory category = IncomeCategory.SALARY;
-        Income income = new Income(30.04,date,category);
-        Income income2 = new Income(20.00,date,category);
-        account.addIncome(income);
-        account.addIncome(income2);
-        account.CalculateTaxFree();
-        Assert.assertEquals(15.012,account.getTaxFree(),0.0001);
-    }
-
-    @Test
     public void addNullList(){
         Account account = new Account();
         account.addList(null);

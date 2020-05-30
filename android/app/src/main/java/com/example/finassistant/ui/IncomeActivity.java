@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,11 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.finassistant.R;
-import com.example.finassistant.dao.AccountDAO;
-import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.Income;
 import com.example.finassistant.domain.IncomeCategory;
-import com.example.finassistant.memorydao.AccountDAOMemory;
 import com.example.finassistant.ui.account.AccountPresenter;
 import com.example.finassistant.ui.account.AccountView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -43,7 +39,6 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     Date dateValue;
     IncomeCategory selected_category;
     static AccountPresenter presenter;
-    //Income income2;
     TextView textView2;
     TextView textView3;
     TextView taxfree;
@@ -81,7 +76,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         submit.setVisibility(View.GONE);
 
         textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateTaxFree() + "€ out of " + presenter.getAccount().CalculateTotalIncome() + " €");
+        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
         Iterator<Income> iterator = presenter.getAccount().getIncome().iterator();
         while(iterator.hasNext()) {
@@ -168,8 +163,6 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
                         try {
                             dateValue = formatter.parse(endDate.toString());
-
-                            //addDate(parsedDate);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -179,16 +172,10 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 String clickedItem = String.valueOf(position);
                                 if (clickedItem.equalsIgnoreCase("SALARY")) {
-                                    //expense.setCategory(ExpenseCategory.HEALTH);
-                                    //addCategory(IncomeCategory.SALARY);
                                     selected_category = IncomeCategory.SALARY;
                                 } else if (clickedItem.equalsIgnoreCase("REGULAR")) {
-                                    //expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                                    //addCategory(IncomeCategory.REGULAR);
                                     selected_category = IncomeCategory.REGULAR;
                                 } else if (clickedItem.equalsIgnoreCase("NONREGULAR")) {
-                                    //expense.setCategory(ExpenseCategory.SHOPPING);
-                                    //addCategory(IncomeCategory.NONREGULAR);
                                     selected_category = IncomeCategory.NONREGULAR;
                                 }
                             }
@@ -207,7 +194,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         incomelist.add(income);
 
                         textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-                        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateTaxFree() + "€ out of " + presenter.getAccount().CalculateTotalIncome() + " €");
+                        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
                         incomes.setVisibility(View.VISIBLE);
                         add.setVisibility(View.VISIBLE);
@@ -222,14 +209,6 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                 });
             }
         });
-
-                /*openDialog();
-                //System.err.println("Total income is: "+account.CalculateTotalIncome());
-                MyDialogue myDialogue = new MyDialogue();
-                myDialogue.show(getSupportFragmentManager(),"message");
-                /*AlertDialog.Builder builder = new AlertDialog.Builder();
-                builder.setTitle("Total Income Results")
-                        .setMessage("Your total income is: "+account.CalculateTotalIncome()); */
     }
 
     public void openDialog(){

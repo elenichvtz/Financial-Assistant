@@ -9,6 +9,7 @@ public class Account{
     private int id;
     private User user;
     private double taxFree;
+    private double currenttaxFree;
 
     private Set<Goal> goals = new HashSet<>();
     private Set<Income> income = new HashSet<>();
@@ -37,10 +38,6 @@ public class Account{
 
     public User getUser() {
         return user;
-    }
-
-    public double getTaxFree() {
-        return taxFree;
     }
 
     public Set<Expense> getExpenses() {
@@ -147,6 +144,15 @@ public class Account{
         this.taxFree = 0.3*CalculateTotalIncome();
 
         return this.taxFree;
+    }
+
+    public double CalculateCurrentTaxFree() {
+        for (Expense expense: expenses) {
+            if(expense.getExchange().equals(ExchangeCategory.ONLINE)){
+                currenttaxFree =+ expense.getSum();
+            }
+        }
+        return currenttaxFree;
     }
 
     public void ShoppingExpenses(){
