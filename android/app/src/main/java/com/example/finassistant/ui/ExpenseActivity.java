@@ -3,7 +3,6 @@ package com.example.finassistant.ui;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finassistant.R;
-import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.Expense;
 import com.example.finassistant.domain.ExpenseCategory;
 import com.example.finassistant.ui.account.ExpensePresenter;
@@ -48,14 +46,14 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
     EditText date;
 
     static ExpensePresenter presenter;
-    Expense expense;
+    //Expense expense;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense);
         presenter =  new ExpensePresenter(this);
-        expense = new Expense();
+        //expense = new Expense();
     }
 
     public void onStart() {
@@ -109,19 +107,23 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         String clickedItem = String.valueOf(position);
                         if (clickedItem.equalsIgnoreCase("HEALTH")){
                             //expense.setCategory(ExpenseCategory.HEALTH);
-                            addCategory(ExpenseCategory.HEALTH);
+                            //addCategory(ExpenseCategory.HEALTH);
+                            selected_category=ExpenseCategory.HEALTH;
                         }else if (clickedItem.equalsIgnoreCase("ENTERTAINMENT")){
                             //expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                            addCategory(ExpenseCategory.ENTERTAINMENT);
+                            //addCategory(ExpenseCategory.ENTERTAINMENT);
+                            selected_category=ExpenseCategory.ENTERTAINMENT;
                         }else if(clickedItem.equalsIgnoreCase("SHOPPING")){
                             //expense.setCategory(ExpenseCategory.SHOPPING);
-                            addCategory(ExpenseCategory.SHOPPING);
+                            selected_category=ExpenseCategory.SHOPPING;
                         }else if(clickedItem.equalsIgnoreCase("TRANSPORT")){
                             //expense.setCategory(ExpenseCategory.TRANSPORT);
-                            addCategory(ExpenseCategory.TRANSPORT);
+                            //addCategory(ExpenseCategory.TRANSPORT);
+                            selected_category=ExpenseCategory.TRANSPORT;
                         }else if(clickedItem.equalsIgnoreCase("OBLIGATION")){
                             //expense.setCategory(ExpenseCategory.OBLIGATION);
-                            addCategory(ExpenseCategory.OBLIGATION);
+                            //addCategory(ExpenseCategory.OBLIGATION);
+                            selected_category=ExpenseCategory.OBLIGATION;
                         }
                     }
 
@@ -139,14 +141,15 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         amount = findViewById(R.id.txt_input);
                         amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" +amountValue);
-                        addAmount(amountValue);
+                        System.err.println("category "+selected_category);
+                        //addAmount(amountValue);
 
                         date = findViewById(R.id.date);
                         //dateValue = (Date) date.getText();
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         try {
-                            Date parsedDate = formatter.parse(date.toString());
-                            addDate(parsedDate);
+                           dateValue = formatter.parse(date.toString());
+                            //addDate(parsedDate);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -160,13 +163,12 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         textView2.setVisibility(View.GONE);
                         textView3.setVisibility(View.VISIBLE);
 
-                        //Expense expense = new Expense(amountValue, dateValue, selected_category);
-                        System.err.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq "+amountValue);
                         //addCategory();
-                        //String itemValue = (String) categories.getItemAtPosition(position);
+
+                        Expense expense = new Expense(amountValue,dateValue,selected_category);
 
                         presenter.getAccount().addExpense(expense);
-                        System.out.println("efwigyyyyyyyyyyyywybc "+presenter.getAccount().getExpenses().size());
+                        System.out.println("presenter.getAccount().getExpenses().size() "+presenter.getAccount().getExpenses().size());
 
                         expenselist.add(expense);
                         //System.out.println("iiifgyyggggggggggggggggggggggg   " +account.getExpenses().size());
@@ -214,17 +216,17 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
     @Override
     public void addCategory(ExpenseCategory category){
-        expense.setCategory(category);
+        //expense.setCategory(category);
     }
 
     @Override
     public void addAmount(Double amount){
-        expense.setSum(amount);
+        //expense.setSum(amount);
     }
 
     @Override
     public void addDate(Date date){
-        expense.setDateEnd(date);
+        //expense.setDateEnd(date);
     }
 
     @Override

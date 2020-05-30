@@ -18,6 +18,8 @@ import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.Goal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -68,47 +70,6 @@ public class GoalActivity extends AppCompatActivity {
                 title.setVisibility(View.VISIBLE);
                 date.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
-
-                amount.setOnKeyListener(new View.OnKeyListener() {
-                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                        //If the keyevent is a key-down event on the "enter" button
-                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                            amount = findViewById(R.id.txt_input);
-                            amountValue = Double.parseDouble(amount.getText().toString());
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-                title.setOnKeyListener(new View.OnKeyListener() {
-                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                        //If the keyevent is a key-down event on the "enter" button
-                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                            title = findViewById(R.id.title);
-                            titleValue = title.getText().toString();
-
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-                date.setOnKeyListener(new View.OnKeyListener() {
-                    public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                        //If the keyevent is a key-down event on the "enter" button
-                        if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-
-                            date = findViewById(R.id.date);
-                            dateValue = (Date) date.getText();
-
-                            return true;
-                        }
-                        return false;
-                    }
-                });
             }
         });
 
@@ -123,6 +84,20 @@ public class GoalActivity extends AppCompatActivity {
                 date.setVisibility(View.GONE);
                 submit.setVisibility(View.GONE);
 
+                title = findViewById(R.id.title);
+                titleValue = title.getText().toString();
+
+                amount = findViewById(R.id.txt_input);
+                amountValue = Double.parseDouble(amount.getText().toString());
+
+                date = findViewById(R.id.date);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                try {
+                    dateValue = formatter.parse(date.toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 final Goal goal = new Goal(titleValue, amountValue, dateValue);
 
                 //TODO apothikeusi sto account
@@ -132,8 +107,6 @@ public class GoalActivity extends AppCompatActivity {
 
                 add.setVisibility(View.VISIBLE);
                 //otan ksanapataei add, sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
-                //den apothikevei tous stoxous pou ftiaksame an vgeis kai ksanampeis -> DAO(?)
-                //den doulevei to enter mono to submit
 
                 goallist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

@@ -39,8 +39,10 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     EditText amount;
     EditText endDate;
     double amountValue;
+    Date dateValue;
+    IncomeCategory selected_category;
     static AccountPresenter presenter;
-    Income income2;
+    //Income income2;
     TextView textView2;
     TextView textView3;
 
@@ -52,7 +54,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
         presenter = new AccountPresenter(this);
-        income2 = new Income();
+        //income2 = new Income();
         //accountDAO = new AccountDAOMemory();
         //account = accountDAO.find(1234);
     }
@@ -116,15 +118,16 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         amount = findViewById(R.id.txt_input);
                         amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" + amountValue);
-                        addAmount(amountValue);
+                        //addAmount(amountValue);
 
                         endDate = findViewById(R.id.date);
 
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
                         try {
-                            Date parsedDate = formatter.parse(endDate.toString());
-                            addDate(parsedDate);
+                            dateValue = formatter.parse(endDate.toString());
+
+                            //addDate(parsedDate);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -135,13 +138,16 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                                 String clickedItem = String.valueOf(position);
                                 if (clickedItem.equalsIgnoreCase("SALARY")) {
                                     //expense.setCategory(ExpenseCategory.HEALTH);
-                                    addCategory(IncomeCategory.SALARY);
+                                    //addCategory(IncomeCategory.SALARY);
+                                    selected_category = IncomeCategory.SALARY;
                                 } else if (clickedItem.equalsIgnoreCase("REGULAR")) {
                                     //expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                                    addCategory(IncomeCategory.REGULAR);
+                                    //addCategory(IncomeCategory.REGULAR);
+                                    selected_category = IncomeCategory.REGULAR;
                                 } else if (clickedItem.equalsIgnoreCase("NONREGULAR")) {
                                     //expense.setCategory(ExpenseCategory.SHOPPING);
-                                    addCategory(IncomeCategory.NONREGULAR);
+                                    //addCategory(IncomeCategory.NONREGULAR);
+                                    selected_category = IncomeCategory.NONREGULAR;
                                 }
                             }
 
@@ -151,16 +157,12 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                             }
                         });
 
-                        presenter.getAccount().addIncome(income2);
-                        System.out.println("ggggggggggggggggggggggggggggggg "+presenter.getAccount().getIncome().size());
+                        Income income = new Income(amountValue, dateValue, selected_category);
 
-                        incomelist.add(income2);
+                        presenter.getAccount().addIncome(income);
+                        System.out.println("presenter.getAccount().getIncome().size() "+presenter.getAccount().getIncome().size());
 
-                        /*AccountDAO accountDAO;
-                        Account account;
-
-                        accountDAO = new AccountDAOMemory();
-                        account = accountDAO.find(1234);*/
+                        incomelist.add(income);
 
                         textView3.setText("Total expensessss: " + presenter.getAccount().CalculateTotalIncome() + " €");
 
@@ -174,8 +176,6 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         textView3.setVisibility(View.VISIBLE);
                     }
                 });
-
-                textView3.setText("Total expensessss: " + presenter.getAccount().CalculateTotalIncome() + " €");
             }
         });
 
@@ -227,17 +227,17 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
     @Override
     public void addCategory(IncomeCategory category){
-        income2.setCategory(category);
+        //income2.setCategory(category);
     }
 
     @Override
     public void addAmount(Double amount){
-        income2.setSum(amount);
+        //income2.setSum(amount);
     }
 
     @Override
     public void addDate(Date date){
-        income2.setDateEnd(date);
+        //income2.setDateEnd(date);
     }
 
     @Override
