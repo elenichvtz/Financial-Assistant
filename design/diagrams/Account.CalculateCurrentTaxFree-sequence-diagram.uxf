@@ -4,8 +4,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>460</x>
-      <y>210</y>
+      <x>400</x>
+      <y>100</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -15,33 +15,33 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>500</x>
-      <y>230</y>
+      <x>440</x>
+      <y>120</y>
       <w>30</w>
-      <h>350</h>
+      <h>460</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
-      <y>270</y>
-      <w>220</w>
+      <x>220</x>
+      <y>160</y>
+      <w>240</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-CalculateTaxFree()</panel_attributes>
-    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+CalculateCurrentTaxFree()</panel_attributes>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>500</x>
-      <y>290</y>
+      <x>440</x>
+      <y>180</y>
       <w>20</w>
-      <h>240</h>
+      <h>250</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -49,44 +49,44 @@ CalculateTaxFree()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>670</x>
-      <y>210</y>
+      <x>820</x>
+      <y>100</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>:Income</panel_attributes>
+    <panel_attributes>:Expense</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>290</y>
-      <w>220</w>
+      <x>450</x>
+      <y>180</y>
+      <w>430</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 CalculateTotalIncome()</panel_attributes>
-    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>410.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>230</y>
+      <x>860</x>
+      <y>120</y>
       <w>30</w>
-      <h>350</h>
+      <h>460</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>710</x>
-      <y>310</y>
+      <x>860</x>
+      <y>200</y>
       <w>20</w>
-      <h>190</h>
+      <h>230</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -94,38 +94,51 @@ CalculateTotalIncome()</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>390</x>
-      <y>330</y>
-      <w>430</w>
-      <h>160</h>
+      <x>400</x>
+      <y>280</y>
+      <w>510</w>
+      <h>180</h>
     </coordinates>
-    <panel_attributes>loop
+    <panel_attributes>opt
 --
-[for all income]</panel_attributes>
+expense.getExchange().equals(ExchangeCategory.ONLINE)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>380</y>
-      <w>220</w>
+      <x>450</x>
+      <y>340</y>
+      <w>430</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 getSum()</panel_attributes>
-    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>410.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>430</y>
-      <w>220</w>
+      <x>450</x>
+      <y>380</y>
+      <w>430</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 sum</panel_attributes>
-    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;410.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>360</x>
+      <y>230</y>
+      <w>590</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>loop
+--
+[for all expenses]</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
