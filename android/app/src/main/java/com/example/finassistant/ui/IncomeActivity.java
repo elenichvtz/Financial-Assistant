@@ -36,7 +36,10 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     double amountValue;
     Date dateValue;
     IncomeCategory selected_category;
+
     static AccountPresenter presenter;
+    Income income;
+
     TextView textView2;
     TextView textView3;
     TextView taxFree;
@@ -139,10 +142,10 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                 categories.add(IncomeCategory.NONREGULAR);
 
                 final ArrayAdapter<String> adapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_spinner_dropdown_item, categories);
-
-                incomeCategory.setAdapter(adapter);
+                //incomeCategory.setAdapter(adapter);
 
                 //ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, categories);
+                income = new Income();
 
                 incomeCategory.setAdapter(adapter);
                 incomeCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -151,10 +154,13 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         String clickedItem = String.valueOf(position);
                         System.err.println("Position selected: "+clickedItem);
                         if (clickedItem.equals("0")) {
+                            addCategory(IncomeCategory.SALARY);
                             selected_category = IncomeCategory.SALARY;
                         } else if (clickedItem.equals("1")) {
+                            addCategory(IncomeCategory.REGULAR);
                             selected_category = IncomeCategory.REGULAR;
                         } else if (clickedItem.equals("2")) {
+                            addCategory(IncomeCategory.NONREGULAR);
                             selected_category = IncomeCategory.NONREGULAR;
                         }
                     }
@@ -173,7 +179,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         amount = findViewById(R.id.txt_input);
                         amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" + amountValue);
-                        //addAmount(amountValue);
+                        addAmount(amountValue);
 
                         endDate = findViewById(R.id.date);
 
@@ -182,13 +188,14 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
                         try {
                             dateValue = formatter.parse(parsedDate);
+                            addDate(dateValue);
                         } catch (ParseException e) {
                             e.printStackTrace();
 
                         }
 
 
-                        Income income = new Income(amountValue, dateValue, selected_category);
+                        //Income income = new Income(amountValue, dateValue, selected_category);
 
                         presenter.getAccount().addIncome(income);
                         //System.out.println("presenter.getAccount().getIncome().size() "+presenter.getAccount().getIncome().size());
@@ -213,24 +220,20 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         });
     }
 
-    public void openDialog(){
-        MyDialogue myDialogue = new MyDialogue();
-        myDialogue.show(getSupportFragmentManager(),"dialogue");
-    }
 
     @Override
     public void addCategory(IncomeCategory category){
-        //income2.setCategory(category);
+        income.setCategory(category);
     }
 
     @Override
     public void addAmount(Double amount){
-        //income2.setSum(amount);
+        income.setSum(amount);
     }
 
     @Override
     public void addDate(Date date){
-        //income2.setDateEnd(date);
+        income.setDateEnd(date);
     }
 
     @Override

@@ -47,7 +47,7 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
     EditText date;
 
     static ExpensePresenter presenter;
-    //Expense expense;
+    Expense expense;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +111,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         });
                         delete.setPositiveButton("Delete", new android.app.AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //TODO diagrafi apo to account
                                 Expense expense = expenselist.get(position);
                                 presenter.getAccount().removeExpense(expense);
                                 arrayAdapter.notifyDataSetChanged();
@@ -142,6 +141,8 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                 textView3.setVisibility(View.GONE);
                 expenses.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
+
+                expense = new Expense();
 
                 categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -180,15 +181,15 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" +amountValue);
                         System.err.println("category "+selected_category);
-                        //addAmount(amountValue);
+                        addAmount(amountValue);
 
                         date = findViewById(R.id.date);
                         String parsedDate = (date.getText().toString());
                         //dateValue = (Date) date.getText();
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         try {
-                           dateValue = formatter.parse(parsedDate);
-                            //addDate(parsedDate);
+                            dateValue = formatter.parse(parsedDate);
+                            addDate(dateValue);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -204,14 +205,14 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
                         //addCategory();
 
-                        Expense expense = new Expense(amountValue,dateValue,selected_category);
+                        //Expense expense = new Expense(amountValue,dateValue,selected_category);
 
                         presenter.getAccount().addExpense(expense);
                         System.out.println("presenter.getAccount().getExpenses().size() "+presenter.getAccount().getExpenses().size());
 
                         expenselist.add(expense);
 
-                        //presenter.getAccount().addExpense(expense);
+                        presenter.getAccount().addExpense(expense);
                         textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
 
                     }
@@ -222,17 +223,17 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
     @Override
     public void addCategory(ExpenseCategory category){
-        //expense.setCategory(category);
+        expense.setCategory(category);
     }
 
     @Override
     public void addAmount(Double amount){
-        //expense.setSum(amount);
+        expense.setSum(amount);
     }
 
     @Override
     public void addDate(Date date){
-        //expense.setDateEnd(date);
+        expense.setDateEnd(date);
     }
 
     @Override
