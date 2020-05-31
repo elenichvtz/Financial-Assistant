@@ -112,7 +112,8 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         delete.setPositiveButton("Delete", new android.app.AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //TODO diagrafi apo to account
-                                //MyDataObject.remove(positionToRemove);
+                                Expense expense = expenselist.get(position);
+                                presenter.getAccount().removeExpense(expense);
                                 arrayAdapter.notifyDataSetChanged();
                             }});
                         delete.show();
@@ -146,24 +147,20 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         String clickedItem = String.valueOf(position);
-                        if (clickedItem.equalsIgnoreCase("HEALTH")){
-                            //expense.setCategory(ExpenseCategory.HEALTH);
-                            //addCategory(ExpenseCategory.HEALTH);
+                        if (clickedItem.equals("0")){
+                            addCategory(ExpenseCategory.HEALTH);
                             selected_category=ExpenseCategory.HEALTH;
-                        }else if (clickedItem.equalsIgnoreCase("ENTERTAINMENT")){
-                            //expense.setCategory(ExpenseCategory.ENTERTAINMENT);
-                            //addCategory(ExpenseCategory.ENTERTAINMENT);
+                        }else if (clickedItem.equals("1")){
+                            addCategory(ExpenseCategory.ENTERTAINMENT);
                             selected_category=ExpenseCategory.ENTERTAINMENT;
-                        }else if(clickedItem.equalsIgnoreCase("SHOPPING")){
-                            //expense.setCategory(ExpenseCategory.SHOPPING);
+                        }else if(clickedItem.equals("2")){
+                            addCategory(ExpenseCategory.SHOPPING);
                             selected_category=ExpenseCategory.SHOPPING;
-                        }else if(clickedItem.equalsIgnoreCase("TRANSPORT")){
-                            //expense.setCategory(ExpenseCategory.TRANSPORT);
-                            //addCategory(ExpenseCategory.TRANSPORT);
+                        }else if(clickedItem.equals("3")){
+                            addCategory(ExpenseCategory.TRANSPORT);
                             selected_category=ExpenseCategory.TRANSPORT;
-                        }else if(clickedItem.equalsIgnoreCase("OBLIGATION")){
-                            //expense.setCategory(ExpenseCategory.OBLIGATION);
-                            //addCategory(ExpenseCategory.OBLIGATION);
+                        }else if(clickedItem.equals("4")){
+                            addCategory(ExpenseCategory.OBLIGATION);
                             selected_category=ExpenseCategory.OBLIGATION;
                         }
                     }
@@ -186,10 +183,11 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         //addAmount(amountValue);
 
                         date = findViewById(R.id.date);
+                        String parsedDate = (date.getText().toString());
                         //dateValue = (Date) date.getText();
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         try {
-                           dateValue = formatter.parse(date.toString());
+                           dateValue = formatter.parse(parsedDate);
                             //addDate(parsedDate);
                         } catch (ParseException e) {
                             e.printStackTrace();

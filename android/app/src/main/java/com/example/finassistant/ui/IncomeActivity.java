@@ -3,8 +3,6 @@ package com.example.finassistant.ui;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -41,9 +39,9 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     static AccountPresenter presenter;
     TextView textView2;
     TextView textView3;
-    TextView taxfree;
+    TextView taxFree;
 
-    ArrayList<Income> incomelist = new ArrayList<>();
+    ArrayList<Income> incomeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +56,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
-        taxfree = findViewById(R.id.taxfree);
+        taxFree = findViewById(R.id.taxfree);
         incomes = findViewById((R.id.button_income));
         incomeCategory = findViewById((R.id.incomecategory));
         amount = findViewById(R.id.txt_input);
@@ -70,31 +68,31 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
         endDate.setVisibility(View.GONE);
         textView2.setVisibility(View.GONE);
         textView3.setVisibility(View.VISIBLE);
-        taxfree.setVisibility(View.VISIBLE);
+        taxFree.setVisibility(View.VISIBLE);
         incomes.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
         submit.setVisibility(View.GONE);
 
         textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
+        taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
         Iterator<Income> iterator = presenter.getAccount().getIncome().iterator();
         while(iterator.hasNext()) {
-            incomelist.add(iterator.next());
+            incomeList.add(iterator.next());
         }
 
-        final ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, incomelist);
+        final ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, incomeList);
         incomes.setAdapter(arrayAdapter);
 
         incomes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
+
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(IncomeActivity.this);
                 info.setTitle("Details");
 
-                info.setMessage("Category: " + incomelist.get(position).getCategory() +"\n\n" + "Amount: " +
-                        incomelist.get(position).getSum() + " €\n\n" + "End Date: " + incomelist.get(position).getDateEnd());
+                info.setMessage("Category: " + incomeList.get(position).getCategory() +"\n\n" + "Amount: " +
+                        incomeList.get(position).getSum() + " €\n\n" + "End Date: " + incomeList.get(position).getDateEnd());
 
                 info.setPositiveButton("OK", null);
 
@@ -110,8 +108,8 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         });
                         delete.setPositiveButton("Delete", new android.app.AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //TODO diagrafi apo to account
-                                //MyDataObject.remove(positionToRemove);
+                                Income income = incomeList.get(position);
+                                presenter.getAccount().removeIncome(income);
                                 arrayAdapter.notifyDataSetChanged();
                             }});
                         delete.show();
@@ -130,7 +128,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                 endDate.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
                 textView3.setVisibility(View.GONE);
-                taxfree.setVisibility(View.GONE);
+                taxFree.setVisibility(View.GONE);
                 textView2.setVisibility(View.VISIBLE);
                 incomes.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
@@ -144,10 +142,30 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
                 incomeCategory.setAdapter(adapter);
 
-                ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, categories);
+                //ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, categories);
 
-                incomeCategory.setAdapter(arrayAdapter);
+                incomeCategory.setAdapter(adapter);
+                incomeCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String clickedItem = String.valueOf(position);
+                        System.err.println("Position selected: "+clickedItem);
+                        if (clickedItem.equals("0")) {
+                            selected_category = IncomeCategory.SALARY;
+                        } else if (clickedItem.equals("1")) {
+                            selected_category = IncomeCategory.REGULAR;
+                        } else if (clickedItem.equals("2")) {
+                            selected_category = IncomeCategory.NONREGULAR;
+                        }
+                    }
 
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+                System.err.println("Selected category is: "+selected_category);
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -160,41 +178,25 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         endDate = findViewById(R.id.date);
 
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        String parsedDate = (endDate.getText().toString());
 
                         try {
-                            dateValue = formatter.parse(endDate.toString());
+                            dateValue = formatter.parse(parsedDate);
                         } catch (ParseException e) {
                             e.printStackTrace();
+
                         }
 
-                        incomes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                String clickedItem = String.valueOf(position);
-                                if (clickedItem.equalsIgnoreCase("SALARY")) {
-                                    selected_category = IncomeCategory.SALARY;
-                                } else if (clickedItem.equalsIgnoreCase("REGULAR")) {
-                                    selected_category = IncomeCategory.REGULAR;
-                                } else if (clickedItem.equalsIgnoreCase("NONREGULAR")) {
-                                    selected_category = IncomeCategory.NONREGULAR;
-                                }
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-
-                            }
-                        });
 
                         Income income = new Income(amountValue, dateValue, selected_category);
 
                         presenter.getAccount().addIncome(income);
-                        System.out.println("presenter.getAccount().getIncome().size() "+presenter.getAccount().getIncome().size());
+                        //System.out.println("presenter.getAccount().getIncome().size() "+presenter.getAccount().getIncome().size());
 
-                        incomelist.add(income);
+                        incomeList.add(income);
 
                         textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-                        taxfree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
+                        taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
                         incomes.setVisibility(View.VISIBLE);
                         add.setVisibility(View.VISIBLE);
@@ -204,7 +206,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         incomeCategory.setVisibility(View.GONE);
                         textView2.setVisibility(View.GONE);
                         textView3.setVisibility(View.VISIBLE);
-                        taxfree.setVisibility(View.VISIBLE);
+                        taxFree.setVisibility(View.VISIBLE);
                     }
                 });
             }

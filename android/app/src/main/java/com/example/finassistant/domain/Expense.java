@@ -5,7 +5,7 @@ import java.util.Date;
 public class Expense extends Exchange{
 
     private ExpenseCategory category = ExpenseCategory.OBLIGATION; //default
-
+    private static int counter = 1;
 
     public Expense() {
         super();
@@ -29,5 +29,9 @@ public class Expense extends Exchange{
     public Object[] getCategoryList(){
         Object[] possibleValues = ExpenseCategory.class.getEnumConstants();
         return possibleValues;
+    }
+    @Override
+    public String toString(){
+        return "Expense"+counter++;
     }
 }

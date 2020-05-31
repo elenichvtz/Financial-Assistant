@@ -5,7 +5,7 @@ import java.util.Date;
 public class Income extends Exchange{
 
     private IncomeCategory category = IncomeCategory.SALARY;
-    //private ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
+    private static int counter = 1;
 
     public Income() {
         super();
@@ -29,6 +29,11 @@ public class Income extends Exchange{
     public Object[] getCategoryList(){
         Object[] possibleValues = IncomeCategory.class.getEnumConstants();
         return possibleValues;
+    }
+
+    @Override
+    public String toString(){
+        return "Income"+counter++;
     }
 
 
