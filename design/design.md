@@ -2,11 +2,13 @@
 
 ![Μοντέλο πεδίου](diagrams/class-diagram-new.png)
 
+![full class diagram](diagrams/class-diagram-full.png)
+
 <h2>Συμπεριφορές</h2>
 
 <h2>ΠΧ1. Αναφορές αφορολόγητου ορίου</h2>
 
-![CalculateTaxFree()](diagrams/Account.CalculateTaxFree-sequence-diagram.png)
+![CalculateTaxFree()](diagrams/Account.CalculateCurrentTaxFree-sequence-diagram.png)
 
 <h2>ΠΧ2. Αναφορές στόχων οικονομικής διαχείρισης</h2>
 
