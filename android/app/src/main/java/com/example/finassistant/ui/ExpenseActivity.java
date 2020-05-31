@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finassistant.R;
+import com.example.finassistant.domain.ExchangeCategory;
 import com.example.finassistant.domain.Expense;
 import com.example.finassistant.domain.ExpenseCategory;
 import com.example.finassistant.ui.account.ExpensePresenter;
@@ -31,20 +32,18 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
     TextView textView2;
     TextView textView3;
+    TextView textView4;
     ListView expenses;
-
-    ArrayList<Expense> expenselist = new ArrayList<>();
-
-    double amountValue;
-    double newAmountValue;
-
-    Date dateValue;
-    Date newDateValue;
     ExpenseCategory selected_category;
-    ExpenseCategory newselected_category;
+    ExchangeCategory selected_exchange_category;
     Spinner categories;
+    Spinner exchange_category;
     EditText amount;
     EditText date;
+
+    ArrayList<Expense> expenselist = new ArrayList<>();
+    double amountValue;
+    Date dateValue;
 
     static ExpensePresenter presenter;
     Expense expense;
@@ -54,26 +53,29 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense);
         presenter =  new ExpensePresenter(this);
-        //expense = new Expense();
     }
 
     public void onStart() {
         super.onStart();
 
         categories = findViewById(R.id.category);
+        exchange_category = findViewById(R.id.exchange_category);
         amount = findViewById(R.id.txt_input);
         date = findViewById(R.id.date);
         expenses = findViewById(R.id.button_expense);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
+        textView4 = findViewById(R.id.textView4);
         final FloatingActionButton add = findViewById(R.id.add);
         final Button submit = findViewById(R.id.submit);
         date.setVisibility(View.GONE);
         amount.setVisibility(View.GONE);
         submit.setVisibility(View.GONE);
         categories.setVisibility(View.GONE);
+        exchange_category.setVisibility(View.GONE);
         textView2.setVisibility(View.GONE);
         textView3.setVisibility(View.VISIBLE);
+        textView4.setVisibility(View.GONE);
         expenses.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
 
@@ -95,7 +97,8 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                 info.setTitle("Details");
 
                 info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
-                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd());
+                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd() + "\n\nExchange Category: " +
+                        expenselist.get(position).getExchange());
 
                 info.setPositiveButton("OK", null);
 
@@ -133,12 +136,18 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                 //set the spinners adapter to the previously created one.
                 categories.setAdapter(adapter);
 
+                ExchangeCategory[] exchangeCategories = new ExchangeCategory[]{ExchangeCategory.CASH, ExchangeCategory.ONLINE};
+                ArrayAdapter<String> eadapter = new ArrayAdapter(ExpenseActivity.this, android.R.layout.simple_spinner_dropdown_item, exchangeCategories);
+                exchange_category.setAdapter(eadapter);
+
                 date.setVisibility(View.VISIBLE);
                 amount.setVisibility(View.VISIBLE);
                 categories.setVisibility(View.VISIBLE);
+                exchange_category.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
                 textView2.setVisibility(View.VISIBLE);
                 textView3.setVisibility(View.GONE);
+                textView4.setVisibility(View.VISIBLE);
                 expenses.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
 
@@ -172,6 +181,23 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                     }
                 });
 
+                exchange_category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        String clickedItem = String.valueOf(position);
+                        if (clickedItem.equals("0")){
+                            selected_exchange_category = ExchangeCategory.CASH;
+                        }else if (clickedItem.equals("1")){
+                            selected_exchange_category = ExchangeCategory.ONLINE;
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
                 //otan pataei submit na ftiaxnetai expense kai na mpainei stin expense list tou account
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -200,21 +226,20 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         date.setVisibility(View.GONE);
                         submit.setVisibility(View.GONE);
                         categories.setVisibility(View.GONE);
+                        exchange_category.setVisibility(View.GONE);
                         textView2.setVisibility(View.GONE);
                         textView3.setVisibility(View.VISIBLE);
-
-                        //addCategory();
-
-                        //Expense expense = new Expense(amountValue,dateValue,selected_category);
+                        textView4.setVisibility(View.GONE);
 
                         presenter.getAccount().addExpense(expense);
                         System.out.println("presenter.getAccount().getExpenses().size() "+presenter.getAccount().getExpenses().size());
+
+                        expense.setExchange(selected_exchange_category);
 
                         expenselist.add(expense);
 
                         presenter.getAccount().addExpense(expense);
                         textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
-
                     }
                 });
             }

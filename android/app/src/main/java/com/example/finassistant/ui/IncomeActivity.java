@@ -33,18 +33,17 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     ListView incomes;
     EditText amount;
     EditText endDate;
+    TextView textView2;
+    TextView textView3;
+    TextView taxFree;
+
+    ArrayList<Income> incomeList = new ArrayList<>();
     double amountValue;
     Date dateValue;
     IncomeCategory selected_category;
 
     static AccountPresenter presenter;
     Income income;
-
-    TextView textView2;
-    TextView textView3;
-    TextView taxFree;
-
-    ArrayList<Income> incomeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,9 +141,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                 categories.add(IncomeCategory.NONREGULAR);
 
                 final ArrayAdapter<String> adapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_spinner_dropdown_item, categories);
-                //incomeCategory.setAdapter(adapter);
 
-                //ArrayAdapter arrayAdapter = new ArrayAdapter(IncomeActivity.this, android.R.layout.simple_list_item_1, categories);
                 income = new Income();
 
                 incomeCategory.setAdapter(adapter);
@@ -152,7 +149,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         String clickedItem = String.valueOf(position);
-                        System.err.println("Position selected: "+clickedItem);
+                        System.err.println("Position selected: " + clickedItem);
                         if (clickedItem.equals("0")) {
                             addCategory(IncomeCategory.SALARY);
                             selected_category = IncomeCategory.SALARY;
@@ -194,11 +191,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
                         }
 
-
-                        //Income income = new Income(amountValue, dateValue, selected_category);
-
                         presenter.getAccount().addIncome(income);
-                        //System.out.println("presenter.getAccount().getIncome().size() "+presenter.getAccount().getIncome().size());
 
                         incomeList.add(income);
 

@@ -147,12 +147,15 @@ public class Account{
     }
 
     public double CalculateCurrentTaxFree() {
+
+        double total = 0;
+
         for (Expense expense: expenses) {
             if(expense.getExchange().equals(ExchangeCategory.ONLINE)){
-                currenttaxFree =+ expense.getSum();
+                total = total + expense.getSum();
             }
         }
-        return currenttaxFree;
+        return total;
     }
 
     public void ShoppingExpenses(){
