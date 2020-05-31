@@ -210,11 +210,10 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         System.out.println("presenter.getAccount().getExpenses().size() "+presenter.getAccount().getExpenses().size());
 
                         expenselist.add(expense);
-                        //System.out.println("iiifgyyggggggggggggggggggggggg   " +account.getExpenses().size());
 
                         //presenter.getAccount().addExpense(expense);
                         textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
-                        //otan ksanapataei add, sta pedia exei tis times tou proigoumenou expense alla ama ta allakseis apothikevei kainourgio eksodo
+
                     }
                 });
             }

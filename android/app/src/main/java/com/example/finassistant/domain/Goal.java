@@ -8,6 +8,7 @@ public class Goal{
     private double amount;
     private Date endDate;
     private double currentamount;
+    private static int counter = 1;
 
     Goal(){ }
 
@@ -51,5 +52,10 @@ public class Goal{
             this.currentamount = this.currentamount + completion;
         }
         return this.currentamount;
+    }
+
+    @Override
+    public String toString(){
+        return "Goal "+counter++;
     }
 }

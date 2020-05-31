@@ -142,7 +142,8 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                         delete.setPositiveButton("Delete", new AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //TODO diagrafi apo to account
-                                presenter.getAccount().getGoals().remove(positionToRemove);     //den to diagrafei
+                                Goal goal = goals.get(position);
+                                presenter.getAccount().removeGoal(goal);
                                 arrayAdapter.notifyDataSetChanged();
                             }});
                         delete.show();
@@ -183,8 +184,9 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
 
                 date = findViewById(R.id.date);
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                String parsedDate = (date.getText().toString());
                 try {
-                    dateValue = formatter.parse(date.toString());
+                    dateValue = formatter.parse(parsedDate.toString());
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

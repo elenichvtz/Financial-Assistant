@@ -28,7 +28,7 @@ public class Account{
         this.id = id;
     }
 
-    void setUser(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -93,7 +93,7 @@ public class Account{
         }
     }
 
-    void removeGoal(Goal goal){
+    public void removeGoal(Goal goal){
         if(goal != null){
             this.goals.remove(goal);
         }

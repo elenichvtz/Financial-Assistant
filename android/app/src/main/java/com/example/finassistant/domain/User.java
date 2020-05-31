@@ -6,7 +6,6 @@ public class User {
     private String name;
     private Email email;
     private String password;
-    private Account account;
     private int id;
 
     public User(){ }
