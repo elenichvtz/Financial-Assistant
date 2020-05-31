@@ -2,6 +2,8 @@
 
 ![Μοντέλο πεδίου](diagrams/class-diagram-new.png)
 
+![full class diagram](diagrams/class-diagram-full.png)
+
 <h2>Συμπεριφορές</h2>
 
 <h2>ΠΧ1. Αναφορές αφορολόγητου ορίου</h2>

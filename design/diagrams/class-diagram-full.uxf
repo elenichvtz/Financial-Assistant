@@ -4,187 +4,30 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1146</x>
-      <y>390</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>AccountDAOMemory
---
-+ delete(Account entity)
-+ findAll() : List&lt;Account&gt;
-+ save(Account entity) : void
-+ find(int id) : Account</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1044</x>
-      <y>528</y>
-      <w>114</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Email
---
-&lt;&lt;get/set&gt;&gt;-email : String
---
-+equals() boolean{quer}
-+hashCode()int{query}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>630</x>
-      <y>240</y>
+      <x>426</x>
+      <y>66</y>
       <w>168</w>
-      <h>24</h>
+      <h>54</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>564</x>
-      <y>282</y>
-      <w>24</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>186</y>
-      <w>30</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>72</y>
-      <w>24</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1 
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>978</x>
-      <y>240</y>
-      <w>114</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n
-m2=1</panel_attributes>
-    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>978</x>
-      <y>72</y>
-      <w>228</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n
-m2=1</panel_attributes>
-    <additional_attributes>360.0;10.0;10.0;280.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>564</x>
-      <y>84</y>
-      <w>24</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>654</x>
-      <y>42</y>
-      <w>150</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>348</x>
-      <y>36</y>
-      <w>156</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;240.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>864</x>
-      <y>462</y>
-      <w>24</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-&gt;
-m1= 1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>942</x>
-      <y>528</y>
-      <w>114</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+    <panel_attributes>Exchange
+--
+&lt;&lt;get/set&gt;&gt;- dateEnd: Date
+&lt;&lt;get/set&gt;&gt;- exchange: ExchandeCategory
+&lt;&lt;get/set&gt;&gt;- sum : double
+</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>144</y>
+      <x>552</x>
+      <y>246</y>
       <w>150</w>
-      <h>48</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>Expense
 --
-- category : ExpenseCategory
+&lt;&lt;get/set&gt;&gt;- category: ExpenseCategory
 --
 +getCategoryList(): Object[]</panel_attributes>
     <additional_attributes/>
@@ -192,8 +35,297 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>240</y>
+      <x>312</x>
+      <y>246</y>
+      <w>150</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Income
+--
+&lt;&lt;get/set&gt;&gt;- category: IncomeCategory
+--
++getCategoryList(): Object[]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>114</y>
+      <w>102</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>114</y>
+      <w>96</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1176</x>
+      <y>186</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>IncomeActivity
+--
+# onCreate(Bundle savedInstanceState) : void
++ onStart() : void
++ addCategory(category: IncomeeCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>768</x>
+      <y>180</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>GoalActivity
+--
+# onCreate(Bundle savedInstanceState) : void
++ onStart() : void
++ addTitle(title: String) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>54</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>AccountView
+--
++ addCategory(category: ExpenseCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>114</y>
+      <w>150</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>114</y>
+      <w>192</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>264</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ExpenseActivity
+--
+# onCreate(Bundle savedInstanceState) : void
++ onStart() : void
++ addCategory(category: ExpenseCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1650</x>
+      <y>120</y>
+      <w>198</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ExpenseView
+--
++ addCategory(category: ExpenseCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>156</y>
+      <w>162</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1746</x>
+      <y>408</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>ExpensePresenter
+--
++ validateAmount(amount: Double) : boolean
++ getAccount() : Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1770</x>
+      <y>180</y>
+      <w>72</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;380.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>324</y>
+      <w>198</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1458</x>
+      <y>378</y>
+      <w>84</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>«enumeration»
+ExpenseCAtegory
+--
+HEALTH
+ENTERTAINMENT
+SHOPPING
+TRANSPORT
+DEPT</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1494</x>
+      <y>324</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>258</y>
+      <w>774</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;1270.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2052</x>
+      <y>162</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>UserDAOMemory
+--
++ delete(User entity) : void
++ findAll() : List&lt;User&gt;
++ save(User entity) : void
++ find(int id) : User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2052</x>
+      <y>48</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>UserDAO
+--
++ delete(User entity) : void
++ findAll() : List&lt;User&gt;
++ save(User entity) : void
++ find(int id) : User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2100</x>
+      <y>78</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>630</y>
+      <w>132</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>User
+--
+&lt;&lt;get/set&gt;&gt;- name : String
+&lt;&lt;get/set&gt;&gt;- email : String
+&lt;&lt;get/set&gt;&gt;- password : String
+&lt;&lt;get/set&gt;&gt;- accout : Account
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1458</x>
+      <y>630</y>
       <w>198</w>
       <h>228</h>
     </coordinates>
@@ -223,10 +355,193 @@ m2=1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1650</x>
+      <y>468</y>
+      <w>144</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1236</x>
+      <y>630</y>
+      <w>234</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1236</x>
+      <y>642</y>
+      <w>234</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>378</y>
+      <x>876</x>
+      <y>630</y>
+      <w>114</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Email
+--
+&lt;&lt;get/set&gt;&gt;-email : String
+--
++equals() boolean{quer}
++hashCode()int{query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>630</y>
+      <w>138</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1884</x>
+      <y>768</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>AccountDAO
+--
++ delete(Account entity)
++ findAll() : List&lt;Account&gt;
++ save(Account entity) : void
++ find(int id) : Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1884</x>
+      <y>936</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>AccountDAOMemory
+--
++ delete(Account entity)
++ findAll() : List&lt;Account&gt;
++ save(Account entity) : void
++ find(int id) : Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1968</x>
+      <y>828</y>
+      <w>18</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1902</x>
+      <y>468</y>
+      <w>84</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1296</x>
+      <y>486</y>
+      <w>186</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>AccountPresenter
+--
++ validateAmount(amount: Double) : boolean
++ getAccount() : Account</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1434</x>
+      <y>546</y>
+      <w>60</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1476</x>
+      <y>498</y>
+      <w>438</w>
+      <h>282</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;710.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>948</x>
+      <y>228</y>
+      <w>360</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1284</x>
+      <y>246</y>
+      <w>66</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1044</x>
+      <y>114</y>
+      <w>282</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>450.0;620.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>414</y>
       <w>78</w>
       <h>66</h>
     </coordinates>
@@ -240,45 +555,58 @@ EMERGENCY
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>528</y>
-      <w>132</w>
-      <h>66</h>
+      <x>438</x>
+      <y>294</y>
+      <w>126</w>
+      <h>132</h>
     </coordinates>
-    <panel_attributes>User
---
-&lt;&lt;get/set&gt;&gt;- name : String
-&lt;&lt;get/set&gt;&gt;- email : String
-&lt;&lt;get/set&gt;&gt;- password : String
-&lt;&lt;get/set&gt;&gt;- accout : Account
-</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>246</y>
+      <w>612</w>
+      <h>186</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1000.0;10.0;10.0;290.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>240</y>
-      <w>180</w>
-      <h>78</h>
+      <x>714</x>
+      <y>18</y>
+      <w>96</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>ShoppingList
+    <panel_attributes>«enumeration»
+ExchangeCategory
 --
-&lt;&lt;get/set&gt;&gt;- title : String
-- products : HashSet&lt;Product&gt;
---
-+ getProducts() : HashSet&lt;Product&gt; {query}
-+addProduct(product : Product)
-+removeProduct(product:Product)</panel_attributes>
+CASH
+CREDITCARD</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>24</y>
+      <w>138</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1368</x>
-      <y>240</y>
+      <x>570</x>
+      <y>942</y>
       <w>120</w>
       <h>84</h>
     </coordinates>
@@ -294,22 +622,28 @@ EMERGENCY
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>1254</x>
-      <y>240</y>
-      <w>126</w>
-      <h>24</h>
+      <x>0</x>
+      <y>804</y>
+      <w>186</w>
+      <h>66</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=*</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+    <panel_attributes>MainActivity
+--
+# onCreate(Bundle savedInstanceState) : void
++ openActivityIncome() : void
++ openActivityExpense() : void
++ openActivityGoal() :void
++ openActivityList() : void
+</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1194</x>
-      <y>72</y>
+      <x>354</x>
+      <y>948</y>
       <w>150</w>
       <h>72</h>
     </coordinates>
@@ -326,90 +660,26 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>834</x>
-      <y>0</y>
-      <w>84</w>
+      <x>504</x>
+      <y>786</y>
+      <w>180</w>
       <h>78</h>
     </coordinates>
-    <panel_attributes>«enumeration»
-ExpenseCAtegory
+    <panel_attributes>ShoppingList
 --
-HEALTH
-ENTERTAINMENT
-SHOPPING
-TRANSPORT
-DEPT</panel_attributes>
+&lt;&lt;get/set&gt;&gt;- title : String
+- products : HashSet&lt;Product&gt;
+--
++ getProducts() : HashSet&lt;Product&gt; {query}
++addProduct(product : Product)
++removeProduct(product:Product)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>240</y>
-      <w>150</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Income
---
-&lt;&lt;get/set&gt;&gt;- category: IncomeCategory
---
-+getCategoryList(): Object[]
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>492</x>
-      <y>36</y>
-      <w>168</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>Exchange
---
-&lt;&lt;get/set&gt;&gt;- dateEnd: Date
-&lt;&lt;get/set&gt;&gt;- exchange: ExchandeCategory
-&lt;&lt;get/set&gt;&gt;- sum : double
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>258</x>
-      <y>36</y>
-      <w>96</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>«enumeration»
-ExchangeCategory
---
-CASH
-CREDITCARD</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1218</x>
-      <y>582</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>UserDAOMemory
---
-+ delete(User entity) : void
-+ findAll() : List&lt;User&gt;
-+ save(User entity) : void
-+ find(int id) : User</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1242</x>
-      <y>498</y>
+      <x>78</x>
+      <y>930</y>
       <w>186</w>
       <h>66</h>
     </coordinates>
@@ -423,115 +693,14 @@ CREDITCARD</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>618</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>MainActivity
---
-+ onCreate(Bundle savedInstanceState) : void
-+ openActivityIncome() : void
-+ openActivityExpense() : void
-+ openActivityGoal() :void
-+ openActivityList() : void
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>342</x>
-      <y>762</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>GoalActivity
---
-+ onCreate(Bundle savedInstanceState) : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>672</x>
-      <y>618</y>
+      <x>252</x>
+      <y>810</y>
       <w>186</w>
       <h>66</h>
     </coordinates>
     <panel_attributes>ListActivity
 --
-+ onCreate(Bundle savedInstanceState) : void</panel_attributes>
+# onCreate(Bundle savedInstanceState) : void</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>342</x>
-      <y>474</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>IncomeActivity
---
-+ onCreate(Bundle savedInstanceState) : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>618</y>
-      <w>186</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>ExpenseActivity
---
-+ onCreate(Bundle savedInstanceState) : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>180</x>
-      <y>618</y>
-      <w>174</w>
-      <h>18</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>426</x>
-      <y>534</y>
-      <w>18</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>522</x>
-      <y>618</y>
-      <w>162</w>
-      <h>18</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>426</x>
-      <y>678</y>
-      <w>18</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
