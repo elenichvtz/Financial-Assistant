@@ -12,7 +12,6 @@ public class ShoppingList {
 
     public ShoppingList(String title) {
         this.title = title;
-        this.products = products;
     }
 
 

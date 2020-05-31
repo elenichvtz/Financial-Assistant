@@ -1,5 +1,7 @@
 package com.example.finassistant.domain;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -158,15 +160,11 @@ public class Account{
         return total;
     }
 
-    public void ShoppingExpenses(){
+    public void ShoppingExpenses(ShoppingList list){
 
-        int count = 1;
+        Date date = new Date();
 
-        for(ShoppingList list: shoppingList){
-            Expense expense = new Expense(list.getTotal(),null,ExpenseCategory.SHOPPING);
-            temp.put(count,expense);
-            this.addExpense(expense);
-            count ++;
-        }
+        Expense expense = new Expense(list.getTotal(), date, ExpenseCategory.SHOPPING);
+        this.addExpense(expense);
     }
 }
