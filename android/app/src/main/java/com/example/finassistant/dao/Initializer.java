@@ -25,7 +25,7 @@ public abstract class Initializer {
 
     public void prepareData() throws ParseException {
         eraseData();
-        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",1234);
+        User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",9755);
         Account account = new Account(1234, user1);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date parsedDate = formatter.parse("29/05/2020");
