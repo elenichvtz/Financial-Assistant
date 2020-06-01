@@ -207,7 +207,7 @@ public class AccountTest {
         list.addProduct(product2);
         list.addProduct(product3);
         account.addList(list);
-        account.ShoppingExpenses();
+        account.ShoppingExpenses(list);
 
         Assert.assertEquals(1,account.getExpenses().size());
         Assert.assertEquals(38.98,account.getTemp().get(1).getSum(),0.00001);

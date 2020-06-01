@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finassistant.R;
-import com.example.finassistant.domain.Expense;
 import com.example.finassistant.domain.Goal;
 import com.example.finassistant.domain.IncomeCategory;
 import com.example.finassistant.ui.account.AccountPresenter;
@@ -29,7 +28,7 @@ import java.util.Iterator;
 
 public class GoalActivity extends AppCompatActivity implements AccountView {
 
-    ListView goallist;
+    ListView goalList;
     EditText amount;
     EditText amount2;
     double amountValue;
@@ -53,12 +52,12 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
 
         final FloatingActionButton add = findViewById(R.id.add);
         final Button submit = findViewById(R.id.submit);
-        goallist = findViewById((R.id.goallist));
+        goalList = findViewById((R.id.goallist));
         amount = findViewById(R.id.txt_input);
         amount2 = findViewById(R.id.txt_input2);
         title = findViewById(R.id.title);
         date = findViewById(R.id.date);
-        goallist.setVisibility(View.VISIBLE);
+        goalList.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
         amount.setVisibility(View.GONE);
         amount2.setVisibility(View.GONE);
@@ -72,9 +71,9 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
         }
 
         final ArrayAdapter arrayAdapter = new ArrayAdapter(GoalActivity.this, android.R.layout.simple_list_item_1, goals);
-        goallist.setAdapter(arrayAdapter);
+        goalList.setAdapter(arrayAdapter);
 
-        goallist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        goalList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 //emfanizei ta stoixeia tou expense
@@ -156,7 +155,7 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goallist.setVisibility(View.GONE);
+                goalList.setVisibility(View.GONE);
                 add.setVisibility(View.GONE);
                 amount.setVisibility(View.VISIBLE);
                 title.setVisibility(View.VISIBLE);
@@ -169,7 +168,7 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goallist.setVisibility(View.VISIBLE);
+                goalList.setVisibility(View.VISIBLE);
                 add.setVisibility(View.GONE);
                 amount.setVisibility(View.GONE);
                 title.setVisibility(View.GONE);

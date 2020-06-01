@@ -18,6 +18,7 @@ public class Account{
     private Set<Expense> expenses = new HashSet<>();
     private Set<ShoppingList> shoppingList = new HashSet<>();
     private HashMap<Integer,Expense> temp = new HashMap<>();
+    private static int count = 1;
 
     public Account(){ }
 
@@ -166,5 +167,19 @@ public class Account{
 
         Expense expense = new Expense(list.getTotal(), date, ExpenseCategory.SHOPPING);
         this.addExpense(expense);
+        this.temp.put(count,expense);
     }
+
+    /*public void ShoppingExpenses(){
+
+        int count = 1;
+
+        for(ShoppingList list: shoppingList){
+            Expense expense = new Expense(list.getTotal(),null,ExpenseCategory.SHOPPING);
+            temp.put(count,expense);
+            this.addExpense(expense);
+            count ++;
+        }
+    }*/
+
 }

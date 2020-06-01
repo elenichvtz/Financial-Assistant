@@ -92,7 +92,7 @@ public abstract class Initializer {
         list.addProduct(product2);
         list.addProduct(product3);
         account.addList(list);
-        account.ShoppingExpenses();
+        account.ShoppingExpenses(list);
         account.getTemp().get(1).setDateEnd(formatter.parse("03/05/2020"));
 
         getAccountDAO().save(account);
