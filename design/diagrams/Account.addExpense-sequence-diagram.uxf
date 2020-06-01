@@ -5,7 +5,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>470</x>
-      <y>80</y>
+      <y>40</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -16,30 +16,18 @@
     <id>Relation</id>
     <coordinates>
       <x>510</x>
-      <y>100</y>
+      <y>60</y>
       <w>30</w>
-      <h>540</h>
+      <h>600</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>320</x>
-      <y>120</y>
-      <w>210</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;-
-addExpense(expense)</panel_attributes>
-    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>240</y>
+      <y>200</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -51,9 +39,9 @@ addAmount(amount)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>510</x>
-      <y>140</y>
+      <y>100</y>
       <w>20</w>
-      <h>460</h>
+      <h>520</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -62,7 +50,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>240</y>
+      <y>200</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -73,7 +61,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>280</y>
+      <y>240</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -83,19 +71,19 @@ addAmount(amount)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>100</y>
+      <x>800</x>
+      <y>60</y>
       <w>30</w>
-      <h>540</h>
+      <h>600</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>720</x>
-      <y>80</y>
+      <x>760</x>
+      <y>40</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -106,7 +94,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>330</y>
+      <y>290</y>
       <w>120</w>
       <h>70</h>
     </coordinates>
@@ -118,7 +106,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>330</y>
+      <y>290</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -129,7 +117,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>370</y>
+      <y>330</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -140,7 +128,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>430</y>
+      <y>390</y>
       <w>170</w>
       <h>70</h>
     </coordinates>
@@ -152,7 +140,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>430</y>
+      <y>390</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -163,7 +151,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>470</y>
+      <y>430</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -173,8 +161,8 @@ addCategory(category)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>760</x>
-      <y>160</y>
+      <x>800</x>
+      <y>120</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -185,31 +173,31 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>140</y>
-      <w>260</w>
+      <y>100</y>
+      <w>300</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 &lt;&lt;create&gt;&gt;</panel_attributes>
-    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>180</y>
-      <w>260</w>
+      <y>140</y>
+      <w>300</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 expense</panel_attributes>
-    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>550</y>
+      <y>510</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -220,7 +208,7 @@ expense</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>520</x>
-      <y>510</y>
+      <y>470</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -231,12 +219,46 @@ expense</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>510</y>
+      <y>470</y>
       <w>240</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=-
 setExchange(exchange_category)</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>580</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>540</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+addExpense(expense)</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>540</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
   </element>
 </diagram>
