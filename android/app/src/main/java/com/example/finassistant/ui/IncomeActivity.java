@@ -17,8 +17,8 @@ import android.widget.TextView;
 import com.example.finassistant.R;
 import com.example.finassistant.domain.Income;
 import com.example.finassistant.domain.IncomeCategory;
-import com.example.finassistant.ui.account.AccountPresenter;
-import com.example.finassistant.ui.account.AccountView;
+import com.example.finassistant.ui.account.IncomePresenter;
+import com.example.finassistant.ui.account.IncomeView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-public class IncomeActivity extends AppCompatActivity implements AccountView {
+public class IncomeActivity extends AppCompatActivity implements IncomeView {
 
     Spinner incomeCategory;
     ListView incomes;
@@ -42,7 +42,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
     Date dateValue;
     IncomeCategory selected_category;
 
-    static AccountPresenter presenter;
+    static IncomePresenter presenter;
     Income income;
 
     @Override
@@ -50,7 +50,7 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
-        presenter = new AccountPresenter(this);
+        presenter = new IncomePresenter(this);
     }
 
     public void onStart() {
@@ -176,37 +176,44 @@ public class IncomeActivity extends AppCompatActivity implements AccountView {
                         amount = findViewById(R.id.txt_input);
                         amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" + amountValue);
-                        addAmount(amountValue);
+                        boolean isValid = presenter.validateAmount(amountValue);
+                        if (isValid) {
+                            addAmount(amountValue);
 
-                        endDate = findViewById(R.id.date);
+                            endDate = findViewById(R.id.date);
 
-                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                        String parsedDate = (endDate.getText().toString());
+                            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                            String parsedDate = (endDate.getText().toString());
+                            System.err.println("parsed date is: "+parsedDate);
+                            if(parsedDate.equals("")){
+                                addDate(new Date());
+                            }else {
+                                try {
+                                    dateValue = formatter.parse(parsedDate);
+                                    addDate(dateValue);
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
 
-                        try {
-                            dateValue = formatter.parse(parsedDate);
-                            addDate(dateValue);
-                        } catch (ParseException e) {
-                            e.printStackTrace();
+                                }
+                            }
 
+                            presenter.getAccount().addIncome(income);
+
+                            incomeList.add(income);
+
+                            textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
+                            taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
+
+                            incomes.setVisibility(View.VISIBLE);
+                            add.setVisibility(View.VISIBLE);
+                            amount.setVisibility(View.GONE);
+                            endDate.setVisibility(View.GONE);
+                            submit.setVisibility(View.GONE);
+                            incomeCategory.setVisibility(View.GONE);
+                            textView2.setVisibility(View.GONE);
+                            textView3.setVisibility(View.VISIBLE);
+                            taxFree.setVisibility(View.VISIBLE);
                         }
-
-                        presenter.getAccount().addIncome(income);
-
-                        incomeList.add(income);
-
-                        textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-                        taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
-
-                        incomes.setVisibility(View.VISIBLE);
-                        add.setVisibility(View.VISIBLE);
-                        amount.setVisibility(View.GONE);
-                        endDate.setVisibility(View.GONE);
-                        submit.setVisibility(View.GONE);
-                        incomeCategory.setVisibility(View.GONE);
-                        textView2.setVisibility(View.GONE);
-                        textView3.setVisibility(View.VISIBLE);
-                        taxFree.setVisibility(View.VISIBLE);
                     }
                 });
             }

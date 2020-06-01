@@ -5,6 +5,7 @@ public class Product {
     private String title;
     private double price;
 
+
     public Product(){ }
 
     public Product(String title, double price) {
@@ -28,4 +29,7 @@ public class Product {
         this.price = price;
     }
 
+    public String toString(){
+        return ""+this.title+"";
+    }
 }

@@ -205,41 +205,48 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
                         amount = findViewById(R.id.txt_input);
                         amountValue = Double.parseDouble(amount.getText().toString());
-                        System.err.println("amountvalue :" +amountValue);
-                        System.err.println("category "+selected_category);
-                        addAmount(amountValue);
+                        System.err.println("amountvalue :" + amountValue);
+                        System.err.println("category " + selected_category);
+                        boolean isValid = presenter.validateAmount(amountValue);
+                        if (isValid) {
+                            addAmount(amountValue);
 
-                        date = findViewById(R.id.date);
-                        String parsedDate = (date.getText().toString());
-                        //dateValue = (Date) date.getText();
-                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                        try {
-                            dateValue = formatter.parse(parsedDate);
-                            addDate(dateValue);
-                        } catch (ParseException e) {
-                            e.printStackTrace();
+                            date = findViewById(R.id.date);
+                            String parsedDate = (date.getText().toString());
+                            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                            if (parsedDate.equals("")) {
+                                addDate(new Date());
+                            } else {
+                                try {
+                                    dateValue = formatter.parse(parsedDate);
+                                    addDate(dateValue);
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+
+                                }
+                            }
+
+                            expenses.setVisibility(View.VISIBLE);
+                            add.setVisibility(View.VISIBLE);
+                            amount.setVisibility(View.GONE);
+                            date.setVisibility(View.GONE);
+                            submit.setVisibility(View.GONE);
+                            categories.setVisibility(View.GONE);
+                            exchange_category.setVisibility(View.GONE);
+                            textView2.setVisibility(View.GONE);
+                            textView3.setVisibility(View.VISIBLE);
+                            textView4.setVisibility(View.GONE);
+
+                            presenter.getAccount().addExpense(expense);
+                            System.out.println("presenter.getAccount().getExpenses().size() " + presenter.getAccount().getExpenses().size());
+
+                            expense.setExchange(selected_exchange_category);
+
+                            expenselist.add(expense);
+
+                            presenter.getAccount().addExpense(expense);
+                            textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
                         }
-
-                        expenses.setVisibility(View.VISIBLE);
-                        add.setVisibility(View.VISIBLE);
-                        amount.setVisibility(View.GONE);
-                        date.setVisibility(View.GONE);
-                        submit.setVisibility(View.GONE);
-                        categories.setVisibility(View.GONE);
-                        exchange_category.setVisibility(View.GONE);
-                        textView2.setVisibility(View.GONE);
-                        textView3.setVisibility(View.VISIBLE);
-                        textView4.setVisibility(View.GONE);
-
-                        presenter.getAccount().addExpense(expense);
-                        System.out.println("presenter.getAccount().getExpenses().size() "+presenter.getAccount().getExpenses().size());
-
-                        expense.setExchange(selected_exchange_category);
-
-                        expenselist.add(expense);
-
-                        presenter.getAccount().addExpense(expense);
-                        textView3.setText("Total expenses: " + presenter.getAccount().CalculateTotalExpense() + " €");
                     }
                 });
             }

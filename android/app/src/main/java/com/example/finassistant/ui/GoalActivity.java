@@ -17,8 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finassistant.R;
 import com.example.finassistant.domain.Goal;
 import com.example.finassistant.domain.IncomeCategory;
-import com.example.finassistant.ui.account.AccountPresenter;
-import com.example.finassistant.ui.account.AccountView;
+import com.example.finassistant.ui.account.GoalPresenter;
+import com.example.finassistant.ui.account.GoalView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-public class GoalActivity extends AppCompatActivity implements AccountView {
+public class GoalActivity extends AppCompatActivity implements GoalView {
 
     ListView goalList;
     EditText amount;
@@ -38,14 +38,15 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
     String titleValue;
     EditText date;
     Date dateValue;
-    static AccountPresenter presenter;
+    static GoalPresenter presenter;
+    Goal goal;
     ArrayList<Goal> goals = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goal);
-        presenter = new AccountPresenter(this);
+        presenter = new GoalPresenter(this);
     }
 
     public void onStart() {
@@ -161,6 +162,8 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                 title.setVisibility(View.VISIBLE);
                 date.setVisibility(View.VISIBLE);
                 submit.setVisibility(View.VISIBLE);
+
+                goal = new Goal();
             }
         });
 
@@ -177,50 +180,72 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
 
                 title = findViewById(R.id.title);
                 titleValue = title.getText().toString();
+                boolean isValidTitle = presenter.validateTitle(titleValue);
+                if (isValidTitle) {
+                    addTitle(titleValue);
 
-                amount = findViewById(R.id.txt_input);
-                amountValue = Double.parseDouble(amount.getText().toString());
+                    amount = findViewById(R.id.txt_input);
+                    amountValue = Double.parseDouble(amount.getText().toString());
+                    boolean isValid = presenter.validateAmount(amountValue);
+                    if (isValid) {
+                        addAmount(amountValue);
 
-                date = findViewById(R.id.date);
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                String parsedDate = (date.getText().toString());
-                try {
-                    dateValue = formatter.parse(parsedDate.toString());
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                        date = findViewById(R.id.date);
+                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        String parsedDate = (date.getText().toString());
+                        if (parsedDate.equals("")) {
+                            addDate(new Date());
+                        } else {
+                            try {
+                                dateValue = formatter.parse(parsedDate);
+                                addDate(dateValue);
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+
+                            }
+                        }
+
+                        //final Goal goal = new Goal(titleValue, amountValue, dateValue);
+
+                        //TODO apothikeusi sto account
+                        presenter.getAccount().addGoal(goal);
+
+                        goals.add(goal);
+
+                        add.setVisibility(View.VISIBLE);
+                        //otan ksanapataei add, sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
+                    }else{
+                        add.setVisibility(View.VISIBLE);
+                    }
+                }else{
+                    add.setVisibility(View.VISIBLE);
                 }
-
-                final Goal goal = new Goal(titleValue, amountValue, dateValue);
-
-                //TODO apothikeusi sto account
-                presenter.getAccount().addGoal(goal);
-
-                goals.add(goal);
-
-                add.setVisibility(View.VISIBLE);
-                //otan ksanapataei add, sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
             }
         });
 
     }
 
+    public void addTitle(String title){
+        goal.setTitle(title);
+    }
+
     @Override
     public void addAmount(Double amount) {
-
+        goal.setAmount(amount);
     }
 
     @Override
     public void addDate(Date date) {
-
+        goal.setEndDate(date);
     }
 
-    @Override
-    public void addCategory(IncomeCategory category) {
-
-    }
 
     @Override
-    public void showErrorMessage(String title, String message) {
-
+    public void showErrorMessage(String title,String message){
+        new AlertDialog.Builder(GoalActivity.this)
+                .setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", null).create().show();
     }
 }

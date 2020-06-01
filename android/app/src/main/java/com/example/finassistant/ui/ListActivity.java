@@ -21,6 +21,7 @@ import com.example.finassistant.ui.account.ShoppingListPresenter;
 import com.example.finassistant.ui.account.ShoppingListView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -72,6 +73,9 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                 //emfanizei ta stoixeia tou expense
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ListActivity.this);
                 info.setTitle("Details");
+                DecimalFormat numberFormat = new DecimalFormat("#.00");
+                info.setMessage("Title: " + sList.get(position).getTitle() +"\n\n" + "Total: " +
+                        numberFormat.format(sList.get(position).getTotal()) + " €\n\n" + "Products: " + sList.get(position).getProducts());
 
                 final Iterator<Product> productIterator = sList.get(position).getProducts().iterator();
 
@@ -159,7 +163,7 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
 
     @Override
     public void addProduct(Product product){
-
+        list.addProduct(product);
     }
 
     @Override
@@ -174,6 +178,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
 
     @Override
     public void addTitleList(String title) {
-
+        list.setTitle(title);
     }
 }

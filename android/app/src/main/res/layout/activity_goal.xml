@@ -8,8 +8,8 @@
 
     <ListView
         android:id="@+id/goallist"
-        android:layout_width="388dp"
-        android:layout_height="483dp"
+        android:layout_width="401dp"
+        android:layout_height="478dp"
         android:choiceMode="singleChoice"
         android:listSelector="@android:color/holo_purple"
         app:layout_constraintBottom_toBottomOf="parent"

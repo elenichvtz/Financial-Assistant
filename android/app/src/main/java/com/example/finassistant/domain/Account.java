@@ -164,9 +164,22 @@ public class Account{
     public void ShoppingExpenses(ShoppingList list){
 
         Date date = new Date();
-
-        Expense expense = new Expense(list.getTotal(), date, ExpenseCategory.SHOPPING);
+        Expense expense = new Expense(list.getTotal(),date, ExpenseCategory.SHOPPING);
         this.addExpense(expense);
         this.temp.put(count,expense);
+        /*boolean flag = false;
+        for(Expense expn : expenses) {
+            if (expn.getSum() == expense.getSum()) {
+                flag  = false;
+            } else {
+                flag = true;
+            }
+
+        }
+        if(flag){
+            this.addExpense(expense);
+            this.temp.put(count,expense);
+        }*/
     }
 }
+

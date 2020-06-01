@@ -2,6 +2,8 @@ package com.example.finassistant.dao;
 
 import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.Email;
+import com.example.finassistant.domain.Expense;
+import com.example.finassistant.domain.ExpenseCategory;
 import com.example.finassistant.domain.User;
 import com.example.finassistant.memorydao.AccountDAOMemory;
 import com.example.finassistant.memorydao.MemoryInitializer;
@@ -162,5 +164,9 @@ public class DAOTest {
         Assert.assertEquals(1713.49,account.CalculateTotalIncome(),0.000001);
     }
 
+    /*@Test
+    public void test3(){
+        Expense expense = new Expense(38.98,new Date, ExpenseCategory.SHOPPING);
+    }*/
 
 }

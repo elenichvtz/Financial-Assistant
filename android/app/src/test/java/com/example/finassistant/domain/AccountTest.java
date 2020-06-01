@@ -226,5 +226,4 @@ public class AccountTest {
             Assert.assertEquals(43.56, expense.getSum(), 0.001);
         }
     }
-
 }

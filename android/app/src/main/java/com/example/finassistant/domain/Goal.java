@@ -10,7 +10,7 @@ public class Goal{
     private double currentamount;
     private static int counter = 1;
 
-    Goal(){ }
+    public Goal(){ }
 
     public Goal(String title, double amount, Date endDate) {
         this.title = title;
@@ -23,7 +23,7 @@ public class Goal{
         return endDate;
     }
 
-    void setEndDate(Date endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -31,11 +31,11 @@ public class Goal{
         return title;
     }
 
-    void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    void setAmount(double amount) {
+    public void setAmount(double amount) {
         if(amount > 0) this.amount = amount;
         else System.out.println("Invalid input");
     }
@@ -55,6 +55,6 @@ public class Goal{
 
     @Override
     public String toString(){
-        return "Goal "+counter++;
+        return ""+this.title+"";
     }
 }

@@ -48,4 +48,9 @@ public class ShoppingList {
         }
         return total;
     }
+
+    @Override
+    public String toString(){
+        return ""+this.title+"";
+    }
 }
