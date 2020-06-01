@@ -39,7 +39,7 @@ addIncome(income)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>580</x>
-      <y>170</y>
+      <y>230</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -62,7 +62,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>170</y>
+      <y>230</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -73,7 +73,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>210</y>
+      <y>270</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -86,10 +86,10 @@ addAmount(amount)</panel_attributes>
       <x>770</x>
       <y>80</y>
       <w>30</w>
-      <h>500</h>
+      <h>490</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;480.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;470.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
@@ -106,7 +106,7 @@ addAmount(amount)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>580</x>
-      <y>260</y>
+      <y>320</y>
       <w>120</w>
       <h>70</h>
     </coordinates>
@@ -118,7 +118,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>260</y>
+      <y>320</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -129,7 +129,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>300</y>
+      <y>360</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -140,7 +140,7 @@ addDate(date)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>580</x>
-      <y>360</y>
+      <y>420</y>
       <w>170</w>
       <h>70</h>
     </coordinates>
@@ -152,7 +152,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>360</y>
+      <y>420</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -163,7 +163,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>400</y>
+      <y>460</y>
       <w>80</w>
       <h>30</h>
     </coordinates>
@@ -174,7 +174,7 @@ addCategory(category)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>770</x>
-      <y>450</y>
+      <y>160</y>
       <w>20</w>
       <h>40</h>
     </coordinates>
@@ -185,7 +185,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>430</y>
+      <y>140</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
@@ -197,7 +197,7 @@ addCategory(category)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>470</y>
+      <y>180</y>
       <w>260</w>
       <h>40</h>
     </coordinates>
