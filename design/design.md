@@ -10,11 +10,15 @@
 
 ![CalculateTaxFree()](diagrams/Account.CalculateCurrentTaxFree-sequence-diagram.png)
 
+![uc1-class-diagram](diagrams/uc1-class-diagram.png)
+
 <h2>ΠΧ2. Αναφορές στόχων οικονομικής διαχείρισης</h2>
 
 <h3>Α) Προβολή Εσόδων</h3>
 
 ![CalculateTotalIncome()](diagrams/Account.CalculateTotalIncome-sequence-diagram.png)
+
+![uc2-class-diagram](diagrams/uc2-class-diagram.png)
 
 <h3>Β) Προβολή Εξόδων</h3>
 

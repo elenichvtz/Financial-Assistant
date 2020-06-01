@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>594</y>
-      <w>114</w>
-      <h>60</h>
+      <x>1310</x>
+      <y>880</y>
+      <w>190</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>Email
 --
@@ -20,48 +20,48 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>372</x>
-      <y>306</y>
-      <w>168</w>
-      <h>24</h>
+      <x>620</x>
+      <y>400</y>
+      <w>250</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>348</y>
-      <w>24</w>
-      <h>108</h>
+      <x>510</x>
+      <y>490</y>
+      <w>30</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>252</y>
-      <w>30</w>
-      <h>66</h>
+      <x>1010</x>
+      <y>330</y>
+      <w>50</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>138</y>
-      <w>24</w>
-      <h>84</h>
+      <x>1010</x>
+      <y>120</y>
+      <w>30</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1 
@@ -71,10 +71,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>306</y>
-      <w>114</w>
-      <h>24</h>
+      <x>1200</x>
+      <y>400</y>
+      <w>190</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
@@ -84,10 +84,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>138</y>
-      <w>228</w>
-      <h>180</h>
+      <x>1200</x>
+      <y>120</y>
+      <w>380</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
@@ -97,23 +97,23 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>150</y>
-      <w>24</w>
-      <h>168</h>
+      <x>510</x>
+      <y>140</y>
+      <w>30</w>
+      <h>270</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>108</y>
-      <w>150</w>
-      <h>114</h>
+      <x>660</x>
+      <y>70</y>
+      <w>250</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -123,10 +123,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>102</y>
-      <w>156</w>
-      <h>24</h>
+      <x>150</x>
+      <y>60</y>
+      <w>260</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -136,23 +136,23 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>606</x>
-      <y>528</y>
-      <w>24</w>
-      <h>78</h>
+      <x>1010</x>
+      <y>760</y>
+      <w>30</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;-&gt;
 m1= 1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>594</y>
-      <w>114</w>
-      <h>24</h>
+      <x>1140</x>
+      <y>880</y>
+      <w>190</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
 m2=1</panel_attributes>
@@ -161,35 +161,32 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>534</x>
-      <y>210</y>
-      <w>150</w>
-      <h>48</h>
+      <x>880</x>
+      <y>240</y>
+      <w>280</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>Expense
 --
-- category : ExpenseCategory
---
-+getCategoryList(): Object[]</panel_attributes>
++ getCategoryList(): Object[]
++ getCategory() : ExpenseCategory{query}
++ setCategory(category: ExpenseCategory)
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>306</y>
-      <w>198</w>
-      <h>228</h>
+      <x>850</x>
+      <y>400</y>
+      <w>360</w>
+      <h>370</h>
     </coordinates>
     <panel_attributes>Account
 --
 &lt;&lt;get/set&gt;&gt;- id: int
 &lt;&lt;get/set&gt;&gt;- user: User
 &lt;&lt;get/set&gt;&gt;- taxFree: double
-&lt;&lt;get/set&gt;&gt;- goals : HashSet&lt;Goal&gt;
-&lt;&lt;get&gt;&gt;- expenses: HashSet&lt;Expense&gt;
-&lt;&lt;get&gt;&gt;- income: HashSet&lt;Income&gt;
-&lt;&lt;get&gt;&gt;- shoppingList: HasSet&lt;ShoppingList&gt; 
 --
 + addIncome(income: Income)
 + removeIncome(income: Income) 
@@ -197,22 +194,26 @@ m2=1</panel_attributes>
 + removeExpense(expense: Expense)
 + addGoal(goal:Goal)
 + removeGoal(goal:Goal)
-+ addList(ShoppingList list)
-+ removeList(ShoppingList list)
++ addList(list: ShoppingList)
++ removeList(list: ShoppingList)
++ getIncome(): HashSet&lt;Income&gt;(query)
++ getExpenses(): HashSet&lt;Expense&gt;(query)
++ getGoals(): HashSet&lt;Goal&gt;(query)
++ getShoppingList(): HashSet&lt;ShoppingList&gt;(query)
 + updateGoalExpenses(Goal goal, double amount)
 + CalculateTotalIncome()
 + CalculateTotalExpense()
 + CalculateTaxFree()
-+ ShoppingExpenses()</panel_attributes>
++ ShoppingExpenses(list: ShoppingList)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>444</y>
-      <w>78</w>
-      <h>66</h>
+      <x>450</x>
+      <y>630</y>
+      <w>130</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>«enumeration»
 IncomeCategory
@@ -226,64 +227,63 @@ EMERGENCY
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>558</x>
-      <y>594</y>
-      <w>132</w>
-      <h>66</h>
+      <x>930</x>
+      <y>880</y>
+      <w>220</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>User
 --
 &lt;&lt;get/set&gt;&gt;- name : String
-&lt;&lt;get/set&gt;&gt;- email : String
 &lt;&lt;get/set&gt;&gt;- password : String
-&lt;&lt;get/set&gt;&gt;- accout : Account
+&lt;&lt;get/set&gt;&gt;- id: int
+--
++ getEmail() : Email{query}
++ setEmail(email: Email) 
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>822</x>
-      <y>306</y>
-      <w>180</w>
-      <h>78</h>
+      <x>1370</x>
+      <y>400</y>
+      <w>300</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ShoppingList
 --
 &lt;&lt;get/set&gt;&gt;- title : String
-- products : HashSet&lt;Product&gt;
 --
-+ getProducts() : HashSet&lt;Product&gt; {query}
++getProducts() : HashSet&lt;Product&gt; {query}
 +addProduct(product : Product)
-+removeProduct(product:Product)</panel_attributes>
++removeProduct(product:Product)
++toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>306</y>
-      <w>120</w>
-      <h>84</h>
+      <x>1850</x>
+      <y>400</y>
+      <w>200</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>Product
 --
-- title : String
-- price : double
+&lt;&lt;get/set&gt;&gt;- title : String
+&lt;&lt;get/set&gt;&gt;- price : double
 --
-+ getTitle() : String {query}
-+ setTitle(title : String)
-+ getPrice() : double {query}
-+ setPrice(price : double)</panel_attributes>
++toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>996</x>
-      <y>306</y>
-      <w>126</w>
-      <h>24</h>
+      <x>1660</x>
+      <y>400</y>
+      <w>210</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=*</panel_attributes>
@@ -292,10 +292,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>138</y>
-      <w>150</w>
-      <h>72</h>
+      <x>1560</x>
+      <y>120</y>
+      <w>250</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>Goal
 --
@@ -304,16 +304,17 @@ m2=*</panel_attributes>
 &lt;&lt;get/set&gt;&gt;- endDate : Date
 &lt;&lt;get&gt;&gt;- currentamount : double
 --
-+ GoalCompletion(double completion)</panel_attributes>
++ GoalCompletion(double completion)
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>66</y>
-      <w>84</w>
-      <h>78</h>
+      <x>960</x>
+      <y>0</y>
+      <w>140</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>«enumeration»
 ExpenseCAtegory
@@ -328,27 +329,27 @@ DEPT</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>306</y>
-      <w>150</w>
-      <h>48</h>
+      <x>360</x>
+      <y>390</y>
+      <w>270</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Income
 --
-&lt;&lt;get/set&gt;&gt;- category: IncomeCategory
---
-+getCategoryList(): Object[]
 
-</panel_attributes>
++ getCategoryList(): Object[]
++ getCategory() : IncomeCategory{query}
++ setCategory(category: IncomeCategory)
++ toString(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
-      <y>102</y>
-      <w>168</w>
-      <h>54</h>
+      <x>390</x>
+      <y>60</y>
+      <w>280</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Exchange
 --
@@ -362,9 +363,9 @@ DEPT</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>102</y>
-      <w>96</w>
-      <h>48</h>
+      <y>60</y>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>«enumeration»
 ExchangeCategory
