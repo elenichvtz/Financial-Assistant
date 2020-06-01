@@ -2,7 +2,9 @@ package com.example.finassistant.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -90,21 +92,29 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                 info.setPositiveButton("OK", null);
 
                 info.setNeutralButton("Add Amount", new DialogInterface.OnClickListener() {
+
                     public void onClick(DialogInterface dialog, int which) {
+
                         AlertDialog.Builder add = new AlertDialog.Builder(GoalActivity.this);
                         add.setTitle("Add Saved Amount");
 
                         //TODO den emfanizei to amount2 gia na eisagei o xristis
 
                         //get user input
-                        amount2.setVisibility(View.VISIBLE);
-                        amount2 = findViewById(R.id.txt_input2);
-                        addedamountValue = Double.parseDouble(amount.getText().toString());
+                        final EditText input = new EditText(GoalActivity.this);
 
-                        AlertDialog.Builder added = new AlertDialog.Builder(GoalActivity.this);
 
-                        added.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+                        add.setView(input);
+                       // amount2 = findViewById(R.id.txt_input2);
+                       // addedamountValue = Double.parseDouble(input.getText().toString());
+
+                        //AlertDialog.Builder added = new AlertDialog.Builder(GoalActivity.this);
+
+                        add.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
+                                addedamountValue = Double.parseDouble(input.getText().toString());
                                 while(iterator.hasNext()) {
                                     Goal e = iterator.next();
                                     if(e.hashCode()==goals.get(position).hashCode()) {
@@ -117,14 +127,14 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                             }
                         });
 
-                        added.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        add.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 dialog.cancel();
                             }
                         });
 
-                        amount2.setVisibility(View.GONE);
-                        added.show();
+                       // amount2.setVisibility(View.GONE);
+                        add.show();
                     }
                 });
 
