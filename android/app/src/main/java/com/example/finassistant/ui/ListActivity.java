@@ -1,6 +1,7 @@
 package com.example.finassistant.ui;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,13 +25,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class ListActivity extends AppCompatActivity implements ShoppingListView {
 
     ListView lists;
     EditText price;
     EditText title;
+    EditText product_name;
     ShoppingListPresenter presenter;
 
     double priceValue;
@@ -38,6 +42,8 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
     String product_titleValue;
     ShoppingList list;
     ArrayList<ShoppingList> sList = new ArrayList<>();
+    static int num_of_clicks = 0;
+    static int number = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +55,19 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
     public void onStart() {
         super.onStart();
         lists = findViewById(R.id.button_shopping_list);
-        price = findViewById(R.id.txt_input);
+
         title = findViewById(R.id.title);
+
         final FloatingActionButton add = findViewById(R.id.add);
+
         final Button submit = findViewById(R.id.submit);
         lists.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
         submit.setVisibility(View.GONE);
-        price.setVisibility(View.GONE);
+
         title.setVisibility(View.GONE);
+
+
 
         Iterator<ShoppingList> iterator = presenter.getAccount().getShoppingList().iterator();
         while(iterator.hasNext()) {
@@ -135,30 +145,39 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                title.setVisibility(View.VISIBLE);
+
 
                 submit.setVisibility(View.VISIBLE);
                 add.setVisibility(View.GONE);
                 lists.setVisibility(View.GONE);
-                title.setVisibility(View.VISIBLE);
+                final Product[] product = new Product[1];
 
-                list = new ShoppingList();
-
-                //TODO add product
 
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //TODO add product
 
-                        title = findViewById(R.id.title);
-                        list_titleValue = title.getText().toString();
-
+                        Intent intent = new Intent(ListActivity.this, ProductActivity.class);
+                        startActivity(intent);
+                        ProductActivity pact = new ProductActivity();
+                        Product product = pact.product;
+                        list = new ShoppingList(title.getText().toString());
+                        list.addProduct(product);
                         presenter.getAccount().addList(list);
 
                         sList.add(list);
+
                     }
                 });
+
+
+
             }
         });
+
+
     }
 
     @Override
@@ -180,4 +199,7 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
     public void addTitleList(String title) {
         list.setTitle(title);
     }
+
+
+
 }
