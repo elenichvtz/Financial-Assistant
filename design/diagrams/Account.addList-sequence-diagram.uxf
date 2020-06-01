@@ -28,11 +28,11 @@
     <coordinates>
       <x>680</x>
       <y>110</y>
-      <w>110</w>
+      <w>100</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=-
-addTitle(title)</panel_attributes>
+setTitle(title)</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -196,11 +196,11 @@ addList(list)</panel_attributes>
     <coordinates>
       <x>930</x>
       <y>250</y>
-      <w>110</w>
+      <w>100</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=-
-addTitle(title)</panel_attributes>
+setTitle(title)</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
