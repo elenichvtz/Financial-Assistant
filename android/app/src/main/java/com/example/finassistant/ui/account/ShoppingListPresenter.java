@@ -1,16 +1,16 @@
-package com.example.finassistant.ui;
+package com.example.finassistant.ui.account;
 
 import com.example.finassistant.dao.AccountDAO;
 import com.example.finassistant.domain.Account;
 import com.example.finassistant.memorydao.AccountDAOMemory;
 
-public class ListPresenter {
+public class ShoppingListPresenter {
 
-    private ListView view;
+    private ShoppingListView view;
     private AccountDAO accountDAO;
     private Account account;
 
-    public ListPresenter(ListView view){
+    public ShoppingListPresenter(ShoppingListView view){
         this.view = view;
         accountDAO = new AccountDAOMemory();
         account = accountDAO.find(1234);

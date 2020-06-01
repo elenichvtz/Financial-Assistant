@@ -40,7 +40,7 @@ public class ShoppingList {
 
         }
     }
-    //added
+
     public double getTotal(){
         double total = 0;
         for(Product product : products){

@@ -2,7 +2,6 @@ package com.example.finassistant.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -82,13 +81,12 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                 AlertDialog.Builder info = new AlertDialog.Builder(GoalActivity.this);
                 info.setTitle("Details");
 
-                double compl = (goals.get(position).getAmount() - goals.get(position).getCurrentAmount())/goals.get(position).getAmount();
+                double compl = 100 - ((goals.get(position).getAmount() - goals.get(position).getCurrentAmount())/goals.get(position).getAmount())*100;
 
                 info.setMessage("Title: " + goals.get(position).getTitle() +"\n\n" + "Amount: " +
                         goals.get(position).getAmount() + " €\n\n" + "End Date: " + goals.get(position).getEndDate() +
                         "\n\nCompletion: " + compl + "%");
 
-                //TODO apothikeusi sto account:
                 info.setPositiveButton("OK", null);
 
                 info.setNeutralButton("Add Amount", new DialogInterface.OnClickListener() {
@@ -98,31 +96,23 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                         AlertDialog.Builder add = new AlertDialog.Builder(GoalActivity.this);
                         add.setTitle("Add Saved Amount");
 
-                        //TODO den emfanizei to amount2 gia na eisagei o xristis
-
                         //get user input
                         final EditText input = new EditText(GoalActivity.this);
-
 
                         input.setInputType(InputType.TYPE_CLASS_NUMBER);
 
                         add.setView(input);
-                       // amount2 = findViewById(R.id.txt_input2);
-                       // addedamountValue = Double.parseDouble(input.getText().toString());
-
-                        //AlertDialog.Builder added = new AlertDialog.Builder(GoalActivity.this);
 
                         add.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 addedamountValue = Double.parseDouble(input.getText().toString());
                                 while(iterator.hasNext()) {
-                                    Goal e = iterator.next();
-                                    if(e.hashCode()==goals.get(position).hashCode()) {
-                                        e.GoalCompletion(addedamountValue);
-                                        arrayAdapter.notifyDataSetChanged();
-                                        break;
-                                    }
+                                    System.err.println("yep " + iterator.next().getCurrentAmount());
                                 }
+
+                                Goal goal = goals.get(position);
+                                presenter.getAccount().updateGoalExpenses(goal, addedamountValue);
+
                                 Toast.makeText(GoalActivity.this,"Saved amount added.",Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -133,7 +123,7 @@ public class GoalActivity extends AppCompatActivity implements AccountView {
                             }
                         });
 
-                       // amount2.setVisibility(View.GONE);
+                        // amount2.setVisibility(View.GONE);
                         add.show();
                     }
                 });

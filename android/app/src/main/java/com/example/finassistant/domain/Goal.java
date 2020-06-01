@@ -44,14 +44,13 @@ public class Goal{
 
     public double getCurrentAmount() {return this.currentamount; }
 
-    public double GoalCompletion(double completion) {
+    public void GoalCompletion(double completion) {
         if(this.amount-this.currentamount<completion) {
             this.currentamount = this.amount;
         }
         else if(this.currentamount!=this.amount && this.amount-this.currentamount>=completion) {
             this.currentamount = this.currentamount + completion;
         }
-        return this.currentamount;
     }
 
     @Override

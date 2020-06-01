@@ -169,17 +169,4 @@ public class Account{
         this.addExpense(expense);
         this.temp.put(count,expense);
     }
-
-    /*public void ShoppingExpenses(){
-
-        int count = 1;
-
-        for(ShoppingList list: shoppingList){
-            Expense expense = new Expense(list.getTotal(),null,ExpenseCategory.SHOPPING);
-            temp.put(count,expense);
-            this.addExpense(expense);
-            count ++;
-        }
-    }*/
-
 }
