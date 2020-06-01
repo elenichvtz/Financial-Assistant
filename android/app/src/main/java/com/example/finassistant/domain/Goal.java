@@ -8,7 +8,6 @@ public class Goal{
     private double amount;
     private Date endDate;
     private double currentamount;
-    private static int counter = 1;
 
     public Goal(){ }
 

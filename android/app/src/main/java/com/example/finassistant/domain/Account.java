@@ -1,7 +1,5 @@
 package com.example.finassistant.domain;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,7 +9,6 @@ public class Account{
     private int id;
     private User user;
     private double taxFree;
-    private double currenttaxFree;
 
     private Set<Goal> goals = new HashSet<>();
     private Set<Income> income = new HashSet<>();
@@ -124,7 +121,7 @@ public class Account{
 
     public double CalculateTotalIncome(){
 
-        double total =0;
+        double total = 0;
 
         for(Income income : income){
             total = total + income.getSum();
@@ -166,20 +163,7 @@ public class Account{
         Date date = new Date();
         Expense expense = new Expense(list.getTotal(),date, ExpenseCategory.SHOPPING);
         this.addExpense(expense);
-        this.temp.put(count,expense);
-        /*boolean flag = false;
-        for(Expense expn : expenses) {
-            if (expn.getSum() == expense.getSum()) {
-                flag  = false;
-            } else {
-                flag = true;
-            }
-
-        }
-        if(flag){
-            this.addExpense(expense);
-            this.temp.put(count,expense);
-        }*/
+        this.temp.put(count, expense);
     }
 }
 

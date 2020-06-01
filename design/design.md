@@ -34,6 +34,8 @@
 
 ![addIncome(Income income)](diagrams/Account.addIncome-sequence-diagram.png)
 
+![uc3-class-diagram](diagrams/uc3-class-diagram.png)
+
 <h3>Β) Διαγραφή εσόδων</h3>
 
 ![removeIncome(Income income)](diagrams/Account.removeIncome-sequence-diagram.png)
@@ -52,6 +54,8 @@
 
 ![addList(ShoppingList list)](diagrams/Account.addList-sequence-diagram.png)
 
+![uc4-class-diagram](diagrams/uc4-class-diagram.png)
+
 <h3>Β) Τροποποίηση λίστας αγορών</h3>
 
 
@@ -65,6 +69,8 @@
 <h3>Α) Δημιουργία αποταμιευτικών στόχων</h3>
 
 ![addGoal(Goal goal)](diagrams/Account.addGoal-sequence-diagram.png)
+
+![uc5-class-diagram](diagrams/uc5-class-diagram.png)
 
 <h3>Β) Τροποποίηση αποταμιευτικών στόχων</h3>
 

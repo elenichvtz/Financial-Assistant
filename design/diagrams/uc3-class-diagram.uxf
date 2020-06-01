@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <help_text/>
   <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>256</y>
+      <x>320</x>
+      <y>264</y>
       <w>264</w>
-      <h>64</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>IncomeActivity
 --
 # onCreate(Bundle savedInstanceState) : void
 + onStart() : void
-</panel_attributes>
++ addCategory(category: IncomeCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>312</y>
+      <x>448</x>
+      <y>352</y>
       <w>72</w>
-      <h>136</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 «inflates»</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>312</x>
-      <y>432</y>
+      <x>392</x>
+      <y>456</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -44,8 +45,8 @@ activity_income.xml</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>280</y>
+      <x>224</x>
+      <y>304</y>
       <w>112</w>
       <h>24</h>
     </coordinates>
@@ -55,31 +56,35 @@ activity_income.xml</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>272</y>
-      <w>88</w>
-      <h>32</h>
+      <x>8</x>
+      <y>296</y>
+      <w>224</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>«interface»
-IncomeView</panel_attributes>
+IncomeView
+--
++ addCategory(category: IncomeCategory) : void
++ addAmount(amount: Double) : void
++ addDate(date: Date) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>136</y>
+      <x>448</x>
+      <y>160</y>
       <w>24</w>
-      <h>136</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>120</y>
+      <x>400</x>
+      <y>144</y>
       <w>104</w>
       <h>24</h>
     </coordinates>
@@ -89,8 +94,8 @@ IncomeView</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
-      <y>280</y>
+      <x>576</x>
+      <y>304</y>
       <w>152</w>
       <h>24</h>
     </coordinates>
@@ -100,22 +105,23 @@ IncomeView</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>240</y>
+      <x>712</x>
+      <y>264</y>
       <w>248</w>
       <h>88</h>
     </coordinates>
     <panel_attributes>IncomePresenter
 --
 + validateAmount(amount: Double) : boolean
-+ getAccount() : Account</panel_attributes>
++ getAccount() : Account
++ validateAmount(Double amount) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>400</y>
+      <x>712</x>
+      <y>424</y>
       <w>248</w>
       <h>96</h>
     </coordinates>
@@ -131,8 +137,8 @@ AccountDAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>320</y>
+      <x>832</x>
+      <y>344</y>
       <w>88</w>
       <h>96</h>
     </coordinates>
@@ -144,99 +150,51 @@ m1=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>872</x>
-      <y>152</y>
-      <w>120</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>136</y>
-      <w>184</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Income
---
-+ CalculateTotalIncome() : double
-+ getSum() : double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
-      <y>304</y>
-      <w>120</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;130.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>392</y>
-      <w>200</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>Account
---
-+ CalculateTaxFree() : double
-+ CalculateCurrentTaxFree() : double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
+      <x>952</x>
       <y>240</y>
-      <w>120</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>232</y>
-      <w>192</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Expense
---
-+ getSum() : double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>312</y>
-      <w>192</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Exchange
---
-+ getExchange() : ExhangeCategory</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
-      <y>280</y>
       <w>120</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>130.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1056</x>
+      <y>216</y>
+      <w>176</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Income
+--
++ setCategory(category) : void
++ setSum() : void
++ setDateEnd() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1064</x>
+      <y>320</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Account
+--
++ addIncome(income) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>312</y>
+      <w>128</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>140.0;40.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

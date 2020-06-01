@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <help_text/>
   <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>256</y>
+      <x>216</x>
+      <y>280</y>
       <w>264</w>
       <h>64</h>
     </coordinates>
-    <panel_attributes>IncomeActivity
+    <panel_attributes>ListActivity
 --
 # onCreate(Bundle savedInstanceState) : void
-+ onStart() : void
-</panel_attributes>
++ onStart() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>312</y>
+      <x>344</x>
+      <y>336</y>
       <w>72</w>
       <h>136</h>
     </coordinates>
@@ -32,20 +30,20 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>312</x>
-      <y>432</y>
+      <x>288</x>
+      <y>456</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>«layout»
-activity_income.xml</panel_attributes>
+activity_list.xml</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>280</y>
+      <x>120</x>
+      <y>304</y>
       <w>112</w>
       <h>24</h>
     </coordinates>
@@ -55,20 +53,20 @@ activity_income.xml</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>272</y>
-      <w>88</w>
-      <h>32</h>
+      <x>24</x>
+      <y>296</y>
+      <w>104</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>«interface»
-IncomeView</panel_attributes>
+ShoppingListView</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>136</y>
+      <x>344</x>
+      <y>160</y>
       <w>24</w>
       <h>136</h>
     </coordinates>
@@ -78,8 +76,8 @@ IncomeView</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>120</y>
+      <x>296</x>
+      <y>144</y>
       <w>104</w>
       <h>24</h>
     </coordinates>
@@ -89,8 +87,8 @@ IncomeView</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
-      <y>280</y>
+      <x>472</x>
+      <y>304</y>
       <w>152</w>
       <h>24</h>
     </coordinates>
@@ -100,22 +98,21 @@ IncomeView</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>240</y>
+      <x>608</x>
+      <y>280</y>
       <w>248</w>
-      <h>88</h>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>IncomePresenter
+    <panel_attributes>ShoppingListPresenter
 --
-+ validateAmount(amount: Double) : boolean
 + getAccount() : Account</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>400</y>
+      <x>608</x>
+      <y>424</y>
       <w>248</w>
       <h>96</h>
     </coordinates>
@@ -131,112 +128,89 @@ AccountDAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>320</y>
+      <x>728</x>
+      <y>336</y>
       <w>88</w>
-      <h>96</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 -accountDAO</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>872</x>
-      <y>152</y>
-      <w>120</w>
-      <h>120</h>
+      <x>848</x>
+      <y>240</y>
+      <w>136</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>136</y>
+      <x>968</x>
+      <y>216</y>
+      <w>192</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>ShoppingList
+--
++ setTitle(String title) : void
++ addProduct(Product product) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>968</x>
+      <y>384</y>
       <w>184</w>
       <h>56</h>
     </coordinates>
-    <panel_attributes>Income
---
-+ CalculateTotalIncome() : double
-+ getSum() : double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
-      <y>304</y>
-      <w>120</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;130.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>392</y>
-      <w>200</w>
-      <h>64</h>
-    </coordinates>
     <panel_attributes>Account
 --
-+ CalculateTaxFree() : double
-+ CalculateCurrentTaxFree() : double</panel_attributes>
++ addList(ShoppingList list) : void
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>872</x>
-      <y>240</y>
-      <w>120</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>232</y>
-      <w>192</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Expense
---
-+ getSum() : double</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>976</x>
-      <y>312</y>
-      <w>192</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Exchange
---
-+ getExchange() : ExhangeCategory</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
-      <y>280</y>
-      <w>120</w>
+      <x>848</x>
+      <y>336</y>
+      <w>136</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>130.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>150.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>968</x>
+      <y>296</y>
+      <w>184</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Product
+--
++ setTitle(String title) : void
++ setPrice(double price) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>312</y>
+      <w>136</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -11,7 +11,7 @@ public interface GoalView {
 
     /**
      * Sets the sum field of a Goal Object
-     * @param amount
+      @param amount
      */
     void addAmount(Double amount);
 

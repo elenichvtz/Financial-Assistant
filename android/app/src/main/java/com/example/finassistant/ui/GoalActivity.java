@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finassistant.R;
 import com.example.finassistant.domain.Goal;
-import com.example.finassistant.domain.IncomeCategory;
 import com.example.finassistant.ui.account.GoalPresenter;
 import com.example.finassistant.ui.account.GoalView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -124,7 +123,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                             }
                         });
 
-                        // amount2.setVisibility(View.GONE);
                         add.show();
                     }
                 });
@@ -167,7 +165,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
             }
         });
 
-        //otan pataei submit na ftiaxnetai goal kai na mpainei stin goal list tou account
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,16 +201,11 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
 
                             }
                         }
-
-                        //final Goal goal = new Goal(titleValue, amountValue, dateValue);
-
-                        //TODO apothikeusi sto account
                         presenter.getAccount().addGoal(goal);
 
                         goals.add(goal);
 
                         add.setVisibility(View.VISIBLE);
-                        //otan ksanapataei add, sta pedia exei tis times tou proigoumenou goal alla ama ta allakseis apothikevei kainourgio stoxo
                     }else{
                         add.setVisibility(View.VISIBLE);
                     }
@@ -225,6 +217,7 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
 
     }
 
+    @Override
     public void addTitle(String title){
         goal.setTitle(title);
     }
