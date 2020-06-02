@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,27 +13,67 @@ import android.widget.EditText;
 import com.example.finassistant.R;
 import com.example.finassistant.domain.Product;
 import com.example.finassistant.domain.ShoppingList;
-import com.example.finassistant.ui.account.AccountView;
 import com.example.finassistant.ui.account.ProductPresenter;
 import com.example.finassistant.ui.account.ProductView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+/**
+ * The type Product activity.
+ */
 public class ProductActivity extends AppCompatActivity implements ProductView {
+    /**
+     * The Price.
+     */
     static EditText price;
+    /**
+     * The Product name.
+     */
     EditText product_name;
+    /**
+     * The Product.
+     */
     Product product;
+    /**
+     * The Addproduct.
+     */
     FloatingActionButton addproduct;
+    /**
+     * The List.
+     */
     static ShoppingList list;
+    /**
+     * The Num of clicks.
+     */
     static int numOfClicks = 0;
+    /**
+     * The Products.
+     */
     ArrayList<Product> products = new ArrayList<>();
+    /**
+     * The Presenter.
+     */
     ProductPresenter presenter ;
+    /**
+     * The Amount.
+     */
     static double amount;
+    /**
+     * The Prname.
+     */
     static String prname;
+    /**
+     * The constant EXTRA_MESSAGE.
+     */
     public static final String EXTRA_MESSAGE = "com.example.finassistant.MESSAGE";
+    /**
+     * The constant RESULT_OK.
+     */
     public static final int RESULT_OK = 1;
-    public static  int RESULT_CANCELLED = 0;
+    /**
+     * The Intent.
+     */
     Intent intent;
 
     @Override
@@ -59,8 +98,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
         final Button submit = findViewById(R.id.submit);
         submit.setVisibility(View.GONE);
 
-
-
         addproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,27 +113,17 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                     System.err.println(price.getText().toString());
                     prname = product_name.getText().toString();
                     System.out.println("numOfClicks: " + numOfClicks );
-
-
                 }else if (numOfClicks%2 == 0){
                     android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ProductActivity.this);
                     info.setTitle("Do you wish to put this product to your list?");
                     info.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                           // product_name.setText("");
-                           // price.setText("");
-                           // numOfClicks++;
-                            /*if(product_name.getText().toString().equals("")){
-                                product_name.setText("Product");
-                            }*/
                             boolean isValidTitle = presenter.validateTitle(product_name.getText().toString());
                             if (isValidTitle) {
 
-                               // System.out.prinln
                                 if (price.getText().toString().equals("")) {
                                     price.setText("0");
-
                                 }
                                 amount = Double.parseDouble(price.getText().toString());
 
@@ -105,7 +132,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                                     product = new Product();
                                     addAmount(amount);
 
-
                                     addTitle(product_name.getText().toString());
                                     System.err.println("priceee " + product.getPrice());
 
@@ -113,8 +139,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                                     System.err.println("List products: " + products.toString());
                                     product_name.setText("");
                                     price.setText("");
-
-
                                 }
                             }
                             else{
@@ -131,9 +155,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                             product_name.setText("");
                             price.setText("");
                             numOfClicks--;
-
-
-
                         }
                     });
                     info.show();
@@ -148,22 +169,16 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                     list.addProduct(products.get(i));
                 }
                 numOfClicks=0;
-                //intent.putParcelableArrayListExtra(EXTRA_MESSAGE, (ArrayList<? extends Parcelable>) products);
                 String itemValue = "OK";
                 intent.putExtra(EXTRA_MESSAGE, itemValue);
                 setResult(ProductActivity.RESULT_OK, intent);
-                //MainActivity m = new MainActivity();
-                //m.flag_song = true;
                 finish();
             }
         });
-
-
     }
 
     public void addAmount(Double amount){
         product.setPrice(amount);
-
     }
 
     public void addTitle(String title){
@@ -177,6 +192,4 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                 .setMessage(message)
                 .setPositiveButton("OK", null).create().show();
     }
-
-
 }

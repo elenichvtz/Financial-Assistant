@@ -6,8 +6,14 @@ import com.example.finassistant.domain.Account;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Account dao memory.
+ */
 public class AccountDAOMemory implements AccountDAO {
 
+    /**
+     * The constant entities.
+     */
     protected static List<Account> entities = new ArrayList<Account>();
 
     public void delete(Account entity) {
@@ -31,7 +37,4 @@ public class AccountDAOMemory implements AccountDAO {
         }
         return null;
     }
-
-
-
 }

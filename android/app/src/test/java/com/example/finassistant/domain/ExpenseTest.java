@@ -5,14 +5,23 @@ import org.junit.Test;
 
 import java.util.Date;
 
+/**
+ * The type Expense test.
+ */
 public class ExpenseTest {
 
+    /**
+     * Get category.
+     */
     @Test
     public void getCategory(){
         Expense expense = new Expense();
         Assert.assertEquals(ExpenseCategory.OBLIGATION,expense.getCategory());
     }
 
+    /**
+     * Set category.
+     */
     @Test
     public void setCategory(){
         Expense expense = new Expense();
@@ -20,6 +29,9 @@ public class ExpenseTest {
         Assert.assertEquals(ExpenseCategory.TRANSPORT,expense.getCategory());
     }
 
+    /**
+     * Check exchange.
+     */
     @Test
     public void checkExchange(){
         Expense expense = new Expense();
@@ -28,6 +40,9 @@ public class ExpenseTest {
         Assert.assertEquals(exchangeCategory,expense.getExchange());
     }
 
+    /**
+     * Check expense.
+     */
     @Test
     public void checkExpense(){
         Date date = new Date();
@@ -36,14 +51,13 @@ public class ExpenseTest {
         Assert.assertEquals(30.04,expense.getSum(),0.000001);
     }
 
+    /**
+     * Test category list.
+     */
     @Test
     public void testCategoryList(){
         Expense expense = new Expense();
         expense.setCategory(ExpenseCategory.OBLIGATION);
         Assert.assertEquals(expense.getCategoryList()[4],expense.getCategory());
-
     }
-
-
-
 }

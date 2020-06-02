@@ -5,7 +5,7 @@ import com.example.finassistant.domain.User;
 import java.util.List;
 
 /**
- * διεπαφή Dao για την κλάση User
+ * DAO interface for class User
  *
  *
  */

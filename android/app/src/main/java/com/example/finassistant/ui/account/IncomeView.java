@@ -1,6 +1,10 @@
 package com.example.finassistant.ui.account;
 
+import com.example.finassistant.dao.AccountDAO;
+import com.example.finassistant.domain.Account;
 import com.example.finassistant.domain.IncomeCategory;
+import com.example.finassistant.domain.Product;
+import com.example.finassistant.memorydao.AccountDAOMemory;
 
 import java.util.Date;
 

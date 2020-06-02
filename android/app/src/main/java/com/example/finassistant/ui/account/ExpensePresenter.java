@@ -4,6 +4,9 @@ import com.example.finassistant.dao.AccountDAO;
 import com.example.finassistant.domain.Account;
 import com.example.finassistant.memorydao.AccountDAOMemory;
 
+/**
+ * The type Expense presenter.
+ */
 public class ExpensePresenter {
 
     private ExpenseView view;

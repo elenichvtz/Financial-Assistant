@@ -12,6 +12,9 @@ import com.example.finassistant.memorydao.MemoryInitializer;
 
 import java.text.ParseException;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Button button1;
@@ -64,24 +67,36 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             initialized = true;
-
         }
     }
+
+    /**
+     * Open activity income.
+     */
     public void openActivityIncome(){
         Intent intent = new Intent(this, IncomeActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Open activity expense.
+     */
     public void openActivityExpense(){
         Intent intent = new Intent(this, ExpenseActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Open activity goal.
+     */
     public void openActivityGoal(){
         Intent intent = new Intent(this, GoalActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Open activity list.
+     */
     public void openActivityList(){
         Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);

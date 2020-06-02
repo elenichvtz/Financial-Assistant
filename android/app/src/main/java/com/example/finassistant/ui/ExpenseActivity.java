@@ -29,24 +29,72 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
+/**
+ * The type Expense activity.
+ */
 public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
+    /**
+     * The Text view 2.
+     */
     TextView textView2;
+    /**
+     * The Text view 3.
+     */
     TextView textView3;
+    /**
+     * The Text view 4.
+     */
     TextView textView4;
+    /**
+     * The Expenses.
+     */
     ListView expenses;
+    /**
+     * The Selected category.
+     */
     ExpenseCategory selected_category;
+    /**
+     * The Selected exchange category.
+     */
     ExchangeCategory selected_exchange_category;
+    /**
+     * The Categories.
+     */
     Spinner categories;
+    /**
+     * The Exchange category.
+     */
     Spinner exchange_category;
+    /**
+     * The Amount.
+     */
     EditText amount;
+    /**
+     * The Date.
+     */
     EditText date;
 
+    /**
+     * The Expenselist.
+     */
     ArrayList<Expense> expenselist = new ArrayList<>();
+    /**
+     * The Amount value.
+     */
     double amountValue;
+    /**
+     * The Date value.
+     */
     Date dateValue;
 
+    /**
+     * The Presenter.
+     */
     static ExpensePresenter presenter;
+    /**
+     * The Expense.
+     */
     Expense expense;
 
     @Override
@@ -93,7 +141,7 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
         expenses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
+
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ExpenseActivity.this);
                 info.setTitle("Details");
                 DecimalFormat numberFormat = new DecimalFormat("#.00");
@@ -107,7 +155,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                     public void onClick(DialogInterface dialog, int which) {
                         android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ExpenseActivity.this);
                         delete.setTitle("Are you sure you want to delete the expense?");
-                        final int positionToRemove = position;
                         delete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 dialog.cancel();
@@ -131,10 +178,9 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
             public void onClick(View v) {
 
                 ExpenseCategory[] items = new ExpenseCategory[]{ExpenseCategory.HEALTH, ExpenseCategory.ENTERTAINMENT, ExpenseCategory.SHOPPING, ExpenseCategory.TRANSPORT, ExpenseCategory.OBLIGATION};
-                //create an adapter to describe how the items are displayed, adapters are used in several places in android.
-                //There are multiple variations of this, but this is the basic variant.
+
                 ArrayAdapter<String> adapter = new ArrayAdapter(ExpenseActivity.this, android.R.layout.simple_spinner_dropdown_item, items);
-                //set the spinners adapter to the previously created one.
+
                 categories.setAdapter(adapter);
 
                 ExchangeCategory[] exchangeCategories = new ExchangeCategory[]{ExchangeCategory.CASH, ExchangeCategory.ONLINE};
@@ -178,7 +224,7 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-                        //addCategory(ExpenseCategory.HEALTH);
+                        addCategory(ExpenseCategory.HEALTH);
                     }
                 });
 
@@ -199,7 +245,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                     }
                 });
 
-                //otan pataei submit na ftiaxnetai expense kai na mpainei stin expense list tou account
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -208,13 +253,12 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
 
                         if(amount.getText().toString().equals("")){
                             amount.setText("0");
-
-
                         }
+
                         amountValue = Double.parseDouble(amount.getText().toString());
                         amount.setText("");
                         boolean isValid = presenter.validateAmount(amountValue);
-                        //amountValue = Double.parseDouble(amount.getText().toString());
+
                         System.err.println("amountvalue :" + amountValue);
                         System.err.println("category " + selected_category);
 
@@ -232,7 +276,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                                     addDate(dateValue);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
-
                                 }
                             }
 
@@ -248,7 +291,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                             textView4.setVisibility(View.GONE);
 
                             presenter.getAccount().addExpense(expense);
-                            System.out.println("presenter.getAccount().getExpenses().size() " + presenter.getAccount().getExpenses().size());
 
                             expense.setExchange(selected_exchange_category);
 

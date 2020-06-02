@@ -27,19 +27,58 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
+/**
+ * The type Goal activity.
+ */
 public class GoalActivity extends AppCompatActivity implements GoalView {
 
+    /**
+     * The Goal list.
+     */
     ListView goalList;
+    /**
+     * The Amount.
+     */
     EditText amount;
+    /**
+     * The Amount 2.
+     */
     EditText amount2;
+    /**
+     * The Amount value.
+     */
     double amountValue;
+    /**
+     * The Addedamount value.
+     */
     double addedamountValue;
+    /**
+     * The Title.
+     */
     EditText title;
+    /**
+     * The Title value.
+     */
     String titleValue;
+    /**
+     * The Date.
+     */
     EditText date;
+    /**
+     * The Date value.
+     */
     Date dateValue;
+    /**
+     * The Presenter.
+     */
     static GoalPresenter presenter;
+    /**
+     * The Goal.
+     */
     Goal goal;
+    /**
+     * The Goals.
+     */
     ArrayList<Goal> goals = new ArrayList<>();
 
     @Override
@@ -78,7 +117,7 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
         goalList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
+
                 AlertDialog.Builder info = new AlertDialog.Builder(GoalActivity.this);
                 info.setTitle("Details");
 
@@ -132,7 +171,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                     public void onClick(DialogInterface dialog, int which) {
                         AlertDialog.Builder delete = new AlertDialog.Builder(GoalActivity.this);
                         delete.setTitle("Are you sure you want to delete the goal?");
-                        final int positionToRemove = position;
                         delete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 dialog.cancel();
@@ -140,7 +178,7 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                         });
                         delete.setPositiveButton("Delete", new AlertDialog.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                //TODO diagrafi apo to account
+
                                 Goal goal = goals.get(position);
                                 presenter.getAccount().removeGoal(goal);
                                 arrayAdapter.notifyDataSetChanged();
@@ -177,10 +215,8 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                 submit.setVisibility(View.GONE);
 
                 title = findViewById(R.id.title);
-               /* if(title.getText().toString().equals("")){
-                    title.setText("Goal");
-                }*/
                 titleValue = title.getText().toString();
+
                 boolean isValidTitle = presenter.validateTitle(titleValue);
                 if (isValidTitle) {
                     addTitle(titleValue);
@@ -223,7 +259,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                 }
             }
         });
-
     }
 
     @Override
@@ -240,7 +275,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
     public void addDate(Date date) {
         goal.setEndDate(date);
     }
-
 
     @Override
     public void showErrorMessage(String title,String message){

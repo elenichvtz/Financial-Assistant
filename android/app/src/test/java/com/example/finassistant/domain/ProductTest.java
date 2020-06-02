@@ -3,8 +3,14 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * The type Product test.
+ */
 public class ProductTest {
 
+    /**
+     * Test product.
+     */
     @Test
     public void testProduct(){
         Product product = new Product("toothbrush",2.99);
@@ -12,6 +18,9 @@ public class ProductTest {
         Assert.assertEquals(2.99,product.getPrice(),0.0001);
     }
 
+    /**
+     * Test setters.
+     */
     @Test
     public void TestSetters(){
         Product product = new Product();
@@ -19,6 +28,5 @@ public class ProductTest {
         product.setPrice(5.99);
         Assert.assertEquals("ice cream",product.getTitle());
         Assert.assertEquals(5.99,product.getPrice(),0.00001);
-
     }
 }

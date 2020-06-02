@@ -3,8 +3,14 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * The type Email test.
+ */
 public class EmailTest {
 
+    /**
+     * Test equals.
+     */
     @Test
     public void testEquals(){
         Email email = new Email();
@@ -20,14 +26,15 @@ public class EmailTest {
         email2.setEmail("example@gmail.com");
         Assert.assertEquals(email, email2);
         Assert.assertEquals(email.hashCode(), email2.hashCode());
-
     }
 
+    /**
+     * Equals and hash.
+     */
     @Test
     public void equalsAndHash(){
         BasicEqualTester<Email> equalsTester = new BasicEqualTester<Email>();
         equalsTester.setObjectUnderTest(new Email(null));
-
 
         equalsTester.otherObjectIsOfDifferentType(new Object());
 

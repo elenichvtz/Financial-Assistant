@@ -29,23 +29,40 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * The type List activity.
+ */
 public class ListActivity extends AppCompatActivity implements ShoppingListView {
 
+    /**
+     * The Lists.
+     */
     ListView lists;
+    /**
+     * The Price.
+     */
     EditText price;
+    /**
+     * The Title.
+     */
     static EditText title;
-    EditText product_name;
+    /**
+     * The Presenter.
+     */
     ShoppingListPresenter presenter;
 
-    double priceValue;
-    String list_titleValue;
-    String product_titleValue;
+    /**
+     * The List.
+     */
     ShoppingList list  = new ShoppingList();
+    /**
+     * The S list.
+     */
     ArrayList<ShoppingList> sList = new ArrayList<>();
-    static int num_of_clicks = 0;
-    static int number = 0;
-    ArrayList<Product> products = new ArrayList<>();
 
+    /**
+     * The constant LAUNCH_ACTIVITY.
+     */
     public static final int LAUNCH_ACTIVITY = 1;
 
     @Override
@@ -62,8 +79,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
             if(resultCode == ProductActivity.RESULT_OK){
 
                 System.out.println("Fourth");
-                String message = "" + (String) intent.getStringExtra(ProductActivity.EXTRA_MESSAGE);
-              //  products = (ArrayList<Product>) getIntent().getExtras().getParcelableArrayList(ProductActivity.EXTRA_MESSAGE);
                 ProductActivity pact = new ProductActivity();
                 if(title.getText().toString().equals("")){
                     title.setText("New List");
@@ -98,8 +113,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
 
         title.setVisibility(View.GONE);
 
-
-
         Iterator<ShoppingList> iterator = presenter.getAccount().getShoppingList().iterator();
         while(iterator.hasNext()) {
             sList.add(iterator.next());
@@ -111,7 +124,7 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
         lists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                //emfanizei ta stoixeia tou expense
+
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ListActivity.this);
                 info.setTitle("Details");
                 DecimalFormat numberFormat = new DecimalFormat("#.00");
@@ -126,7 +139,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                     products.add(productIterator.next());
                 }
 
-                //TODO otan pataei na tou emfanizei ta proionta tis listas
                 info.setPositiveButton("OK", null);
 
                 info.setNeutralButton("Add List to Expenses", new DialogInterface.OnClickListener() {
@@ -154,7 +166,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                     public void onClick(DialogInterface dialog, int which) {
                         android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ListActivity.this);
                         delete.setTitle("Are you sure you want to delete the list?");
-                        final int positionToRemove = position;
                         delete.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 dialog.cancel();
@@ -183,42 +194,20 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                 submit.setVisibility(View.VISIBLE);
                 add.setVisibility(View.GONE);
                 lists.setVisibility(View.GONE);
-                final Product[] product = new Product[1];
-                final ShoppingList[] lista = new ShoppingList[1];
-
 
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //TODO add product
                         System.out.println("title: " + title.getText().toString());
-                        //Intent intent = new Intent(ListActivity.this, ProductActivity.class);
-                        //startActivity(intent);
-
-                        /*list.setTitle(title.getText().toString());
-                        System.out.println("list title:  " + list.getTitle());*/
 
                         Intent intent= new Intent(ListActivity.this, ProductActivity.class);
                         startActivityForResult(intent, LAUNCH_ACTIVITY);
                         System.out.println("Now on ListActivity");
-                       // ProductActivity pact = new ProductActivity();
-                        //Product product = pact.product;
-                        //ShoppingList lista = pact.list;
-                        //System.err.println("loool "+lista.getTitle());
-                        //lista.setTitle(title.getText().toString());
-                        //list = new ShoppingList(title.getText().toString());
-                        //list.addProduct(product);
-
-
                     }
                 });
-
-
-
             }
         });
-
-
     }
 
     @Override

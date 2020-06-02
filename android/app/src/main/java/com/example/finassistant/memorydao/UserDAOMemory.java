@@ -6,8 +6,14 @@ import com.example.finassistant.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type User dao memory.
+ */
 public class UserDAOMemory implements UserDAO {
 
+    /**
+     * The constant entities.
+     */
     protected static List<User> entities = new ArrayList<User>();
 
     public void delete(User entity) {

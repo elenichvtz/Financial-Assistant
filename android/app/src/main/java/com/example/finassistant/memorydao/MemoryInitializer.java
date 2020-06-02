@@ -8,6 +8,9 @@ import com.example.finassistant.domain.User;
 
 import java.util.List;
 
+/**
+ * The type Memory initializer.
+ */
 public class MemoryInitializer extends Initializer {
 
     @Override
@@ -21,7 +24,6 @@ public class MemoryInitializer extends Initializer {
         for(User user : allUsers) {
             getUserDAO().delete(user);
         }
-
     }
 
     @Override
@@ -33,6 +35,4 @@ public class MemoryInitializer extends Initializer {
     protected UserDAO getUserDAO() {
         return new UserDAOMemory();
     }
-
-
 }

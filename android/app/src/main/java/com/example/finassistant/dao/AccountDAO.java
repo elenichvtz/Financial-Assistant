@@ -5,7 +5,7 @@ import com.example.finassistant.domain.Account;
 import java.util.List;
 
 /**
- * διεπαφή Dao για την κλάση User
+ * DAO interface for class Account
  *
  *
  */
@@ -33,13 +33,9 @@ public interface AccountDAO {
      */
     void delete(Account entity);
 
-
     /**
      * Returns all objects from our database
      * @return catalog of the objects
      */
     List<Account> findAll();
-
-
-
 }

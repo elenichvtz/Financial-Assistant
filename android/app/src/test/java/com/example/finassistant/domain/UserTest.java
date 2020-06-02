@@ -3,10 +3,14 @@ package com.example.finassistant.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Date;
-
+/**
+ * The type User test.
+ */
 public class UserTest {
 
+    /**
+     * User test.
+     */
     @Test
     public void UserTest(){
         Email email = new Email("example@gmail.com");
@@ -17,6 +21,9 @@ public class UserTest {
         Assert.assertEquals(123,user.getId());
     }
 
+    /**
+     * Test password.
+     */
     @Test
     public void testPassword(){
         User user = new User();
@@ -24,6 +31,9 @@ public class UserTest {
         Assert.assertEquals(null,user.getPassword());
     }
 
+    /**
+     * Test password 2.
+     */
     @Test
     public void testPassword2(){
         User user = new User();
@@ -31,6 +41,9 @@ public class UserTest {
         Assert.assertEquals("12345678",user.getPassword());
     }
 
+    /**
+     * Test name.
+     */
     @Test
     public void testName(){
         User user = new User();
@@ -38,6 +51,9 @@ public class UserTest {
         Assert.assertEquals("Name",user.getName());
     }
 
+    /**
+     * Test email.
+     */
     @Test
     public void testEmail(){
         User user = new User();
@@ -46,11 +62,13 @@ public class UserTest {
         Assert.assertEquals(email,user.getEmail());
     }
 
+    /**
+     * Test id.
+     */
     @Test
     public void testId(){
         User user = new User();
         user.setId(1234);
         Assert.assertEquals(1234,user.getId());
     }
-
 }

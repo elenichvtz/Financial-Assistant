@@ -16,13 +16,35 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * The type Initializer.
+ */
 public abstract class Initializer {
 
+    /**
+     * Erase data.
+     */
     protected abstract void eraseData();
 
+    /**
+     * Gets account dao.
+     *
+     * @return the account dao
+     */
     protected abstract AccountDAO getAccountDAO();
+
+    /**
+     * Gets user dao.
+     *
+     * @return the user dao
+     */
     protected abstract UserDAO getUserDAO();
 
+    /**
+     * Prepare data.
+     *
+     * @throws ParseException the parse exception
+     */
     public void prepareData() throws ParseException {
         eraseData();
         User user1 = new User("John Wick",new Email("john@gmail.com"),"ProtectAllDogs",9755);
@@ -94,12 +116,8 @@ public abstract class Initializer {
         account.addList(list);
         account.ShoppingExpenses(list);
         account.getTemp().get(1).setDateEnd(formatter.parse("03/05/2020"));
-        //account.getTemp().get(1).setDateEnd(null);
 
         getAccountDAO().save(account);
         getUserDAO().save(user1);
-
-
-
     }
 }

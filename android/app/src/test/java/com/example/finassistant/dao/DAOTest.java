@@ -33,7 +33,6 @@ public class DAOTest {
         helper.prepareData();
         userDAO = new UserDAOMemory();
         accountDAO =  new AccountDAOMemory();
-
     }
 
     /**
@@ -168,5 +167,4 @@ public class DAOTest {
     public void test3(){
         Expense expense = new Expense(38.98,new Date, ExpenseCategory.SHOPPING);
     }*/
-
 }

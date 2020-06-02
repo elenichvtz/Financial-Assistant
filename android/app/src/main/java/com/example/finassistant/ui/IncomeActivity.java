@@ -28,22 +28,64 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
+/**
+ * The type Income activity.
+ */
 public class IncomeActivity extends AppCompatActivity implements IncomeView {
 
+    /**
+     * The Income category.
+     */
     Spinner incomeCategory;
+    /**
+     * The Incomes.
+     */
     ListView incomes;
+    /**
+     * The Amount.
+     */
     EditText amount;
+    /**
+     * The End date.
+     */
     EditText endDate;
+    /**
+     * The Text view 2.
+     */
     TextView textView2;
+    /**
+     * The Text view 3.
+     */
     TextView textView3;
+    /**
+     * The Tax free.
+     */
     TextView taxFree;
 
+    /**
+     * The Income list.
+     */
     ArrayList<Income> incomeList = new ArrayList<>();
+    /**
+     * The Amount value.
+     */
     double amountValue;
+    /**
+     * The Date value.
+     */
     Date dateValue;
+    /**
+     * The Selected category.
+     */
     IncomeCategory selected_category;
 
+    /**
+     * The Presenter.
+     */
     static IncomePresenter presenter;
+    /**
+     * The Income.
+     */
     Income income;
 
     @Override
@@ -60,8 +102,8 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
         taxFree = findViewById(R.id.taxfree);
-        incomes = findViewById((R.id.button_income));
-        incomeCategory = findViewById((R.id.incomecategory));
+        incomes = findViewById(R.id.button_income);
+        incomeCategory = findViewById(R.id.incomecategory);
         amount = findViewById(R.id.txt_input);
         endDate = findViewById(R.id.date);
         final FloatingActionButton add = findViewById(R.id.add);
@@ -178,12 +220,10 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
 
                         if(amount.getText().toString().equals("")){
                             amount.setText("0");
-
-
                         }
+
                         amountValue = Double.parseDouble(amount.getText().toString());
                         amount.setText("");
-
 
                         System.err.println("amountvalue :" + amountValue);
                         boolean isValid = presenter.validateAmount(amountValue);
@@ -203,7 +243,6 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
                                     addDate(dateValue);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
-
                                 }
                             }
 
@@ -229,7 +268,6 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
             }
         });
     }
-
 
     @Override
     public void addCategory(IncomeCategory category){

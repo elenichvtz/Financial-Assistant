@@ -1,16 +1,18 @@
 package com.example.finassistant.domain;
 
-import com.example.finassistant.domain.Account;
-
-
-import static org.junit.Assert.*;
 import org.junit.*;
 
 import java.util.Date;
 import java.util.Iterator;
 
+/**
+ * The type Account test.
+ */
 public class AccountTest {
 
+    /**
+     * Set user test.
+     */
     @Test
     public void setUserTest(){
         Account account =  new Account();
@@ -21,6 +23,9 @@ public class AccountTest {
         Assert.assertEquals(user, account.getUser());
     }
 
+    /**
+     * Check account.
+     */
     @Test
     public void checkAccount(){
         int id = 12345;
@@ -30,14 +35,19 @@ public class AccountTest {
         Assert.assertEquals(user, account.getUser());
     }
 
+    /**
+     * Add null income.
+     */
     @Test
     public void addNullIncome() {
         Account account = new Account();
         account.addIncome(null);
         Assert.assertEquals(0,account.getIncome().size());
-
     }
 
+    /**
+     * Add income.
+     */
     @Test
     public void addIncome(){
         Account account = new Account();
@@ -47,6 +57,9 @@ public class AccountTest {
         Assert.assertTrue(account.getIncome().contains(income));
     }
 
+    /**
+     * Remove null income.
+     */
     @Test
     public void removeNullIncome(){
         Account account = new Account();
@@ -54,9 +67,11 @@ public class AccountTest {
         account.addIncome(income);
         account.removeIncome(null);
         Assert.assertEquals(1, account.getIncome().size());
-
     }
 
+    /**
+     * Remove income.
+     */
     @Test
     public void removeIncome(){
         Account account = new Account();
@@ -66,6 +81,9 @@ public class AccountTest {
         Assert.assertEquals(0, account.getIncome().size());
     }
 
+    /**
+     * Add null expense.
+     */
     @Test
     public void addNullExpense() {
         Account account = new Account();
@@ -73,6 +91,9 @@ public class AccountTest {
         Assert.assertEquals(0,account.getExpenses().size());
     }
 
+    /**
+     * Add expense.
+     */
     @Test
     public void addExpense(){
         Account account = new Account();
@@ -82,6 +103,9 @@ public class AccountTest {
         Assert.assertTrue(account.getExpenses().contains(expense));
     }
 
+    /**
+     * Remove null expense.
+     */
     @Test
     public void removeNullExpense(){
         Account account = new Account();
@@ -89,9 +113,11 @@ public class AccountTest {
         account.addExpense(expense);
         account.removeExpense(null);
         Assert.assertEquals(1, account.getExpenses().size());
-
     }
 
+    /**
+     * Remove expense.
+     */
     @Test
     public void removeExpense(){
         Account account = new Account();
@@ -101,6 +127,9 @@ public class AccountTest {
         Assert.assertEquals(0, account.getExpenses().size());
     }
 
+    /**
+     * Add null goal.
+     */
     @Test
     public void addNullGoal() {
         Account account = new Account();
@@ -108,6 +137,9 @@ public class AccountTest {
         Assert.assertEquals(0,account.getGoals().size());
     }
 
+    /**
+     * Add goal.
+     */
     @Test
     public void addGoal(){
         Account account = new Account();
@@ -117,6 +149,9 @@ public class AccountTest {
         Assert.assertTrue(account.getGoals().contains(goal));
     }
 
+    /**
+     * Remove null goal.
+     */
     @Test
     public void removeNullGoal(){
         Account account = new Account();
@@ -124,9 +159,11 @@ public class AccountTest {
         account.addGoal(goal);
         account.removeGoal(null);
         Assert.assertEquals(1, account.getGoals().size());
-
     }
 
+    /**
+     * Remove goal.
+     */
     @Test
     public void removeGoal(){
         Account account = new Account();
@@ -136,6 +173,9 @@ public class AccountTest {
         Assert.assertEquals(0,account.getGoals().size());
     }
 
+    /**
+     * Check total.
+     */
     @Test
     public void checkTotal(){
         Account account = new Account();
@@ -150,6 +190,9 @@ public class AccountTest {
     }
 
 
+    /**
+     * Check total expense.
+     */
     @Test
     public void checkTotalExpense(){
         Account account = new Account();
@@ -162,6 +205,9 @@ public class AccountTest {
         Assert.assertEquals(149.99,account.CalculateTotalExpense(),0.000001);
     }
 
+    /**
+     * Add null list.
+     */
     @Test
     public void addNullList(){
         Account account = new Account();
@@ -169,6 +215,9 @@ public class AccountTest {
         Assert.assertEquals(0,account.getShoppingList().size());
     }
 
+    /**
+     * Add list.
+     */
     @Test
     public void addList(){
         Account account = new Account();
@@ -177,6 +226,9 @@ public class AccountTest {
         Assert.assertEquals(1,account.getShoppingList().size());
     }
 
+    /**
+     * Remove null list.
+     */
     @Test
     public void removeNullList(){
         Account account = new Account();
@@ -184,9 +236,11 @@ public class AccountTest {
         account.addList(list);
         account.removeList(null);
         Assert.assertEquals(1, account.getShoppingList().size());
-
     }
 
+    /**
+     * Remove list.
+     */
     @Test
     public void removeList(){
         Account account = new Account();
@@ -196,6 +250,9 @@ public class AccountTest {
         Assert.assertEquals(0, account.getShoppingList().size());
     }
 
+    /**
+     * Check list expense.
+     */
     @Test
     public void checkListExpense(){
         Account account = new Account();
@@ -213,6 +270,9 @@ public class AccountTest {
         Assert.assertEquals(38.98,account.getTemp().get(1).getSum(),0.00001);
     }
 
+    /**
+     * Test goal expenses.
+     */
     @Test
     public void testGoalExpenses() {
         Account account = new Account();
