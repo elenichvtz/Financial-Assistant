@@ -2,58 +2,99 @@ package com.example.finassistant.domain;
 
 import org.junit.Assert;
 
-
-
-    public class BasicEqualTester<T> {
+/**
+ * The type Basic equal tester.
+ *
+ * @param <T> the type parameter
+ */
+public class BasicEqualTester<T> {
 
         private T objectUnderTest;
 
-
-        public void otherObjectIsNull() {
+    /**
+     * Other object is null.
+     */
+    public void otherObjectIsNull() {
             Assert.assertFalse(getObjectUnderTest().equals(null));
-
         }
 
-        public void bothObjectsHaveNoState(Object other) {
+    /**
+     * Both objects have no state.
+     *
+     * @param other the other
+     */
+    public void bothObjectsHaveNoState(Object other) {
             Assert.assertEquals(objectUnderTest, other);
             Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
         }
 
-        public void otherObjectsHasNoState(Object other) {
+    /**
+     * Other objects has no state.
+     *
+     * @param other the other
+     */
+    public void otherObjectsHasNoState(Object other) {
             Assert.assertFalse(objectUnderTest.equals(other) );
             Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
         }
 
 
-        public void otherObjectIsOfDifferentType(Object other) {
+    /**
+     * Other object is of different type.
+     *
+     * @param other the other
+     */
+    public void otherObjectIsOfDifferentType(Object other) {
             Assert.assertFalse(objectUnderTest.equals(other));
         }
 
-        public void sameReferences(Object other) {
+    /**
+     * Same references.
+     *
+     * @param other the other
+     */
+    public void sameReferences(Object other) {
             Assert.assertEquals(objectUnderTest, other);
             Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
         }
 
 
-        public void bothObjectsHaveSameState(Object other) {
+    /**
+     * Both objects have same state.
+     *
+     * @param other the other
+     */
+    public void bothObjectsHaveSameState(Object other) {
             Assert.assertEquals(objectUnderTest, other);
             Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
         }
 
-        public void objectsHaveDifferentState(Object other) {
+    /**
+     * Objects have different state.
+     *
+     * @param other the other
+     */
+    public void objectsHaveDifferentState(Object other) {
             Assert.assertFalse(objectUnderTest.equals(other));
             Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
         }
 
-
-        public void setObjectUnderTest(T objectUnderTest) {
+    /**
+     * Sets object under test.
+     *
+     * @param objectUnderTest the object under test
+     */
+    public void setObjectUnderTest(T objectUnderTest) {
             this.objectUnderTest = objectUnderTest;
         }
 
-        public T getObjectUnderTest() {
+    /**
+     * Gets object under test.
+     *
+     * @return the object under test
+     */
+    public T getObjectUnderTest() {
             return objectUnderTest;
         }
-
-
     }
 

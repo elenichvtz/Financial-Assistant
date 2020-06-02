@@ -11,7 +11,7 @@ import java.util.Date;
 public class ExpenseTest {
 
     /**
-     * Get category.
+     * Check if when default constructor is used, expense category is the default one (OBLIGATION).
      */
     @Test
     public void getCategory(){
@@ -20,7 +20,7 @@ public class ExpenseTest {
     }
 
     /**
-     * Set category.
+     * Check if expense category provided is passed correctly with setCategory().
      */
     @Test
     public void setCategory(){
@@ -30,18 +30,18 @@ public class ExpenseTest {
     }
 
     /**
-     * Check exchange.
+     * Check if exchange category provided is passed correctly with setExchange().
      */
     @Test
     public void checkExchange(){
         Expense expense = new Expense();
         ExchangeCategory exchangeCategory = ExchangeCategory.ONLINE;
         expense.setExchange(exchangeCategory);
-        Assert.assertEquals(exchangeCategory,expense.getExchange());
+        Assert.assertEquals(ExchangeCategory.ONLINE,expense.getExchange());
     }
 
     /**
-     * Check expense.
+     * Check if sum provided is passed correctly.
      */
     @Test
     public void checkExpense(){
@@ -52,7 +52,7 @@ public class ExpenseTest {
     }
 
     /**
-     * Test category list.
+     * Check if categories' list is accessed correctly from an Expense object.
      */
     @Test
     public void testCategoryList(){

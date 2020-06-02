@@ -22,7 +22,7 @@ public class UserTest {
     }
 
     /**
-     * Test password.
+     * Check if short password provided is not passed in User.
      */
     @Test
     public void testPassword(){
@@ -32,7 +32,7 @@ public class UserTest {
     }
 
     /**
-     * Test password 2.
+     * Check if password provided is passed correctly with setPassword().
      */
     @Test
     public void testPassword2(){
@@ -42,7 +42,7 @@ public class UserTest {
     }
 
     /**
-     * Test name.
+     * Check if name provided is passed correctly with setName().
      */
     @Test
     public void testName(){
@@ -52,7 +52,7 @@ public class UserTest {
     }
 
     /**
-     * Test email.
+     * Check if email provided is passed correctly with setEmail().
      */
     @Test
     public void testEmail(){
@@ -63,7 +63,7 @@ public class UserTest {
     }
 
     /**
-     * Test id.
+     * Check if id provided is passed correctly with setId().
      */
     @Test
     public void testId(){

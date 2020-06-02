@@ -11,7 +11,7 @@ import java.util.Date;
 public class IncomeTest {
 
     /**
-     * Get category.
+     * Check if when default constructor is used, expense category is the default one (SALARY).
      */
     @Test
     public void getCategory(){
@@ -20,7 +20,7 @@ public class IncomeTest {
     }
 
     /**
-     * Set category.
+     * Check if income category provided is passed correctly with setCategory().
      */
     @Test
     public void setCategory(){
@@ -30,18 +30,18 @@ public class IncomeTest {
     }
 
     /**
-     * Check exchange category.
+     * Check if exchange category provided is passed correctly with setExchange().
      */
     @Test
     public void checkExchangeCategory(){
         Income income = new Income();
         ExchangeCategory exchangeCategory = ExchangeCategory.CASH;
         income.setExchange(exchangeCategory);
-        Assert.assertEquals(exchangeCategory,income.getExchange());
+        Assert.assertEquals(ExchangeCategory.CASH,income.getExchange());
     }
 
     /**
-     * Check income.
+     * Check if sum provided is passed correctly.
      */
     @Test
     public void checkIncome(){
@@ -52,23 +52,12 @@ public class IncomeTest {
     }
 
     /**
-     * Test category list.
+     * Check if categories' list is accessed correctly from an Expense object.
      */
     @Test
     public void testCategoryList(){
         Income income = new Income();
         income.setCategory(IncomeCategory.REGULAR);
         Assert.assertEquals(income.getCategoryList()[1],income.getCategory());
-    }
-
-    /**
-     * Random.
-     */
-    @Test
-    public void random(){
-        Income income = new Income();
-        income.setCategory(IncomeCategory.REGULAR);
-        income.setExchange(ExchangeCategory.ONLINE);
-        Assert.assertEquals(ExchangeCategory.ONLINE,income.getExchange());
     }
 }

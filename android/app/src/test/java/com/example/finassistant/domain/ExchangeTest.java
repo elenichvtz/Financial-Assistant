@@ -11,7 +11,7 @@ import java.util.Date;
 public class ExchangeTest {
 
     /**
-     * Test sum.
+     * Check if sum provided is passed correctly with setSum().
      */
     @Test
     public void testSum() {
@@ -21,7 +21,7 @@ public class ExchangeTest {
     }
 
     /**
-     * Test date.
+     * Check if date provided is passed correctly with setDateEnd().
      */
     @Test
     public void testDate() {
@@ -32,7 +32,7 @@ public class ExchangeTest {
     }
 
     /**
-     * Test insert sum.
+     * Check if negative sum is passed, it is replaced with 0.
      */
     @Test
     public void testInsertSum(){
@@ -42,7 +42,7 @@ public class ExchangeTest {
     }
 
     /**
-     * Test exchange category.
+     * Check if exchange category provided is passed correctly with setExchange().
      */
     @Test
     public void testExchangeCategory() {

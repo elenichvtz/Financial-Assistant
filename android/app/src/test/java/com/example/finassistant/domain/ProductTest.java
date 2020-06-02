@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ProductTest {
 
     /**
-     * Test product.
+     * Check if price provided is passed correctly.
      */
     @Test
     public void testProduct(){

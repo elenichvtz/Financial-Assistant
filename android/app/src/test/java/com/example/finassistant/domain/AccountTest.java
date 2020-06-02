@@ -11,42 +11,49 @@ import java.util.Iterator;
 public class AccountTest {
 
     /**
-     * Set user test.
+     * Check if id provided is passed correctly with setId().
      */
     @Test
     public void setUserTest(){
         Account account =  new Account();
         account.setId(1);
-        User user = new User();
-        account.setUser(user);
-        Assert.assertEquals(1,account.getId());
-        Assert.assertEquals(user, account.getUser());
+        Assert.assertEquals(1, account.getId());
     }
 
     /**
-     * Check account.
+     * Check acount constructor.
      */
     @Test
-    public void checkAccount(){
-        int id = 12345;
+    public void checkAcount() {
         User user = new User();
-        Account account = new Account(id, user);
-        Assert.assertEquals(12345, account.getId());
+        Account account = new Account(1234, user);
+        Assert.assertEquals(1234, account.getId());
         Assert.assertEquals(user, account.getUser());
     }
 
     /**
-     * Add null income.
+     * Check if user provided is passed correctly with setUser().
+     */
+    @Test
+    public void checkUser(){
+        User user = new User();
+        Account account = new Account();
+        account.setUser(user);
+        Assert.assertEquals(user, account.getUser());
+    }
+
+    /**
+     * Check if null income is passed, it doesn't get in Account's Income Set.
      */
     @Test
     public void addNullIncome() {
         Account account = new Account();
         account.addIncome(null);
-        Assert.assertEquals(0,account.getIncome().size());
+        Assert.assertEquals(0, account.getIncome().size());
     }
 
     /**
-     * Add income.
+     * Check if income is passed, it gets in Account's Income Set.
      */
     @Test
     public void addIncome(){
@@ -58,7 +65,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove null income.
+     * Check if null income is removed, it doesn't affect Account's Income Set.
      */
     @Test
     public void removeNullIncome(){
@@ -70,7 +77,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove income.
+     * Check if income is removed, it affects Account's Income Set.
      */
     @Test
     public void removeIncome(){
@@ -82,7 +89,7 @@ public class AccountTest {
     }
 
     /**
-     * Add null expense.
+     * Check if null expense is added, it doesn't affect Account's Expenses Set.
      */
     @Test
     public void addNullExpense() {
@@ -92,7 +99,7 @@ public class AccountTest {
     }
 
     /**
-     * Add expense.
+     * Check if expense is added, it affects Account's Expenses Set.
      */
     @Test
     public void addExpense(){
@@ -104,7 +111,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove null expense.
+     * Check if null expense is removed, it doesn't affect Account's Expenses Set.
      */
     @Test
     public void removeNullExpense(){
@@ -116,7 +123,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove expense.
+     * Check if expense is removed, it affects Account's Expenses Set.
      */
     @Test
     public void removeExpense(){
@@ -128,7 +135,7 @@ public class AccountTest {
     }
 
     /**
-     * Add null goal.
+     * Check if null goal is added, it doesn't affect Account's Goals Set.
      */
     @Test
     public void addNullGoal() {
@@ -138,7 +145,7 @@ public class AccountTest {
     }
 
     /**
-     * Add goal.
+     * Check if goal is added, it affects Account's Goals Set.
      */
     @Test
     public void addGoal(){
@@ -150,7 +157,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove null goal.
+     * Check if null goal is removed, it doesn't affect Account's Goals Set.
      */
     @Test
     public void removeNullGoal(){
@@ -162,7 +169,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove goal.
+     * Check if goal is removed, it affects Account's Goals Set.
      */
     @Test
     public void removeGoal(){
@@ -174,14 +181,13 @@ public class AccountTest {
     }
 
     /**
-     * Check total.
+     * Check if method CalculateTotalIncome() calculates total income correctly.
      */
     @Test
-    public void checkTotal(){
+    public void checkTotalIncome(){
         Account account = new Account();
         Date date = new Date();
         IncomeCategory category = IncomeCategory.SALARY;
-        //ExchangeCategory exchangeCategory = ExchangeCategory.
         Income income = new Income(30.04,date,category);
         Income income2 = new Income(20.00,date,category);
         account.addIncome(income);
@@ -191,7 +197,7 @@ public class AccountTest {
 
 
     /**
-     * Check total expense.
+     * Check if method CalculateTotalExpense() calculates total expenses correctly.
      */
     @Test
     public void checkTotalExpense(){
@@ -206,7 +212,7 @@ public class AccountTest {
     }
 
     /**
-     * Add null list.
+     * Check if null list is added, it doesn't affect Account's ShoppingList Set.
      */
     @Test
     public void addNullList(){
@@ -216,7 +222,7 @@ public class AccountTest {
     }
 
     /**
-     * Add list.
+     * Check if list is added, it affects Account's ShoppingList Set.
      */
     @Test
     public void addList(){
@@ -227,7 +233,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove null list.
+     * Check if null list is removed, it doesn't affect Account's ShoppingList Set.
      */
     @Test
     public void removeNullList(){
@@ -239,7 +245,7 @@ public class AccountTest {
     }
 
     /**
-     * Remove list.
+     * Check if list is removed, it affects Account's ShoppingList Set.
      */
     @Test
     public void removeList(){
@@ -251,7 +257,7 @@ public class AccountTest {
     }
 
     /**
-     * Check list expense.
+     * Check if list is added to Account's Expenses Set and if method getSum() calculates total products' prices correctly.
      */
     @Test
     public void checkListExpense(){
@@ -271,10 +277,10 @@ public class AccountTest {
     }
 
     /**
-     * Test goal expenses.
+     * Check if amount added to goal is added to Account's Expenses Set and if method getSum() calculates that amount correctly.
      */
     @Test
-    public void testGoalExpenses() {
+    public void checkGoalExpenses() {
         Account account = new Account();
         Goal goal = new Goal();
         goal.setAmount(89.51);
@@ -285,5 +291,37 @@ public class AccountTest {
             Expense expense = it.next();
             Assert.assertEquals(43.56, expense.getSum(), 0.001);
         }
+    }
+
+    /**
+     * Check if tax free is calculated correctly.
+     */
+    @Test
+    public void checkTaxFree() {
+        Account account = new Account();
+        Income income = new Income();
+        income.setSum(23.56);
+        account.addIncome(income);
+        Income income2 = new Income();
+        income2.setSum(123.5);
+        account.addIncome(income2);
+        Assert.assertEquals(44.118, account.CalculateTaxFree(), 0.001);
+    }
+
+    /**
+     * Check if current tax free is calculated correctly.
+     */
+    @Test
+    public void checkCurrentTaxFree() {
+        Account account = new Account();
+        Expense expense = new Expense();
+        expense.setSum(23.5);
+        expense.setExchange(ExchangeCategory.CASH);
+        Expense expense2 = new Expense();
+        expense2.setSum(12.87);
+        expense2.setExchange(ExchangeCategory.ONLINE);
+        account.addExpense(expense);
+        account.addExpense(expense2);
+        Assert.assertEquals(12.87 ,account.CalculateCurrentTaxFree(), 0.001);
     }
 }

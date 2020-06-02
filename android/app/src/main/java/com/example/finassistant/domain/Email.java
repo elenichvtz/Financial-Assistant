@@ -1,18 +1,39 @@
 package com.example.finassistant.domain;
 
+/**
+ * The type Email.
+ */
 public class Email{
     private String email;
 
+    /**
+     * Instantiates a new Email.
+     */
     public Email(){ }
 
+    /**
+     * Instantiates a new Email.
+     *
+     * @param email the email
+     */
     public Email(String email){
         this.email = email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Get email string.
+     *
+     * @return the string
+     */
     public String getEmail(){
 
         return this.email;

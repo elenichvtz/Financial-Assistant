@@ -43,7 +43,6 @@ public class Exchange{
      */
     public void setSum(double sum) {
         if(sum > 0) this.sum = sum;
-        else System.out.println("Invalid input");
     }
 
     /**

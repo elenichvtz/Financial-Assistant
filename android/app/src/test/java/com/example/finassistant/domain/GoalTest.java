@@ -12,7 +12,7 @@ import java.util.Date;
 public class GoalTest {
 
     /**
-     * Check goal.
+     * Check if amount provided is passed correctly.
      */
     @Test
     public void checkGoal() {
@@ -22,7 +22,7 @@ public class GoalTest {
     }
 
     /**
-     * Test title.
+     * Check if title provided is passed correctly with setTitle().
      */
     @Test
     public void testTitle() {
@@ -32,7 +32,7 @@ public class GoalTest {
     }
 
     /**
-     * Test amount.
+     * Check if amount provided is passed correctly with setAmount().
      */
     @Test
     public void testAmount() {
@@ -42,7 +42,7 @@ public class GoalTest {
     }
 
     /**
-     * Test insert amount.
+     * Check if negative amount is passed, it is replaced with 0.
      */
     @Test
     public void testInsertAmount(){
@@ -52,7 +52,7 @@ public class GoalTest {
     }
 
     /**
-     * Check end date.
+     * Check if date provided is passed correctly with setEndDate().
      *
      * @throws ParseException the parse exception
      */
@@ -66,7 +66,7 @@ public class GoalTest {
     }
 
     /**
-     * Test current amount.
+     * Check if when default constructor is used, amount is set to 0.
      */
     @Test
     public void testCurrentAmount() {
@@ -75,7 +75,7 @@ public class GoalTest {
     }
 
     /**
-     * Test completion.
+     * Check if goal completion is calculated correctly when saved amount added is less than the goal amount.
      */
     @Test
     public void testCompletion() {
@@ -86,7 +86,7 @@ public class GoalTest {
     }
 
     /**
-     * Test completion 2.
+     * Check if goal completion is calculated correctly when saved amount added is greater than the goal amount.
      */
     @Test
     public void testCompletion2() {

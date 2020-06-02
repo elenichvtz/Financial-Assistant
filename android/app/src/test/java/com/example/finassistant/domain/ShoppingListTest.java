@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ShoppingListTest {
 
     /**
-     * Add null product.
+     * Check if null product is added, it doesn't affect ShoppingList's Products Set.
      */
     @Test
     public void addNullProduct(){
@@ -19,7 +19,7 @@ public class ShoppingListTest {
     }
 
     /**
-     * Add product.
+     * Check if product is added, it affects ShoppingList's Prosuct Set.
      */
     @Test
     public void addProduct(){
@@ -30,7 +30,7 @@ public class ShoppingListTest {
     }
 
     /**
-     * Remove null product.
+     * Check if null product is removed, it doesn't affect ShoppingList's Products Set.
      */
     @Test
     public void removeNullProduct(){
@@ -42,7 +42,7 @@ public class ShoppingListTest {
     }
 
     /**
-     * Remove product.
+     * Check if product is removed, it affects ShoppingList's Products Set.
      */
     @Test
     public void removeProduct(){
@@ -54,7 +54,7 @@ public class ShoppingListTest {
     }
 
     /**
-     * Test title.
+     * Check if title provided is passed correctly with setTitle().
      */
     @Test
     public void testTitle() {
