@@ -29,4 +29,12 @@ public class ProductTest {
         Assert.assertEquals("ice cream",product.getTitle());
         Assert.assertEquals(5.99,product.getPrice(),0.00001);
     }
+
+    @Test
+    public void testString(){
+        Product product = new Product();
+        product.setTitle("apple");
+        Assert.assertEquals(product.getTitle(),product.toString());
+    }
+
 }

@@ -9,7 +9,9 @@ import org.junit.Test;
 public class EmailTest {
 
     /**
-     * Check if the email provided is not null,
+     * Test if two different objects
+     * have the same values with
+     * equals and hashcode
      */
     @Test
     public void testEquals(){
@@ -29,7 +31,7 @@ public class EmailTest {
     }
 
     /**
-     * Equals and hash.
+     * Tests of email objects with helpful class BasicEqualsTester
      */
     @Test
     public void equalsAndHash(){

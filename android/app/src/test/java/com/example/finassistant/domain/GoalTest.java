@@ -95,4 +95,11 @@ public class GoalTest {
         goal.GoalCompletion(43.7);
         Assert.assertEquals(32.53, goal.getCurrentAmount(), 0.001);
     }
+
+    @Test
+    public void testString(){
+        Goal goal = new Goal();
+        goal.setTitle("save 100 euros");
+        Assert.assertEquals(goal.getTitle(),goal.toString());
+    }
 }

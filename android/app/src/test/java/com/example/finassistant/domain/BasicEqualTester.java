@@ -9,92 +9,98 @@ import org.junit.Assert;
  */
 public class BasicEqualTester<T> {
 
-        private T objectUnderTest;
+    private T objectUnderTest;
 
     /**
-     * Other object is null.
+     * Tests if objectUnderTest
+     * equals null
      */
     public void otherObjectIsNull() {
-            Assert.assertFalse(getObjectUnderTest().equals(null));
-        }
+        Assert.assertFalse(getObjectUnderTest().equals(null));
+
+    }
 
     /**
-     * Both objects have no state.
+     * Tests if objectUnderTest
+     * and other Object don't have a state
      *
-     * @param other the other
+     * @param other is the other object we want to compare
      */
     public void bothObjectsHaveNoState(Object other) {
-            Assert.assertEquals(objectUnderTest, other);
-            Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
-        }
+        Assert.assertEquals(objectUnderTest, other);
+        Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
+    }
 
     /**
-     * Other objects has no state.
+     * Tests if objectUnderTest
+     * and other Object don't have the same state
      *
-     * @param other the other
+     * @param other is the other object we want to compare
      */
     public void otherObjectsHasNoState(Object other) {
-            Assert.assertFalse(objectUnderTest.equals(other) );
-            Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
-        }
-
+        Assert.assertFalse(objectUnderTest.equals(other));
+        Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
+    }
 
     /**
-     * Other object is of different type.
+     * Asserts if objectUnderTest
+     * and other Object are of the same type
      *
-     * @param other the other
+     * @param other
      */
     public void otherObjectIsOfDifferentType(Object other) {
-            Assert.assertFalse(objectUnderTest.equals(other));
-        }
+        Assert.assertFalse(objectUnderTest.equals(other));
+    }
 
     /**
-     * Same references.
+     * Asserts if objectUnderTest
+     * and other Object refer to the same Object
      *
-     * @param other the other
+     * @param other
      */
     public void sameReferences(Object other) {
-            Assert.assertEquals(objectUnderTest, other);
-            Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
-        }
-
+        Assert.assertEquals(objectUnderTest, other);
+        Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
+    }
 
     /**
-     * Both objects have same state.
+     * Asserts if objectUnderTest
+     * and other Object haven the same state
      *
-     * @param other the other
+     * @param other
      */
     public void bothObjectsHaveSameState(Object other) {
-            Assert.assertEquals(objectUnderTest, other);
-            Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
-        }
+        Assert.assertEquals(objectUnderTest, other);
+        Assert.assertEquals(objectUnderTest.hashCode(), other.hashCode());
+    }
 
     /**
-     * Objects have different state.
+     * Asserts if objectUnderTest
+     * and other Object haven different states
      *
-     * @param other the other
+     * @param other
      */
     public void objectsHaveDifferentState(Object other) {
-            Assert.assertFalse(objectUnderTest.equals(other));
-            Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
-        }
+        Assert.assertFalse(objectUnderTest.equals(other));
+        Assert.assertFalse(objectUnderTest.hashCode() == other.hashCode());
+    }
 
     /**
-     * Sets object under test.
+     * sets the private field objectUnderTest
      *
-     * @param objectUnderTest the object under test
+     * @param objectUnderTest
      */
     public void setObjectUnderTest(T objectUnderTest) {
-            this.objectUnderTest = objectUnderTest;
-        }
+        this.objectUnderTest = objectUnderTest;
+    }
 
     /**
-     * Gets object under test.
+     * gets the private field objectUnderTest
      *
-     * @return the object under test
+     * @return objectUnderTest
      */
     public T getObjectUnderTest() {
-            return objectUnderTest;
-        }
+        return objectUnderTest;
     }
+}
 

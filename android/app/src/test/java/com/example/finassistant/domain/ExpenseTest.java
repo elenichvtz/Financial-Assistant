@@ -60,4 +60,10 @@ public class ExpenseTest {
         expense.setCategory(ExpenseCategory.OBLIGATION);
         Assert.assertEquals(expense.getCategoryList()[4],expense.getCategory());
     }
+
+    @Test
+    public void testString(){
+        Expense expense = new Expense();
+        Assert.assertEquals("Expense1",expense.toString());
+    }
 }

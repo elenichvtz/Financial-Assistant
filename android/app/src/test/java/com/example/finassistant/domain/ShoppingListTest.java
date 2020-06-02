@@ -62,4 +62,11 @@ public class ShoppingListTest {
         list.setTitle("grocery shopping");
         Assert.assertEquals("grocery shopping", list.getTitle());
     }
+
+    @Test
+    public void testString(){
+        ShoppingList list = new ShoppingList();
+        list.setTitle("List");
+        Assert.assertEquals(list.getTitle(),list.toString());
+    }
 }

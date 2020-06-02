@@ -60,4 +60,10 @@ public class IncomeTest {
         income.setCategory(IncomeCategory.REGULAR);
         Assert.assertEquals(income.getCategoryList()[1],income.getCategory());
     }
+
+    @Test
+    public void testString(){
+        Income income = new Income();
+        Assert.assertEquals("Income1",income.toString());
+    }
 }
