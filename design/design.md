@@ -24,10 +24,6 @@
 
 ![CalculateTotalExpense()](diagrams/Account.CalculateTotalExpense-sequense-diagram.png)
 
-<h3>Γ) Προβολή Αποταμιευτικών Στόχων</h3>
-
-
-
 <h2>ΠΧ3. Διαχείριση εσόδων/εξόδων</h2>
 
 <h3>A) Εισαγωγή εσόδων</h3>
@@ -56,10 +52,6 @@
 
 ![uc4-class-diagram](diagrams/uc4-class-diagram.png)
 
-<h3>Β) Τροποποίηση λίστας αγορών</h3>
-
-
-
 <h3>Γ) Διαγραφή λίστας αγορών</h3>
 
 ![removeList(ShoppingList list)](diagrams/Account.removeList-sequence-diagram.png)
@@ -79,25 +71,6 @@
 <h3>Γ) Διαγραφή αποταμιευτικών στόχων</h3>
 
 ![removeGoal(Goal goal)](diagrams/Account.removeGoal-sequence-diagram.png)
-
-<h2>ΠΧ6. Εγγραφή στην εφαρμογή</h2>
-
-<h2>ΠΧ7. Σύνδεση στην εφαρμογή</h2>
-
-
-
-
-
-
-
-
-<!--<h3>Διάγραμμα ακολουθίας addProduct(Product product)</h3>
-
-![addProduct(Product product)](diagrams/ShoppingList.addProduct-sequence-diagram.png)
-
-<h3>Διάγραμμα ακολουθίας removeProduct(Product product)</h3>
-
-![removeProduct(Product product)](diagrams/ShoppingList.removeProduct-sequence-diagram.png)-->
 
 <h2>Coverage Report</h2>
 
