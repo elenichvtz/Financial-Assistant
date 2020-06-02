@@ -21,6 +21,7 @@ import com.example.finassistant.ui.account.IncomePresenter;
 import com.example.finassistant.ui.account.IncomeView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -74,9 +75,9 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
         incomes.setVisibility(View.VISIBLE);
         add.setVisibility(View.VISIBLE);
         submit.setVisibility(View.GONE);
-
-        textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-        taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        textView3.setText("Total income: " + numberFormat.format(presenter.getAccount().CalculateTotalIncome()) + " €");
+        taxFree.setText("Your tax free is: " + numberFormat.format(presenter.getAccount().CalculateCurrentTaxFree()) + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
         Iterator<Income> iterator = presenter.getAccount().getIncome().iterator();
         while(iterator.hasNext()) {
@@ -92,9 +93,9 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
 
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(IncomeActivity.this);
                 info.setTitle("Details");
-
+                DecimalFormat numberFormat = new DecimalFormat("#.00");
                 info.setMessage("Category: " + incomeList.get(position).getCategory() +"\n\n" + "Amount: " +
-                        incomeList.get(position).getSum() + " €\n\n" + "End Date: " + incomeList.get(position).getDateEnd());
+                        numberFormat.format(incomeList.get(position).getSum())+ " €\n\n" + "End Date: " + incomeList.get(position).getDateEnd());
 
                 info.setPositiveButton("OK", null);
 
@@ -174,7 +175,16 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
                     public void onClick(View v) {
 
                         amount = findViewById(R.id.txt_input);
+
+                        if(amount.getText().toString().equals("")){
+                            amount.setText("0");
+
+
+                        }
                         amountValue = Double.parseDouble(amount.getText().toString());
+                        amount.setText("");
+
+
                         System.err.println("amountvalue :" + amountValue);
                         boolean isValid = presenter.validateAmount(amountValue);
                         if (isValid) {
@@ -200,9 +210,9 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
                             presenter.getAccount().addIncome(income);
 
                             incomeList.add(income);
-
-                            textView3.setText("Total income: " + presenter.getAccount().CalculateTotalIncome() + " €");
-                            taxFree.setText("Your tax free is: " + presenter.getAccount().CalculateCurrentTaxFree() + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
+                            DecimalFormat numberFormat = new DecimalFormat("#.00");
+                            textView3.setText("Total income: " + numberFormat.format(presenter.getAccount().CalculateTotalIncome()) + " €");
+                            taxFree.setText("Your tax free is: " + numberFormat.format(presenter.getAccount().CalculateCurrentTaxFree()) + "€ out of " + presenter.getAccount().CalculateTaxFree() + " €");
 
                             incomes.setVisibility(View.VISIBLE);
                             add.setVisibility(View.VISIBLE);

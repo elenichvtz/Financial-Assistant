@@ -20,6 +20,7 @@ import com.example.finassistant.ui.account.GoalPresenter;
 import com.example.finassistant.ui.account.GoalView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -82,9 +83,9 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                 info.setTitle("Details");
 
                 double compl = 100 - ((goals.get(position).getAmount() - goals.get(position).getCurrentAmount())/goals.get(position).getAmount())*100;
-
+                DecimalFormat numberFormat = new DecimalFormat("#.00");
                 info.setMessage("Title: " + goals.get(position).getTitle() +"\n\n" + "Amount: " +
-                        goals.get(position).getAmount() + " €\n\n" + "End Date: " + goals.get(position).getEndDate() +
+                        numberFormat.format(goals.get(position).getAmount()) + " €\n\n" + "End Date: " + goals.get(position).getEndDate() +
                         "\n\nCompletion: " + compl + "%");
 
                 info.setPositiveButton("OK", null);
@@ -176,15 +177,23 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                 submit.setVisibility(View.GONE);
 
                 title = findViewById(R.id.title);
+               /* if(title.getText().toString().equals("")){
+                    title.setText("Goal");
+                }*/
                 titleValue = title.getText().toString();
                 boolean isValidTitle = presenter.validateTitle(titleValue);
                 if (isValidTitle) {
                     addTitle(titleValue);
 
                     amount = findViewById(R.id.txt_input);
+                    if(amount.getText().toString().equals("")){
+                        amount.setText("0");
+                        amountValue = Double.parseDouble(amount.getText().toString());
+                    }
                     amountValue = Double.parseDouble(amount.getText().toString());
                     boolean isValid = presenter.validateAmount(amountValue);
                     if (isValid) {
+
                         addAmount(amountValue);
 
                         date = findViewById(R.id.date);

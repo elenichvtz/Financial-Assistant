@@ -18,12 +18,19 @@ public class ProductPresenter {
     }
 
     public boolean validateAmount(Double amount){
-        if ( amount != 0.0){
+        if ( amount != 0.0 || amount==null){
 
             return true;
         }
         view.showErrorMessage("Error!","Invalid amount inserted!");
         return false;
+    }
+    public boolean validateTitle(String title){
+        if(title.equals("")){
+            view.showErrorMessage("Error!","Invalid title field!");
+            return false;
+        }
+        return true;
     }
 
     public Account getAccount(){

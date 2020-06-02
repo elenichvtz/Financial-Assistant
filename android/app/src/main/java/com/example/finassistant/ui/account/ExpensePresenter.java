@@ -17,7 +17,7 @@ public class ExpensePresenter {
     }
 
     public boolean validateAmount(Double amount){
-        if ( amount != 0.0){
+        if ( amount != 0.0 || amount==null){
 
             return true;
         }

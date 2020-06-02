@@ -22,6 +22,7 @@ import com.example.finassistant.ui.account.ExpensePresenter;
 import com.example.finassistant.ui.account.ExpenseView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -95,9 +96,9 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                 //emfanizei ta stoixeia tou expense
                 android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ExpenseActivity.this);
                 info.setTitle("Details");
-
+                DecimalFormat numberFormat = new DecimalFormat("#.00");
                 info.setMessage("Category: " + expenselist.get(position).getCategory() +"\n\n" + "Amount: " +
-                        expenselist.get(position).getSum() + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd() + "\n\nExchange Category: " +
+                        numberFormat.format(expenselist.get(position).getSum()) + " €\n\n" + "End Date: " + expenselist.get(position).getDateEnd() + "\n\nExchange Category: " +
                         expenselist.get(position).getExchange());
 
                 info.setPositiveButton("OK", null);
@@ -204,10 +205,19 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                     public void onClick(View v) {
 
                         amount = findViewById(R.id.txt_input);
+
+                        if(amount.getText().toString().equals("")){
+                            amount.setText("0");
+
+
+                        }
                         amountValue = Double.parseDouble(amount.getText().toString());
+                        amount.setText("");
+                        boolean isValid = presenter.validateAmount(amountValue);
+                        //amountValue = Double.parseDouble(amount.getText().toString());
                         System.err.println("amountvalue :" + amountValue);
                         System.err.println("category " + selected_category);
-                        boolean isValid = presenter.validateAmount(amountValue);
+
                         if (isValid) {
                             addAmount(amountValue);
 
