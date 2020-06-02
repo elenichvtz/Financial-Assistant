@@ -86,7 +86,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
         product_name.setVisibility(View.GONE);
         price.setVisibility(View.GONE);
         addproduct.setVisibility(View.VISIBLE);
-        System.err.println("Inside product activity");
         list = new ShoppingList();
         presenter = new ProductPresenter(this);
         intent = new Intent(ProductActivity.this, ListActivity.class);
@@ -101,21 +100,21 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
         addproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 numOfClicks++;
                 if(numOfClicks%2 != 0) {
 
                     product_name.setVisibility(View.VISIBLE);
                     price.setVisibility(View.VISIBLE);
 
-                    System.err.println("Inside add product");
                     product_name = findViewById(R.id.title_product);
                     price = findViewById(R.id.txt_input);
-                    System.err.println(price.getText().toString());
                     prname = product_name.getText().toString();
-                    System.out.println("numOfClicks: " + numOfClicks );
-                }else if (numOfClicks%2 == 0){
+                }
+                else if (numOfClicks%2 == 0){
                     android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ProductActivity.this);
                     info.setTitle("Do you wish to put this product to your list?");
+
                     info.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -133,25 +132,22 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                                     addAmount(amount);
 
                                     addTitle(product_name.getText().toString());
-                                    System.err.println("priceee " + product.getPrice());
 
                                     products.add(product);
-                                    System.err.println("List products: " + products.toString());
                                     product_name.setText("");
                                     price.setText("");
                                 }
                             }
                             else{
-                                System.out.println("numOfClicks before: " + numOfClicks );
                                 numOfClicks--;
-                                System.out.println("numOfClicks after: " + numOfClicks );
                             }
                         }
                     });
+
                     info.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             android.app.AlertDialog.Builder delete = new android.app.AlertDialog.Builder(ProductActivity.this);
-                            delete.setTitle("Are you sure you want to delete the list?");
+                            delete.setTitle("Are you sure you want to delete the product?");
                             product_name.setText("");
                             price.setText("");
                             numOfClicks--;

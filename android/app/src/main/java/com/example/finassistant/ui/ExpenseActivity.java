@@ -259,9 +259,6 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                         amount.setText("");
                         boolean isValid = presenter.validateAmount(amountValue);
 
-                        System.err.println("amountvalue :" + amountValue);
-                        System.err.println("category " + selected_category);
-
                         if (isValid) {
                             addAmount(amountValue);
 
@@ -270,7 +267,8 @@ public class ExpenseActivity extends AppCompatActivity implements ExpenseView {
                             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                             if (parsedDate.equals("")) {
                                 addDate(new Date());
-                            } else {
+                            }
+                            else {
                                 try {
                                     dateValue = formatter.parse(parsedDate);
                                     addDate(dateValue);

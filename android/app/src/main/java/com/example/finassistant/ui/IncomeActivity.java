@@ -192,7 +192,6 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         String clickedItem = String.valueOf(position);
-                        System.err.println("Position selected: " + clickedItem);
                         if (clickedItem.equals("0")) {
                             addCategory(IncomeCategory.SALARY);
                             selected_category = IncomeCategory.SALARY;
@@ -225,7 +224,6 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
                         amountValue = Double.parseDouble(amount.getText().toString());
                         amount.setText("");
 
-                        System.err.println("amountvalue :" + amountValue);
                         boolean isValid = presenter.validateAmount(amountValue);
                         if (isValid) {
                             addAmount(amountValue);
@@ -234,7 +232,6 @@ public class IncomeActivity extends AppCompatActivity implements IncomeView {
 
                             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                             String parsedDate = (endDate.getText().toString());
-                            System.err.println("parsed date is: "+parsedDate);
                             if(parsedDate.equals("")){
                                 addDate(new Date());
                             }else {

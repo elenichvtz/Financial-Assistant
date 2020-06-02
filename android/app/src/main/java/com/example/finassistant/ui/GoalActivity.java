@@ -147,7 +147,6 @@ public class GoalActivity extends AppCompatActivity implements GoalView {
                             public void onClick(DialogInterface dialog,int id) {
                                 addedamountValue = Double.parseDouble(input.getText().toString());
                                 while(iterator.hasNext()) {
-                                    System.err.println("yep " + iterator.next().getCurrentAmount());
                                 }
 
                                 Goal goal = goals.get(position);

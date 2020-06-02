@@ -78,7 +78,6 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
         if (requestCode == LAUNCH_ACTIVITY) {
             if(resultCode == ProductActivity.RESULT_OK){
 
-                System.out.println("Fourth");
                 ProductActivity pact = new ProductActivity();
                 if(title.getText().toString().equals("")){
                     title.setText("New List");
@@ -198,12 +197,9 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //TODO add product
-                        System.out.println("title: " + title.getText().toString());
 
                         Intent intent= new Intent(ListActivity.this, ProductActivity.class);
                         startActivityForResult(intent, LAUNCH_ACTIVITY);
-                        System.out.println("Now on ListActivity");
                     }
                 });
             }
