@@ -72,6 +72,8 @@
 
 ![removeGoal(Goal goal)](diagrams/Account.removeGoal-sequence-diagram.png)
 
+<h2>[JavaDocs](android/app/src/main/java/com/example/finassistant/javadoc/com/example/finassistant)</h2>
+
 <h2>Coverage Report</h2>
 
 ![Coverage Report](diagrams/coverage_report.png)
