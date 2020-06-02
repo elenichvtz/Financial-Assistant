@@ -152,6 +152,7 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                 add.setVisibility(View.GONE);
                 lists.setVisibility(View.GONE);
                 final Product[] product = new Product[1];
+                final ShoppingList[] lista = new ShoppingList[1];
 
 
                 submit.setOnClickListener(new View.OnClickListener() {
@@ -162,12 +163,15 @@ public class ListActivity extends AppCompatActivity implements ShoppingListView 
                         Intent intent = new Intent(ListActivity.this, ProductActivity.class);
                         startActivity(intent);
                         ProductActivity pact = new ProductActivity();
-                        Product product = pact.product;
-                        list = new ShoppingList(title.getText().toString());
-                        list.addProduct(product);
-                        presenter.getAccount().addList(list);
+                        //Product product = pact.product;
+                        ShoppingList lista = pact.list;
+                        //System.err.println("loool "+lista.getTitle());
+                        //lista.setTitle(title.getText().toString());
+                        //list = new ShoppingList(title.getText().toString());
+                        //list.addProduct(product);
+                        presenter.getAccount().addList(lista);
 
-                        sList.add(list);
+                        sList.add(lista);
 
                     }
                 });
