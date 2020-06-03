@@ -77,3 +77,6 @@
 <h2>Coverage Report</h2>
 
 ![Coverage Report](diagrams/coverage_report.png)
+
+<h2>Dao Coverage Report</h2>
+![Dao Coverage Report](diagrams/daocoverage.png)
