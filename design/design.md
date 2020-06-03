@@ -72,11 +72,11 @@
 
 <h2>[JavaDocs](android/app/src/main/java/com/example/finassistant/javadoc/com/example/finassistant)</h2>
 
+<!--!<h2>Coverage Report</h2>
+
+[Coverage Report](diagrams/coverage_report.png) -->
+
 <h2>Coverage Report</h2>
-
-![Coverage Report](diagrams/coverage_report.png)
-
-<h2>New Coverage Report</h2>
 ![New Coverage Report](diagrams/new_coverage.png)
 
 <h2>Dao Coverage Report</h2>
