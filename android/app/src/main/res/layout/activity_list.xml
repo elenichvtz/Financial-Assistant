@@ -34,8 +34,8 @@
 
     <ListView
         android:id="@+id/button_shopping_list"
-        android:layout_width="404dp"
-        android:layout_height="439dp"
+        android:layout_width="414dp"
+        android:layout_height="438dp"
         android:choiceMode="singleChoice"
         android:listSelector="@android:color/holo_purple"
         app:layout_constraintBottom_toBottomOf="parent"

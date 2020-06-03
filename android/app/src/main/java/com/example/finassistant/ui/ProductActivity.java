@@ -110,6 +110,7 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                     product_name = findViewById(R.id.title_product);
                     price = findViewById(R.id.txt_input);
                     prname = product_name.getText().toString();
+                    //numOfClicks++;
                 }
                 else if (numOfClicks%2 == 0){
                     android.app.AlertDialog.Builder info = new android.app.AlertDialog.Builder(ProductActivity.this);
@@ -137,6 +138,7 @@ public class ProductActivity extends AppCompatActivity implements ProductView {
                                     product_name.setText("");
                                     price.setText("");
                                 }
+                                numOfClicks++;
                             }
                             else{
                                 numOfClicks--;
