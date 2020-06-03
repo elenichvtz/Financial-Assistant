@@ -12,4 +12,4 @@
 
 **Η περιγραφή των προδιαγραφών βρίσκεται [εδώ](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/requirements.md).**
 
-Στο Android Studio χρησιμοποιήθηκε το Nexus 6 API 27 ως virtual device.
+**Στο Android Studio χρησιμοποιήθηκε το Nexus 6 API 27 ως virtual device.**
