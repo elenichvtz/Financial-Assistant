@@ -50,7 +50,7 @@
 
 <h3>Περιγραφές περιπτώσεων χρήσης</h3>
 
-<h4>[ΠΧ1 Αναφορές αφορολόγητου ορίου](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc1-%CE%91%CE%BD%CE%B1%CF%86%CE%BF%CF%81%CE%AD%CF%82%20%CE%B1%CF%86%CE%BF%CF%81%CE%BF%CE%BB%CF%8C%CE%B3%CE%B7%CF%84%CE%BF%CF%85%20%CE%BF%CF%81%CE%AF%CE%BF%CF%85.md)
+<h4>[ΠΧ1 Αναφορές αφορολόγητου ορίου](requirements/use cases/uc1-Αναφορές αφορολόγητου ορίου.md)
 
 <h4>[ΠΧ2 Αναφορές στόχων οικονομικής διαχείρισης](https://gitlab.com/softeng-2019-20/fin-assistant/-/blob/master/requirements/use%20cases/uc2-%CE%91%CE%BD%CE%B1%CF%86%CE%BF%CF%81%CE%AD%CF%82%20%CF%83%CF%84%CF%8C%CF%87%CF%89%CE%BD%20%CE%BF%CE%B9%CE%BA%CE%BF%CE%BD%CE%BF%CE%BC%CE%B9%CE%BA%CE%AE%CF%82%20%CE%B4%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%CF%82.md)
 
