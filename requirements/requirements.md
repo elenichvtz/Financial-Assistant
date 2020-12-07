@@ -50,19 +50,23 @@
 
 <h3>Περιγραφές περιπτώσεων χρήσης</h3>
 
-<h4>[ΠΧ1 Αναφορές αφορολόγητου ορίου](requirements/use_cases/uc1.md)
+<h4> 
+  
+[ΠΧ1 Αναφορές αφορολόγητου ορίου](use_cases/uc1.md)
 
-<h4>[ΠΧ2 Αναφορές στόχων οικονομικής διαχείρισης](requirements/use_cases/uc2.md)
+[ΠΧ2 Αναφορές στόχων οικονομικής διαχείρισης](requirements/use_cases/uc2.md)
 
-<h4>[ΠΧ3 Διαχείριση εσόδων/εξόδων](requirements/use_cases/uc3.md)
+[ΠΧ3 Διαχείριση εσόδων/εξόδων](requirements/use_cases/uc3.md)
 
-<h4>[ΠΧ4 Διαχείριση λίστας αγορών](requirements/use_cases/uc4.md)
+[ΠΧ4 Διαχείριση λίστας αγορών](requirements/use_cases/uc4.md)
 
-<h4>[ΠΧ5 Διαχείριση στόχων αποταμίευσης](requirements/use_cases/uc5.md)
+[ΠΧ5 Διαχείριση στόχων αποταμίευσης](requirements/use_cases/uc5.md)
 
-<h4>[ΠΧ6 Εγγραφή στην εφαρμογή](requirements/use_cases/uc6.md)
+[ΠΧ6 Εγγραφή στην εφαρμογή](requirements/use_cases/uc6.md)
 
-<h4>[ΠΧ7 Σύνδεση στην εφαρμογή](requirements/use_cases/uc7.md)
+[ΠΧ7 Σύνδεση στην εφαρμογή](requirements/use_cases/uc7.md)
+
+</h4>
 
 <h1>Συμπληρωματικές προδιαγραφές</h1>
 
