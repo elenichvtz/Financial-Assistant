@@ -54,17 +54,17 @@
   
 [ΠΧ1 Αναφορές αφορολόγητου ορίου](use_cases/uc1.md)
 
-[ΠΧ2 Αναφορές στόχων οικονομικής διαχείρισης](requirements/use_cases/uc2.md)
+[ΠΧ2 Αναφορές στόχων οικονομικής διαχείρισης](use_cases/uc2.md)
 
-[ΠΧ3 Διαχείριση εσόδων/εξόδων](requirements/use_cases/uc3.md)
+[ΠΧ3 Διαχείριση εσόδων/εξόδων](use_cases/uc3.md)
 
-[ΠΧ4 Διαχείριση λίστας αγορών](requirements/use_cases/uc4.md)
+[ΠΧ4 Διαχείριση λίστας αγορών](use_cases/uc4.md)
 
-[ΠΧ5 Διαχείριση στόχων αποταμίευσης](requirements/use_cases/uc5.md)
+[ΠΧ5 Διαχείριση στόχων αποταμίευσης](/use_cases/uc5.md)
 
-[ΠΧ6 Εγγραφή στην εφαρμογή](requirements/use_cases/uc6.md)
+[ΠΧ6 Εγγραφή στην εφαρμογή](use_cases/uc6.md)
 
-[ΠΧ7 Σύνδεση στην εφαρμογή](requirements/use_cases/uc7.md)
+[ΠΧ7 Σύνδεση στην εφαρμογή](use_cases/uc7.md)
 
 </h4>
 
