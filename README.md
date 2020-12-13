@@ -14,5 +14,5 @@
 
 **Στο Android Studio χρησιμοποιήθηκε το Nexus 6 API 27 ως virtual device.**
 
+<!--- Grade: 3.05/4 --->
 
-Grade: 3.05/4
